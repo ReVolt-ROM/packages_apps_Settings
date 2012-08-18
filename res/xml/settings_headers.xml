@@ -112,6 +112,13 @@
         android:fragment="com.android.settings.profiles.ProfilesSettings"
         android:title="@string/profiles_settings_title" />
 
+    <!-- ReVolt Links -->
+    <header
+        android:id="@+id/revolt_customizations"
+        android:icon="@drawable/ic_settings_revolt"
+        android:fragment="com.android.settings.Revolt"
+        android:title="@string/revolt_custom_title" />
+
     <!-- About ReVolt ROM -->
     <header
         android:id="@+id/about_rom"

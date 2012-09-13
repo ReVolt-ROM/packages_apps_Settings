@@ -53,10 +53,14 @@
             android:entryValues="@array/wifi_frequency_band_values"
             />
 
-    <Preference
-            android:key="install_credentials"
-            android:title="@string/wifi_install_credentials"
-            android:persistent="false" />
+    <ListPreference
+            android:key="wifi_countrycode"
+            android:title="@string/wifi_setting_countrycode_title"
+            android:summary="@string/wifi_setting_countrycode_summary"
+            android:persistent="false"
+            android:entries="@array/wifi_countrycode_entries"
+            android:entryValues="@array/wifi_countrycode_values"
+            />
 
     <PreferenceScreen
             android:key="wifi_priority"
@@ -65,6 +69,11 @@
             android:persistent="false"
             android:fragment="com.android.settings.wifi.WifiPriority"
             />
+
+    <Preference
+            android:key="install_credentials"
+            android:title="@string/wifi_install_credentials"
+            android:persistent="false" />
 
     <CheckBoxPreference
             android:key="suspend_optimizations"

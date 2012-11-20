@@ -108,3 +108,4 @@ public class AppGroupList extends SettingsPreferenceFragment {
                 R.string.profile_appgroup_manage, null, this, APP_GROUP_CONFIG);
     }
 }
+

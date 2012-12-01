@@ -264,4 +264,9 @@
     <!-- About phone screen, Free memory info -->
     <string name="mem_info">Memory</string>
 
+    <string name="nfc_polling_mode_title">NFC polling mode</string>
+    <string name="nfc_polling_mode_screen_off">Screen off</string>
+    <string name="nfc_polling_mode_screen_locked">Screen on, locked</string>
+    <string name="nfc_polling_mode_screen_unlocked">Screen on, unlocked (default)</string>
+
 </resources>

@@ -180,4 +180,3 @@ public class ProfileSilentModePreference extends Preference implements
         }
     }
 }
-

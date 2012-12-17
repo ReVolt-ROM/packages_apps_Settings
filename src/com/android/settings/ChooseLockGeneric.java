@@ -383,7 +383,9 @@ public class ChooseLockGeneric extends PreferenceActivity {
                     startActivity(intent);
                 }
             } else if (quality == DevicePolicyManager.PASSWORD_QUALITY_SOMETHING) {
-                Intent intent = new Intent(getActivity(), ChooseLockPattern.class);
+                boolean showTutorial = !mChooseLockSettingsHelper.utils().isPatternEverChosen();
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), ChooseLockPatternSize.class);
                 intent.putExtra("key_lock_method", "pattern");
                 intent.putExtra(CONFIRM_CREDENTIALS, false);
                 intent.putExtra(LockPatternUtils.LOCKSCREEN_BIOMETRIC_WEAK_FALLBACK,
@@ -417,3 +419,4 @@ public class ChooseLockGeneric extends PreferenceActivity {
 
     }
 }
+

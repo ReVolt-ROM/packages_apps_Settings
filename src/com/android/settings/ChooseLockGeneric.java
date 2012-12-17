@@ -1,18 +1,18 @@
 /*
- * Copyright (C) 2010 The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+* Copyright (C) 2010 The Android Open Source Project
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
 
 package com.android.settings;
 
@@ -236,12 +236,12 @@ public class ChooseLockGeneric extends PreferenceActivity {
         }
 
         /**
-         * Mix in "encryption minimums" to any given quality value.  This prevents users
-         * from downgrading the pattern/pin/password to a level below the minimums.
-         *
-         * ASSUMPTION:  Setting quality is sufficient (e.g. minimum lengths will be set
-         * appropriately.)
-         */
+* Mix in "encryption minimums" to any given quality value. This prevents users
+* from downgrading the pattern/pin/password to a level below the minimums.
+*
+* ASSUMPTION: Setting quality is sufficient (e.g. minimum lengths will be set
+* appropriately.)
+*/
         private int upgradeQualityForEncryption(int quality) {
             int encryptionStatus = mDPM.getStorageEncryptionStatus();
             boolean encrypted = (encryptionStatus == DevicePolicyManager.ENCRYPTION_STATUS_ACTIVE)
@@ -264,10 +264,10 @@ public class ChooseLockGeneric extends PreferenceActivity {
         }
 
         /***
-         * Disables preferences that are less secure than required quality.
-         *
-         * @param quality the requested quality.
-         */
+* Disables preferences that are less secure than required quality.
+*
+* @param quality the requested quality.
+*/
         private void disableUnusablePreferences(final int quality, MutableBoolean allowBiometric) {
             final PreferenceScreen entries = getPreferenceScreen();
             final boolean onlyShowFallback = getActivity().getIntent()
@@ -313,14 +313,14 @@ public class ChooseLockGeneric extends PreferenceActivity {
         }
 
         /**
-         * Check whether the key is allowed for fallback (e.g. bio sensor). Returns true if it's
-         * supported as a backup.
-         *
-         * @param key
-         * @return true if allowed
-         */
+* Check whether the key is allowed for fallback (e.g. bio sensor). Returns true if it's
+* supported as a backup.
+*
+* @param key
+* @return true if allowed
+*/
         private boolean allowedForFallback(String key) {
-            return KEY_UNLOCK_BACKUP_INFO.equals(key)  ||
+            return KEY_UNLOCK_BACKUP_INFO.equals(key) ||
                     KEY_UNLOCK_SET_PATTERN.equals(key) || KEY_UNLOCK_SET_PIN.equals(key);
         }
 
@@ -342,14 +342,14 @@ public class ChooseLockGeneric extends PreferenceActivity {
         }
 
         /**
-         * Invokes an activity to change the user's pattern, password or PIN based on given quality
-         * and minimum quality specified by DevicePolicyManager. If quality is
-         * {@link DevicePolicyManager#PASSWORD_QUALITY_UNSPECIFIED}, password is cleared.
-         *
-         * @param quality the desired quality. Ignored if DevicePolicyManager requires more security
-         * @param disabled whether or not to show LockScreen at all. Only meaningful when quality is
-         * {@link DevicePolicyManager#PASSWORD_QUALITY_UNSPECIFIED}
-         */
+* Invokes an activity to change the user's pattern, password or PIN based on given quality
+* and minimum quality specified by DevicePolicyManager. If quality is
+* {@link DevicePolicyManager#PASSWORD_QUALITY_UNSPECIFIED}, password is cleared.
+*
+* @param quality the desired quality. Ignored if DevicePolicyManager requires more security
+* @param disabled whether or not to show LockScreen at all. Only meaningful when quality is
+* {@link DevicePolicyManager#PASSWORD_QUALITY_UNSPECIFIED}
+*/
         void updateUnlockMethodAndFinish(int quality, boolean disabled) {
             // Sanity check. We should never get here without confirming user's existing password.
             if (!mPasswordConfirmed) {
@@ -383,7 +383,9 @@ public class ChooseLockGeneric extends PreferenceActivity {
                     startActivity(intent);
                 }
             } else if (quality == DevicePolicyManager.PASSWORD_QUALITY_SOMETHING) {
-                Intent intent = new Intent(getActivity(), ChooseLockPattern.class);
+                boolean showTutorial = !mChooseLockSettingsHelper.utils().isPatternEverChosen();
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), ChooseLockPatternSize.class);
                 intent.putExtra("key_lock_method", "pattern");
                 intent.putExtra(CONFIRM_CREDENTIALS, false);
                 intent.putExtra(LockPatternUtils.LOCKSCREEN_BIOMETRIC_WEAK_FALLBACK,

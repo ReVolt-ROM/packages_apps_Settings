@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+	xmlns:android="http://schemas.android.com/apk/res/android"
+        android:title="@string/about_rv_settings_title"
+	xmlns:rv="http://schemas.android.com/apk/res/com.android.settings">
+
+	<PreferenceCategory
+		android:key="links"
+		android:title="@string/revolt">
+
+		<Preference
+			android:key="revolt_website"
+			android:title="@string/revolt_website_title"
+			android:summary="@string/revolt_website_summary" />
+                <Preference
+                        android:key="revolt_fb"
+                        android:title="@string/revolt_fb_title"
+                        android:summary="@string/revolt_fb_summary" />
+                <Preference
+                        android:key="revolt_source"
+                        android:title="@string/revolt_source_title"
+                        android:summary="@string/revolt_source_summary" />
+
+	</PreferenceCategory>
+
+	<PreferenceCategory
+		android:key="devs"
+		android:title="@string/devs">
+
+		<com.android.settings.widgets.DeveloperPreference
+            android:title="Johnhany97"
+            rv:nameDev="Johnhany97"
+            rv:twitterHandle="jhany97"
+            rv:donateLink="@string/donate_johnhany97" />
+
+        </PreferenceCategory>
+
+	<PreferenceCategory
+		android:key="contributors"
+		android:title="@string/contributors_title">
+
+		<com.android.settings.widgets.DeveloperPreference
+            android:title="CyanogenMod"
+            rv:nameDev="cyanogenmod"
+            rv:twitterHandle="cyanogenmod"
+            rv:donateLink="@string/donate_cyanogenmod" />
+
+		<com.android.settings.widgets.DeveloperPreference
+            android:title="AOKP"
+            rv:nameDev="aokp"
+            rv:twitterHandle="aokp_rom"
+            rv:donateLink="@string/donate_aokp" />
+
+	</PreferenceCategory>
+
+</PreferenceScreen>
+

@@ -72,6 +72,13 @@
                 android:targetPackage="com.aokp.romcontrol" />
     </header>
 
+    <!-- Hybrid -->
+    <header
+        android:id="@+id/hybrid_settings"
+        android:title="@string/hybrid_settings_title"
+        android:icon="@drawable/ic_settings_jellybeer"
+        android:fragment="com.android.settings.beerbong.HybridSettings" />
+
     <!-- Themes -->
     <header android:id="@+id/themes"
             android:title="@string/themes_title"
@@ -241,13 +248,6 @@
     <!-- PERSONAL -->
     <header android:id="@+id/personal_section"
         android:title="@string/header_category_personal" />
-
-    <!-- Profiles -->
-    <header
-        android:id="@+id/profiles_settings"
-        android:icon="@drawable/ic_settings_profiles"
-        android:fragment="com.android.settings.profiles.ProfilesSettings"
-        android:title="@string/profiles_settings_title" />
 
     <!-- Location -->
     <header

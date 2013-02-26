@@ -1,18 +1,18 @@
 /*
- * Copyright (C) 2007 The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+* Copyright (C) 2007 The Android Open Source Project
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
 
 package com.android.settings;
 
@@ -41,23 +41,23 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * If the user has a lock pattern set already, makes them confirm the existing one.
- *
- * Then, prompts the user to choose a lock pattern:
- * - prompts for initial pattern
- * - asks for confirmation / restart
- * - saves chosen password when confirmed
- */
+* If the user has a lock pattern set already, makes them confirm the existing one.
+*
+* Then, prompts the user to choose a lock pattern:
+* - prompts for initial pattern
+* - asks for confirmation / restart
+* - saves chosen password when confirmed
+*/
 public class ChooseLockPattern extends PreferenceActivity {
     /**
-     * Used by the choose lock pattern wizard to indicate the wizard is
-     * finished, and each activity in the wizard should finish.
-     * <p>
-     * Previously, each activity in the wizard would finish itself after
-     * starting the next activity. However, this leads to broken 'Back'
-     * behavior. So, now an activity does not finish itself until it gets this
-     * result.
-     */
+* Used by the choose lock pattern wizard to indicate the wizard is
+* finished, and each activity in the wizard should finish.
+* <p>
+* Previously, each activity in the wizard would finish itself after
+* starting the next activity. However, this leads to broken 'Back'
+* behavior. So, now an activity does not finish itself until it gets this
+* result.
+*/
     static final int RESULT_FINISHED = RESULT_FIRST_USER;
 
     @Override
@@ -126,9 +126,9 @@ public class ChooseLockPattern extends PreferenceActivity {
         }
 
         /**
-         * The pattern listener that responds according to a user choosing a new
-         * lock pattern.
-         */
+* The pattern listener that responds according to a user choosing a new
+* lock pattern.
+*/
         protected LockPatternView.OnPatternListener mChooseNewLockPatternListener =
                 new LockPatternView.OnPatternListener() {
 
@@ -177,8 +177,8 @@ public class ChooseLockPattern extends PreferenceActivity {
 
 
         /**
-         * The states of the left footer button.
-         */
+* The states of the left footer button.
+*/
         enum LeftButtonMode {
             Cancel(R.string.cancel, true),
             CancelDisabled(R.string.cancel, false),
@@ -188,9 +188,9 @@ public class ChooseLockPattern extends PreferenceActivity {
 
 
             /**
-             * @param text The displayed text for this mode.
-             * @param enabled Whether the button should be enabled.
-             */
+* @param text The displayed text for this mode.
+* @param enabled Whether the button should be enabled.
+*/
             LeftButtonMode(int text, boolean enabled) {
                 this.text = text;
                 this.enabled = enabled;
@@ -201,8 +201,8 @@ public class ChooseLockPattern extends PreferenceActivity {
         }
 
         /**
-         * The states of the right button.
-         */
+* The states of the right button.
+*/
         enum RightButtonMode {
             Continue(R.string.lockpattern_continue_button_text, true),
             ContinueDisabled(R.string.lockpattern_continue_button_text, false),
@@ -211,9 +211,9 @@ public class ChooseLockPattern extends PreferenceActivity {
             Ok(android.R.string.ok, true);
 
             /**
-             * @param text The displayed text for this mode.
-             * @param enabled Whether the button should be enabled.
-             */
+* @param text The displayed text for this mode.
+* @param enabled Whether the button should be enabled.
+*/
             RightButtonMode(int text, boolean enabled) {
                 this.text = text;
                 this.enabled = enabled;
@@ -224,8 +224,8 @@ public class ChooseLockPattern extends PreferenceActivity {
         }
 
         /**
-         * Keep track internally of where the user is in choosing a pattern.
-         */
+* Keep track internally of where the user is in choosing a pattern.
+*/
         protected enum Stage {
 
             Introduction(
@@ -256,12 +256,12 @@ public class ChooseLockPattern extends PreferenceActivity {
 
 
             /**
-             * @param headerMessage The message displayed at the top.
-             * @param leftMode The mode of the left button.
-             * @param rightMode The mode of the right button.
-             * @param footerMessage The footer message.
-             * @param patternEnabled Whether the pattern widget is enabled.
-             */
+* @param headerMessage The message displayed at the top.
+* @param leftMode The mode of the left button.
+* @param rightMode The mode of the right button.
+* @param footerMessage The footer message.
+* @param patternEnabled Whether the pattern widget is enabled.
+*/
             Stage(int headerMessage,
                     LeftButtonMode leftMode,
                     RightButtonMode rightMode,
@@ -431,11 +431,11 @@ public class ChooseLockPattern extends PreferenceActivity {
         }
 
         /**
-         * Updates the messages and buttons appropriate to what stage the user
-         * is at in choosing a view.  This doesn't handle clearing out the pattern;
-         * the pattern is expected to be in the right state.
-         * @param stage
-         */
+* Updates the messages and buttons appropriate to what stage the user
+* is at in choosing a view. This doesn't handle clearing out the pattern;
+* the pattern is expected to be in the right state.
+* @param stage
+*/
         protected void updateStage(Stage stage) {
             final Stage previousStage = mUiStage;
 

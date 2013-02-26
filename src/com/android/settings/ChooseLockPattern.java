@@ -1,18 +1,18 @@
 /*
- * Copyright (C) 2007 The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+* Copyright (C) 2007 The Android Open Source Project
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
 
 package com.android.settings;
 
@@ -41,23 +41,23 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * If the user has a lock pattern set already, makes them confirm the existing one.
- *
- * Then, prompts the user to choose a lock pattern:
- * - prompts for initial pattern
- * - asks for confirmation / restart
- * - saves chosen password when confirmed
- */
+* If the user has a lock pattern set already, makes them confirm the existing one.
+*
+* Then, prompts the user to choose a lock pattern:
+* - prompts for initial pattern
+* - asks for confirmation / restart
+* - saves chosen password when confirmed
+*/
 public class ChooseLockPattern extends PreferenceActivity {
     /**
-     * Used by the choose lock pattern wizard to indicate the wizard is
-     * finished, and each activity in the wizard should finish.
-     * <p>
-     * Previously, each activity in the wizard would finish itself after
-     * starting the next activity. However, this leads to broken 'Back'
-     * behavior. So, now an activity does not finish itself until it gets this
-     * result.
-     */
+* Used by the choose lock pattern wizard to indicate the wizard is
+* finished, and each activity in the wizard should finish.
+* <p>
+* Previously, each activity in the wizard would finish itself after
+* starting the next activity. However, this leads to broken 'Back'
+* behavior. So, now an activity does not finish itself until it gets this
+* result.
+*/
     static final int RESULT_FINISHED = RESULT_FIRST_USER;
 
     @Override
@@ -103,16 +103,12 @@ public class ChooseLockPattern extends PreferenceActivity {
         private TextView mFooterRightButton;
         protected List<LockPatternView.Cell> mChosenPattern = null;
 
+        private byte mPatternSize = LockPatternUtils.PATTERN_SIZE_DEFAULT;
+
         /**
-         * The patten used during the help screen to show how to draw a pattern.
-         */
-        private final List<LockPatternView.Cell> mAnimatePattern =
-                Collections.unmodifiableList(Lists.newArrayList(
-                        LockPatternView.Cell.of(0, 0),
-                        LockPatternView.Cell.of(0, 1),
-                        LockPatternView.Cell.of(1, 1),
-                        LockPatternView.Cell.of(2, 1)
-                ));
+* The patten used during the help screen to show how to draw a pattern.
+*/
+        private List<LockPatternView.Cell> mAnimatePattern;
 
         @Override
         public void onActivityResult(int requestCode, int resultCode,
@@ -130,9 +126,9 @@ public class ChooseLockPattern extends PreferenceActivity {
         }
 
         /**
-         * The pattern listener that responds according to a user choosing a new
-         * lock pattern.
-         */
+* The pattern listener that responds according to a user choosing a new
+* lock pattern.
+*/
         protected LockPatternView.OnPatternListener mChooseNewLockPatternListener =
                 new LockPatternView.OnPatternListener() {
 
@@ -181,8 +177,8 @@ public class ChooseLockPattern extends PreferenceActivity {
 
 
         /**
-         * The states of the left footer button.
-         */
+* The states of the left footer button.
+*/
         enum LeftButtonMode {
             Cancel(R.string.cancel, true),
             CancelDisabled(R.string.cancel, false),
@@ -192,9 +188,9 @@ public class ChooseLockPattern extends PreferenceActivity {
 
 
             /**
-             * @param text The displayed text for this mode.
-             * @param enabled Whether the button should be enabled.
-             */
+* @param text The displayed text for this mode.
+* @param enabled Whether the button should be enabled.
+*/
             LeftButtonMode(int text, boolean enabled) {
                 this.text = text;
                 this.enabled = enabled;
@@ -205,8 +201,8 @@ public class ChooseLockPattern extends PreferenceActivity {
         }
 
         /**
-         * The states of the right button.
-         */
+* The states of the right button.
+*/
         enum RightButtonMode {
             Continue(R.string.lockpattern_continue_button_text, true),
             ContinueDisabled(R.string.lockpattern_continue_button_text, false),
@@ -215,9 +211,9 @@ public class ChooseLockPattern extends PreferenceActivity {
             Ok(android.R.string.ok, true);
 
             /**
-             * @param text The displayed text for this mode.
-             * @param enabled Whether the button should be enabled.
-             */
+* @param text The displayed text for this mode.
+* @param enabled Whether the button should be enabled.
+*/
             RightButtonMode(int text, boolean enabled) {
                 this.text = text;
                 this.enabled = enabled;
@@ -228,8 +224,8 @@ public class ChooseLockPattern extends PreferenceActivity {
         }
 
         /**
-         * Keep track internally of where the user is in choosing a pattern.
-         */
+* Keep track internally of where the user is in choosing a pattern.
+*/
         protected enum Stage {
 
             Introduction(
@@ -260,12 +256,12 @@ public class ChooseLockPattern extends PreferenceActivity {
 
 
             /**
-             * @param headerMessage The message displayed at the top.
-             * @param leftMode The mode of the left button.
-             * @param rightMode The mode of the right button.
-             * @param footerMessage The footer message.
-             * @param patternEnabled Whether the pattern widget is enabled.
-             */
+* @param headerMessage The message displayed at the top.
+* @param leftMode The mode of the left button.
+* @param rightMode The mode of the right button.
+* @param footerMessage The footer message.
+* @param patternEnabled Whether the pattern widget is enabled.
+*/
             Stage(int headerMessage,
                     LeftButtonMode leftMode,
                     RightButtonMode rightMode,
@@ -307,6 +303,15 @@ public class ChooseLockPattern extends PreferenceActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
 
+            mPatternSize = getActivity().getIntent().getByteExtra("pattern_size", LockPatternUtils.PATTERN_SIZE_DEFAULT);
+            LockPatternView.Cell.updateSize(mPatternSize);
+            mAnimatePattern = Collections.unmodifiableList(Lists.newArrayList(
+                    LockPatternView.Cell.of(0, 0, mPatternSize),
+                    LockPatternView.Cell.of(0, 1, mPatternSize),
+                    LockPatternView.Cell.of(1, 1, mPatternSize),
+                    LockPatternView.Cell.of(2, 1, mPatternSize)
+                    ));
+
             // setupViews()
             View view = inflater.inflate(R.layout.choose_lock_pattern, null);
             mHeaderText = (TextView) view.findViewById(R.id.headerText);
@@ -314,6 +319,7 @@ public class ChooseLockPattern extends PreferenceActivity {
             mLockPatternView.setOnPatternListener(mChooseNewLockPatternListener);
             mLockPatternView.setTactileFeedbackEnabled(
                     mChooseLockSettingsHelper.utils().isTactileFeedbackEnabled());
+            mLockPatternView.setLockPatternSize(mPatternSize);
 
             mFooterText = (TextView) view.findViewById(R.id.footerText);
 
@@ -351,7 +357,8 @@ public class ChooseLockPattern extends PreferenceActivity {
                 // restore from previous state
                 final String patternString = savedInstanceState.getString(KEY_PATTERN_CHOICE);
                 if (patternString != null) {
-                    mChosenPattern = LockPatternUtils.stringToPattern(patternString);
+                    LockPatternUtils utils = mChooseLockSettingsHelper.utils();
+                    mChosenPattern = utils.stringToPattern(patternString);
                 }
                 updateStage(Stage.values()[savedInstanceState.getInt(KEY_UI_STAGE)]);
             }
@@ -417,17 +424,18 @@ public class ChooseLockPattern extends PreferenceActivity {
 
             outState.putInt(KEY_UI_STAGE, mUiStage.ordinal());
             if (mChosenPattern != null) {
+                LockPatternUtils utils = mChooseLockSettingsHelper.utils();
                 outState.putString(KEY_PATTERN_CHOICE,
-                        LockPatternUtils.patternToString(mChosenPattern));
+                        utils.patternToString(mChosenPattern));
             }
         }
 
         /**
-         * Updates the messages and buttons appropriate to what stage the user
-         * is at in choosing a view.  This doesn't handle clearing out the pattern;
-         * the pattern is expected to be in the right state.
-         * @param stage
-         */
+* Updates the messages and buttons appropriate to what stage the user
+* is at in choosing a view. This doesn't handle clearing out the pattern;
+* the pattern is expected to be in the right state.
+* @param stage
+*/
         protected void updateStage(Stage stage) {
             final Stage previousStage = mUiStage;
 
@@ -516,6 +524,7 @@ public class ChooseLockPattern extends PreferenceActivity {
 
             final boolean isFallback = getActivity().getIntent()
                 .getBooleanExtra(LockPatternUtils.LOCKSCREEN_BIOMETRIC_WEAK_FALLBACK, false);
+            utils.setLockPatternSize(mPatternSize);
             utils.saveLockPattern(mChosenPattern, isFallback);
             utils.setLockPatternEnabled(true);
 

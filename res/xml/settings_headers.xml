@@ -62,6 +62,7 @@
     <header android:id="@+id/quick_links"
             android:title="@string/quick_links_title" />
 
+    <!-- ROM Control -->
     <header android:id="@+id/rom_control"
             android:title="@string/rom_control_title"
             android:icon="@drawable/ic_settings_rom_control" >
@@ -71,6 +72,7 @@
                 android:targetPackage="com.aokp.romcontrol" />
     </header>
 
+    <!-- Themes -->
     <header android:id="@+id/themes"
             android:title="@string/themes_title"
             android:icon="@drawable/ic_settings_themes" >
@@ -80,6 +82,7 @@
                 android:targetClass="com.tmobile.themechooser.ThemeChooser" />
     </header>
 
+    <!-- Performance Control -->
     <header android:id="@+id/performance"
             android:title="@string/performance_title"
             android:icon="@drawable/ic_settings_performance" >
@@ -89,15 +92,7 @@
                 android:targetClass="com.brewcrewfoo.performance.activities.MainActivity" />
     </header>
 
-    <header android:id="@+id/advanced_settings"
-            android:title="@string/advanced_settings_title"
-            android:icon="@drawable/ic_settings_advanced">
-        <intent
-                android:action="com.cyanogenmod.action.LAUNCH_DEVICE_SETTINGS"
-                android:targetPackage="com.cyanogenmod.settings.device"
-                android:targetClass="com.cyanogenmod.settings.device.DeviceSettings" />
-    </header>
-
+    <!-- Sprint Tools -->
     <header android:id="@+id/sprint_tools"
             android:title="@string/sprint_tools_title"
             android:icon="@drawable/ic_sprint_tools">
@@ -105,6 +100,61 @@
                 android:action="android.intent.action.MAIN"
                 android:targetPackage="org.teameos.settings.device"
                 android:targetClass="org.teameos.settings.device.DeviceSettings" />
+    </header>
+
+    <!-- ReVolt Settings -->
+    <header android:title="@string/header_category_revolt" />
+
+
+    <!-- About ReVolt ROM -->
+    <header
+        android:id="@+id/about_rom"
+        android:fragment="com.android.settings.rv.About"
+        android:icon="@drawable/ic_settings_about_rv"
+        android:title="@string/about_rv_settings_title" />
+
+    <!-- Update Me -->
+    <header 
+            android:icon="@drawable/ic_settings_update"
+            android:title="@string/update_settings_title">
+        <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="com.acquariusoft.UpdateMe"
+                android:targetClass="com.acquariusoft.UpdateMe.UpdateMeActivity" />
+    </header>
+
+    <!-- LMT Settings -->
+    <header 
+            android:id="@+id/lmt_settings"
+            android:icon="@drawable/ic_menu_scan_network"
+            android:title="@string/lmt_settings">
+        <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="com.android.lmt"
+                android:targetClass="com.android.lmt.LMT" />
+    </header>
+
+    <!-- DPI Settings -->
+    <header android:title="@string/dpi_settings" />
+
+    <!-- Xposed Frameworks Installer -->
+    <header 
+            android:icon="@drawable/ic_settings_advanced"
+            android:title="@string/xposed_frameworks_settings">
+        <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="de.robv.android.xposed.installer"
+                android:targetClass="de.robv.android.xposed.installer.XposedInstallerActivity" />
+   </header>
+
+   <!-- Xposed Controller -->
+   <header 
+            android:icon="@drawable/ic_settings_multiuser"
+            android:title="@string/xposed_dpi_settings">
+        <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="de.robv.android.xposed.mods.appsettings"
+                android:targetClass="de.robv.android.xposed.mods.appsettings.XposedModActivity" />
     </header>
 
     <!-- DEVICE -->
@@ -192,6 +242,16 @@
         android:icon="@drawable/ic_settings_backup"
         android:title="@string/privacy_settings"
         android:id="@+id/privacy_settings" />
+
+    <!-- Advanced Device Specific Settings by CyanogenMod -->
+    <header android:id="@+id/advanced_settings"
+            android:title="@string/advanced_settings_title"
+            android:icon="@drawable/ic_settings_advanced">
+        <intent
+                android:action="com.cyanogenmod.action.LAUNCH_DEVICE_SETTINGS"
+                android:targetPackage="com.cyanogenmod.settings.device"
+                android:targetClass="com.cyanogenmod.settings.device.DeviceSettings" />
+    </header>
 
     <!--  ACCOUNTS section -->
     <header

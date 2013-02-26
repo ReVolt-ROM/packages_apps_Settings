@@ -4502,4 +4502,36 @@
     
     <!-- Sprint Tools -->
     <string name="sprint_tools_title">Sprint Tools</string>
+
+    <!-- ReVolt Customizations -->
+    <string name="header_category_revolt">REVOLT CUSTOMIZATION</string>
+    <!-- OTA UpdateMe Center -->
+    <string name="update_settings_title">ReVolt Updates Center</string>
+
+    <!-- About ReVolt -->
+    <string name="about_rv_settings_title">About Revolt</string>
+    <string name="about_revolt">About ReVolt</string>
+    <string name="about_revolt_summary">@null</string>
+    <string name="app_name">ReVolt</string>
+    <string name="devs">Developer</string>
+    <string name="donate_johnhany97">http://forum.xda-developers.com/donatetome.php?u=4655909</string>
+    <string name="donate_cyanogenmod">http://forum.cyanogenmod.com/donate</string>
+    <string name="donate_aokp">http://aokp.co/</string>
+    <string name="revolt">ReVolt</string>
+    <string name="revolt_website_title">ReVolt WebSite</string>
+    <string name="revolt_website_summary">Find Latest News and Updates from the Official ReVolt Website.</string>
+    <string name="title_about">About ReVolt</string>
+    <string name="revolt_fb_title">ReVolt on Facebook</string>
+    <string name="revolt_fb_summary">Like the Official ReVolt ROM Facebook page for updates.</string>
+    <string name="revolt_source_title">ReVolt Sources</string>
+    <string name="revolt_source_summary">Get the Source of ReVolt ROM at GitHub</string>
+
+    <!-- LMT Settings -->
+    <string name="lmt_settings_title">LMT Settings</string>
+
+    <!-- Per App Dpi Frameworks Controlling System (XPOSED FRAMEWORKS) -->
+    <string name="dpi_settings">DPI &amp; TABLET SETTINGS</string>
+    <string name="xposed_dpi_settings">Per-App Settings</string>
+    <string name="xposed_frameworks_settings">Modules Management</string>
+
 </resources>

@@ -4432,12 +4432,18 @@
     <!-- Cell Broadcast settings description [CHAR LIMIT=100] -->
     <string name="cell_broadcast_settings_summary">Select the types of emergency alerts to display.</string>
 
-    <string name="quick_links_title">Quick Links</string>
+    <!-- AOKP Customizations Section -->
+    <string name="quick_links_title">QUICK LINKS</string>
+    <!-- AOKP ROM Control Specific App for Customizations -->
     <string name="rom_control_title">ROM Control</string>
+    <!-- Themeing Section -->
     <string name="themes_title">Themes</string>
+    <!-- Performance Control app for Kernel Under/Over Clocking -->
     <string name="performance_title">Performance Control</string>
 
-    <string name="mod_version">AOKP version</string>
+    <!-- ReVolt Build Version -->
+    <string name="mod_version">ReVolt Version</string>
+    <!-- Default Value -->
     <string name="mod_version_default">Unknown</string>
 
     <!-- Anonymous Statistics #CM -->

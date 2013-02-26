@@ -42,6 +42,7 @@ public class Revolt extends SettingsPreferenceFragment implements
     private static final String TAG = "Revolt";
 
     private static final String KEY_LOCK_CLOCK = "lock_clock";
+    private static final String KEY_FONT_SIZE = "font_size";
     private static final String KEY_EXPANDED_DESKTOP = "power_menu_expanded_desktop";
     
     private CheckBoxPreference mExpandedDesktopPref;
@@ -72,6 +73,8 @@ public class Revolt extends SettingsPreferenceFragment implements
         // Do not display lock clock preference if its not installed
         removePreferenceIfPackageNotInstalled(findPreference(KEY_LOCK_CLOCK));
 
+        // Do not display font size preference if its not installed
+        removePreferenceIfPackageNotInstalled(findPreference(KEY_FONT_SIZE));
     
     @Override
     public void onResume() {

@@ -4788,4 +4788,8 @@
     <string name="custom_density_dialog_summary">"Changing your LCD density can cause unexpected app behavior. If you encounter market app incompatibility please return here and restart the process from step 1."</string>
     <string name="custom_density_dialog_button_got">Got it!</string>
     <string name="custom_density_dialog_button_reboot">Reboot now</string>
+
+    <!-- Font Size -->
+    <string name="font_size_title">Font Size</string>
+    <string name="font_size_summary">Control the System Font Size</string>
 </resources>

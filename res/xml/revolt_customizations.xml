@@ -8,7 +8,7 @@
   <!-- cLock by CyanogenMod -->
   <PreferenceScreen
         android:key="lock_clock"
-        android:icon="@drawable/ic_settings_chronus"
+        android:icon="@drawable/ic_clock_link"
         android:title="@string/lock_clock_title"
         android:summary="@string/lock_clock_summary">
         <intent android:action="android.intent.action.MAIN"
@@ -16,10 +16,21 @@
                 android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
   </PreferenceScreen>
 
+  <!-- FontSize Controlling Syste, -->
+  <PreferenceScreen
+        android:key="font_size"
+        android:icon="@drawable/ic_font_link"
+        android:title="@string/font_size_title"
+        android:summary="@string/font_size_summary">
+        <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.WhiteLight.FontSizeFree"
+                android:targetClass="com.WhiteLight.FontSizeFree.FontSize" />
+  </PreferenceScreen>
+
   <!-- ScreenSecurity Options by CyanogenMod -->
   <PreferenceScreen
         android:key="screen_security"
-        android:icon="@drawable/ic_settings_security"
+        android:icon="@drawable/ic_security_link"
         android:fragment="com.android.settings.SecuritySettings"
         android:title="@string/screen_security_category"
         android:summary="@string/screen_security_summary">
@@ -29,7 +40,7 @@
   <!-- Lockscreen Targets by ParanoidAndroid -->
   <PreferenceScreen
         android:key="lock_screen_shortcuts"
-        android:icon="@drawable/ic_settings_lock_screen"
+        android:icon="@drawable/ic_target_link"
         android:fragment="com.android.settings.rv.Shortcuts"
         android:title="@string/lock_screen_shortcuts_title"
         android:summary="@string/lock_screen_shortcuts_summary" />
@@ -37,7 +48,7 @@
   <!-- Expanded Desktop -->
   <CheckBoxPreference
 	android:key="power_menu_expanded_desktop"
-        android:icon="@drawable/ic_lock_expanded_desktop"
+        android:icon="@drawable/ic_expdesk_link"
 	android:title="@string/power_menu_expanded_desktop"
         android:summary="@string/power_menu_expanded_desktop_summary"
 	android:defaultValue="false" />

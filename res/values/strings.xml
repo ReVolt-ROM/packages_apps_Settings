@@ -4529,10 +4529,6 @@
     <string name="link_volume_ringtones">Link volumes</string>
     <string name="link_volume_mutes">Link mute states</string>
 
-    <!-- AOKP specific sound settings
-    <string name="camera_sounds">Camera sounds</string> ** TODO ** -->
-    <string name="safe_headset_volume_title">Safe headset volume</string>
-
     <!-- Hostname setting -->
     <string name="device_hostname">Device hostname</string>
     
@@ -4563,7 +4559,7 @@
     <string name="revolt_source_summary">Get the Source of ReVolt ROM at GitHub</string>
 
     <!-- LMT Settings -->
-    <string name="lmt_settings_title">LMT Settings</string>
+    <string name="lmt_settings">LMT Settings</string>
 
     <!-- Per App Dpi Frameworks Controlling System (XPOSED FRAMEWORKS) -->
     <string name="dpi_settings">DPI &amp; TABLET SETTINGS</string>
@@ -4758,7 +4754,8 @@
 
     <!-- LCD Density -->
     <string name="dpi">DPI</string>
-    <string name="lcd_density_title">LCD Density</string>
+    <string name="lcd_density_title">DPI Changer</string>
+    <string name="lcd_density">DPI Changing</string>
     <string name="lcd_density_summary">Change the DPI of your device</string>
     <string name="current_lcd_density">"Current LCD Density: "</string>
     <string name="lcd_density_wizard">LCD Density Wizard</string>
@@ -4792,4 +4789,11 @@
     <!-- Font Size -->
     <string name="font_size_title">Font Size</string>
     <string name="font_size_summary">Control the System Font Size</string>
+
+    <!-- cLock by CyanogenMod -->
+    <string name="lock_clock_title">cLock</string>
+    <string name="lock_clock_summary">Customize CyanogenMod LockClock Widget for Lockscreen</string>
+
+
+    
 </resources>

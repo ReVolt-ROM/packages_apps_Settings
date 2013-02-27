@@ -76,6 +76,8 @@ public class Revolt extends SettingsPreferenceFragment implements
         // Do not display font size preference if its not installed
         removePreferenceIfPackageNotInstalled(findPreference(KEY_FONT_SIZE));
     
+    }
+
     @Override
     public void onResume() {
         super.onResume();

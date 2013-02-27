@@ -37,6 +37,14 @@
         <extra android:name="cm_security" android:value="true" />
   </PreferenceScreen>
 
+  <!-- Pie UI by ParanoidAndroid -->
+  <PreferenceScreen
+        android:key="pie_control"
+        android:icon="@drawable/ic_rv_pie"
+        android:fragment="com.android.settings.paranoid.Pie"
+        android:title="@string/pie_controls_title"
+        android:summary="@string/pie_controls_summary" />
+
   <!-- Lockscreen Targets by ParanoidAndroid -->
   <PreferenceScreen
         android:key="lock_screen_shortcuts"

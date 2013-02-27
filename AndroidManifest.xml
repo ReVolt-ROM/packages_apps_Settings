@@ -1496,6 +1496,10 @@
 
         <activity android:name="DPI" />
 
+        <!-- Paranoid PIE UI -->
+        <activity android:name=".paranoid.Pie" />
+        <activity android:name=".paranoid.PieColor" />
+
         <!-- CyanogenMod activities Start -->
         <activity android:name=".profiles.ProfilesSettings" />
 

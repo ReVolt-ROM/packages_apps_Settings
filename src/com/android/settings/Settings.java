@@ -127,7 +127,7 @@ public class Settings extends PreferenceActivity
             R.id.themes,
             R.id.performance,
             R.id.advanced_settings,
-            R.id.sprint_tools
+            R.id.lmt_settings
     };
 
     private SharedPreferences mDevelopmentPreferences;
@@ -433,15 +433,12 @@ public class Settings extends PreferenceActivity
             Header header = target.get(i);
             // Ids are integers, so downcasting
             int id = (int) header.id;
-            if (id == R.id.operator_settings || id == R.id.manufacturer_settings) {
+            if (id == R.id.operator_settings || id == R.id.manufacturer_settings || id == R.id.lmt_settings) {
                 Utils.updateHeaderToSpecificActivityFromMetaDataOrRemove(this, target, header);
             } else if (id == R.id.advanced_settings) {
                 if (!needsAdvancedSettings())
                     target.remove(header);
-            } else if (id == R.id.sprint_tools) {
-                if (!isSprintDevice())
-                    target.remove(header);
-	    } else if (id == R.id.wifi_settings) {
+            } else if (id == R.id.wifi_settings) {
                 // Remove WiFi Settings if WiFi service is not available.
                 if (!getPackageManager().hasSystemFeature(PackageManager.FEATURE_WIFI)) {
                     target.remove(i);
@@ -559,10 +556,6 @@ public class Settings extends PreferenceActivity
 
     private boolean needsAdvancedSettings() {
         return getResources().getBoolean(R.bool.has_advanced_settings);
-    }
-
-    private boolean isSprintDevice() {
-        return getResources().getBoolean(R.bool.is_sprint_device);
     }
 
     private void getMetaData() {
@@ -867,8 +860,12 @@ public class Settings extends PreferenceActivity
     public static class TextToSpeechSettingsActivity extends Settings { /* empty */ }
     public static class AndroidBeamSettingsActivity extends Settings { /* empty */ }
     public static class WifiDisplaySettingsActivity extends Settings { /* empty */ }
-    public static class AnonymousStatsActivity extends Settings { /* empty */ }
     public static class DreamSettingsActivity extends Settings { /* empty */ }
+    public static class AnonymousStatsActivity extends Settings { /* empty */ }
     public static class AboutActivity extends Settings { /* empty */ }
     public static class RevoltActivity extends Settings { /* empty */ }
+    public static class ApnSettingsActivity extends Settings { /* empty */ }
+    public static class ApnEditorActivity extends Settings { /* empty */ }
+    public static class QuietHoursSettingsActivity extends Settings { /* empty */ }
+    public static class ProfilesSettingsActivity extends Settings { /* empty */ }
 }

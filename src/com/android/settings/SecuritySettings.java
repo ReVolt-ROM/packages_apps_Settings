@@ -81,6 +81,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private static final String KEY_POWER_INSTANTLY_LOCKS = "power_button_instantly_locks";
     private static final String KEY_CREDENTIALS_MANAGER = "credentials_management";
     private static final String PACKAGE_MIME_TYPE = "application/vnd.android.package-archive";
+    private static final String KEY_SMS_SECURITY_CHECK_PREF = "sms_security_check_limit";
 
     // Cyanogenmod Additions
     private static final String SLIDE_LOCK_DELAY_TOGGLE = "slide_lock_delay_toggle";
@@ -110,6 +111,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private CheckBoxPreference mPowerButtonInstantlyLocks;
 
     private boolean mIsPrimary;
+    private ListPreference mSmsSecurityCheck;
 
     // Cyanogenmod Additions
     private CheckBoxPreference mSlideLockDelayToggle;
@@ -138,6 +140,9 @@ public class SecuritySettings extends SettingsPreferenceFragment
         }
         addPreferencesFromResource(R.xml.security_settings);
         root = getPreferenceScreen();
+         
+         // Add package manager to check if features are available
+         PackageManager pm = getPackageManager();
 
         // CM - allows for calling the settings screen with stock or cm view
         boolean isCmSecurity = false;
@@ -378,7 +383,14 @@ public class SecuritySettings extends SettingsPreferenceFragment
                 }
             }
         }
-
+        boolean isTelephony = pm.hasSystemFeature(PackageManager.FEATURE_TELEPHONY);
+        if (isTelephony) {
+            addPreferencesFromResource(R.xml.security_settings_app_cyanogenmod);
+            mSmsSecurityCheck = (ListPreference) root.findPreference(KEY_SMS_SECURITY_CHECK_PREF);
+            mSmsSecurityCheck.setOnPreferenceChangeListener(this);
+            int smsSecurityCheck = Integer.valueOf(mSmsSecurityCheck.getValue());
+            updateSmsSecuritySummary(smsSecurityCheck);
+         }
         return root;
     }
 
@@ -695,13 +707,12 @@ public class SecuritySettings extends SettingsPreferenceFragment
         if (preference == mLockAfter) {
             int timeout = Integer.parseInt((String) value);
             try {
-                Settings.Secure.putInt(getContentResolver(),
+                Settings.Global.putInt(getContentResolver(),
                         Settings.Secure.LOCK_SCREEN_LOCK_AFTER_TIMEOUT, timeout);
             } catch (NumberFormatException e) {
                 Log.e("SecuritySettings", "could not persist lockAfter timeout setting", e);
             }
             updateLockAfterPreferenceSummary();
-
         } else if (preference == mSmsSecurityCheck) {
             int smsSecurityCheck = Integer.valueOf((String) value);
             Settings.Secure.putInt(getContentResolver(), Settings.Global.SMS_OUTGOING_CHECK_MAX_COUNT,

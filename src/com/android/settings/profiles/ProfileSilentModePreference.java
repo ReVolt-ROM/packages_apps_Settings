@@ -179,10 +179,5 @@ public class ProfileSilentModePreference extends Preference implements
             }
         }
     }
-
-    public void setSummary(Context context) {
-        int value = mAirplaneModeItem.mSettings.getValue();
-        setSummary(value == 1 ? getContext().getString(R.string.connection_state_enabled) : getContext().getString(
-                R.string.connection_state_disabled));
-    }
 }
+

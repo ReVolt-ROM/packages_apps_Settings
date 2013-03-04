@@ -18,10 +18,13 @@ package com.android.settings.paranoid;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.ContentResolver;
+import android.database.ContentObserver;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.DialogInterface.OnMultiChoiceClickListener;
 import android.os.Bundle;
+import android.os.Handler;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -69,17 +72,21 @@ public class Pie extends SettingsPreferenceFragment
     private Context mContext;
     private int mAllowedLocations;
 
+    protected Handler mHandler;
+    private SettingsObserver mSettingsObserver;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.pie_settings);
         PreferenceScreen prefSet = getPreferenceScreen();
-        mContext = getActivity();
+        mContext = getActivity().getApplicationContext();
+        ContentResolver resolver = mContext.getContentResolver();
+
+        mSettingsObserver = new SettingsObserver(new Handler());
 
         mPieControls = (CheckBoxPreference) findPreference(PIE_CONTROLS);
-        mPieControls.setChecked((Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.PIE_CONTROLS, 0) == 1));
 
         mPieGravity = (ListPreference) prefSet.findPreference(PIE_GRAVITY);
         int pieGravity = Settings.System.getInt(mContext.getContentResolver(),
@@ -210,5 +217,31 @@ public class Pie extends SettingsPreferenceFragment
             return true;
         }
         return false;
+    }
+
+    class SettingsObserver extends ContentObserver {
+        SettingsObserver(Handler handler) {
+            super(handler);
+            observe();
+        }
+
+        void observe() {
+            ContentResolver resolver = mContext.getContentResolver();
+            resolver.registerContentObserver(
+                    Settings.System.getUriFor(Settings.System.PIE_CONTROLS), false,
+                    this);
+            updateSettings();
+        }
+
+        @Override
+        public void onChange(boolean selfChange) {
+            updateSettings();
+        }
+    }
+
+    protected void updateSettings() {
+        ContentResolver resolver = mContext.getContentResolver();
+        mPieControls.setChecked(Settings.System.getInt(resolver,
+                Settings.System.PIE_CONTROLS, 0) == 1);
     }
 }

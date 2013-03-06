@@ -194,4 +194,3 @@ public class PieColor extends SettingsPreferenceFragment implements OnPreference
         return false;
     }
 }
-

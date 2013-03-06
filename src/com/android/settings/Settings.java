@@ -433,7 +433,7 @@ public class Settings extends PreferenceActivity
             Header header = target.get(i);
             // Ids are integers, so downcasting
             int id = (int) header.id;
-            if (id == R.id.operator_settings || id == R.id.manufacturer_settings || id == R.id.lmt_settings) {
+            if (id == R.id.operator_settings || id == R.id.manufacturer_settings || id == R.id.lmt_settings || id == R.id.stweaks_settings || id == R.id.updateme_settings) {
                 Utils.updateHeaderToSpecificActivityFromMetaDataOrRemove(this, target, header);
             } else if (id == R.id.advanced_settings) {
                 if (!needsAdvancedSettings())

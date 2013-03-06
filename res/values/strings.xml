@@ -4870,4 +4870,7 @@
     <string name="hex_hint">#FF000000</string>
     <string name="set">Set</string>
     <string name="ics_color">!!!</string>
+
+    <!-- STweaks -->
+    <string name="stweaks_title">Kernel Tweaks</string>
 </resources>

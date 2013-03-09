@@ -4768,6 +4768,9 @@
     <!-- Revolt Customs -->
     <string name="revolt_custom_title">Customizations</string>
 
+    <!-- Dark Revolt TRDS, All by SLIM Roms -->
+    <string name="dark_settings_title">Dark ReVolt</string>
+
     <!-- LCD Density -->
     <string name="dpi">DPI</string>
     <string name="lcd_density_title">DPI Changer</string>

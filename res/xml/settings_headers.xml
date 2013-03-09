@@ -109,6 +109,13 @@
         android:fragment="com.android.settings.Revolt"
         android:title="@string/revolt_custom_title" />
 
+    <!-- TRDS by Slim -->
+    <header
+        android:id="@+id/dark_settings"
+        android:icon="@drawable/ic_settings_trds"
+        android:fragment="com.android.settings.slim.TRDSEnabler"
+        android:title="@string/dark_settings_title" />
+
     <!-- About ReVolt ROM -->
     <header
         android:id="@+id/about_rom"

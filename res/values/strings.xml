@@ -5076,5 +5076,8 @@
     <string name="lockscreen_background_result_not_successful">Background Could not be changed</string>
     <string name="lockscreen_background_color_fill">Color fill</string>
     <string name="lockscreen_background_custom_image">Custom image</string>
-    <string name="lockscreen_background_default_wallpaper">Default wallpaper</string> 
+    <string name="lockscreen_background_default_wallpaper">Default wallpaper</string>
+
+    <!-- Permissions Management -->
+    <string name="permissions_settings_title">Permissions</string>
 </resources>

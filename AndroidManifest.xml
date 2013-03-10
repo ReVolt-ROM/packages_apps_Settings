@@ -1526,6 +1526,7 @@
             </intent-filter>
         </activity>
 
+ 
         <!-- CyanogenMod activities Start -->
         <activity android:name=".profiles.ProfilesSettings" />
 
@@ -1543,6 +1544,8 @@
 
         <activity android:name=".profiles.NFCProfile"
                 android:theme="@android:style/Theme.NoDisplay">
+
+        <activity android:name=".rv.Targets" />
 
         <!-- Notification Shortcuts -->
         <activity android:name="Settings$NotificationShortcutsSettingsActivity"

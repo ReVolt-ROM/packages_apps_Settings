@@ -45,7 +45,15 @@
         android:title="@string/pie_controls_title"
         android:summary="@string/pie_controls_summary" />
 
-  <!-- Lockscreen Targets by ParanoidAndroid -->
+   <!-- Lockscreen Targets by CyanogenMod -->
+   <PreferenceScreen
+        android:key="lock_screen_targets"
+        android:icon="@drawable/ic_lockscreen_targets"
+        android:fragment="com.android.settings.rv.Targets"
+        android:title="@string/lockscreen_target_title"
+        android:summary="@string/lockscreen_target_summary" />
+
+  <!-- Lockscreen Shortcuts by ParanoidAndroid -->
   <PreferenceScreen
         android:key="lock_screen_shortcuts"
         android:icon="@drawable/ic_target_link"

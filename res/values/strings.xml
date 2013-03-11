@@ -4889,7 +4889,6 @@
     <string name="group_applications">Applications</string>
 
     <!-- Notification Shortcuts -->
-    <string name="notification_behaviour_title">Notification behaviour</string>
     <string name="notification_shortcuts_grouptitle">Shortcuts</string>
     <string name="notification_shortcuts_settings_title">Notification shortcuts</string>
     <string name="notification_shortcuts_settings_summary">Show shortcuts in the notification drawer</string>

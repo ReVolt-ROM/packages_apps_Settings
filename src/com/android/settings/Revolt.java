@@ -87,7 +87,6 @@ public class Revolt extends SettingsPreferenceFragment implements
                 Settings.System.POWER_MENU_EXPANDED_DESKTOP_ENABLED, 0) == 1));
         }
 
-
         // Do not display lock clock preference if its not installed
         removePreferenceIfPackageNotInstalled(findPreference(KEY_LOCK_CLOCK));
 

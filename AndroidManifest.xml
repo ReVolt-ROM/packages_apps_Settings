@@ -1636,6 +1636,7 @@
                 android:label="@string/revolt_custom_title"
                 android:taskAffinity=""
                 android:excludeFromRecents="true">
+        </activity>
 
             <intent-filter>
                 <action android:name="android.nfc.action.NDEF_DISCOVERED"/>

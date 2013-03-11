@@ -1130,7 +1130,13 @@
         <item>Always expand</item>
         <item>Old style</item>
     </string-array>
+
     <string-array name="notifs_beh_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
 
     <!-- **** CYANOGENMOD EDITS START **** -->
 

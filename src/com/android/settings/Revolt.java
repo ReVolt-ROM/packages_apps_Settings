@@ -55,12 +55,11 @@ public class Revolt extends SettingsPreferenceFragment implements
     private static final String KEY_LOCK_CLOCK = "lock_clock";
     private static final String KEY_FONT_SIZE = "font_size";
     private static final String KEY_EXPANDED_DESKTOP = "power_menu_expanded_desktop";
-    private static final String KEY_NOTIFICATION_BEHAVIOUR = "notifications_behaviour";
     
     private CheckBoxPreference mExpandedDesktopPref;
-    private ListPreference mNotificationsBeh;
     private final Configuration mCurConfig = new Configuration();
     private ContentResolver mCr;
+    private Context mContext;
     private PreferenceScreen mPrefSet;
 
     public boolean hasButtons() {
@@ -70,16 +69,11 @@ public class Revolt extends SettingsPreferenceFragment implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mContext = getActivity();
         mPrefSet = getPreferenceScreen();
         mCr = getContentResolver();
 
         addPreferencesFromResource(R.xml.revolt_customizations);
-
-        int CurrentBeh = Settings.Secure.getInt(mCr, Settings.Secure.NOTIFICATIONS_BEHAVIOUR, 0);
-        mNotificationsBeh = (ListPreference) findPreference(KEY_NOTIFICATION_BEHAVIOUR);
-        mNotificationsBeh.setValue(String.valueOf(CurrentBeh));
-                mNotificationsBeh.setSummary(mNotificationsBeh.getEntry());
-        mNotificationsBeh.setOnPreferenceChangeListener(this);
 
         mExpandedDesktopPref = (CheckBoxPreference) findPreference(KEY_EXPANDED_DESKTOP);
         boolean showExpandedDesktopPref =
@@ -127,17 +121,9 @@ public class Revolt extends SettingsPreferenceFragment implements
          return true;    
      }
 
-    public boolean onPreferenceChange(Preference preference, Object objValue) {
+    public boolean onPreferenceChange(Preference preference, Object nrewValue) {
         final String key = preference.getKey();
-         if (preference == mNotificationsBeh) {
-            String val = (String) Value;
-                     Settings.Secure.putInt(mCr, Settings.Secure.NOTIFICATIONS_BEHAVIOUR,
-            Integer.valueOf(val));
-            int index = mNotificationsBeh.findIndexOfValue(val);
-            mNotificationsBeh.setSummary(mNotificationsBeh.getEntries()[index]);
-            return true;
-        }
-        return false;
+        return true;
     }
 
     private boolean removePreferenceIfPackageNotInstalled(Preference preference) {

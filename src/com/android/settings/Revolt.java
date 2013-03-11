@@ -15,9 +15,14 @@
 
 package com.android.settings;
 
+import android.app.Activity;
 import android.app.ActivityManagerNative;
+import android.content.Intent;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnMultiChoiceClickListener;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -25,9 +30,15 @@ import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.os.SystemProperties;
 import android.preference.CheckBoxPreference;
+import android.preference.ListPreference;
 import android.preference.Preference;
+import android.preference.PreferenceActivity;
+import android.preference.PreferenceCategory;
+import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
+import android.preference.Preference.OnPreferenceChangeListener;
 import android.provider.Settings;
+import android.provider.Settings.SettingNotFoundException;
 import android.util.Log;
 import android.view.IWindowManager;
 import java.util.regex.Matcher;
@@ -118,7 +129,15 @@ public class Revolt extends SettingsPreferenceFragment implements
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         final String key = preference.getKey();
-        return true;
+         if (preference == mNotificationsBeh) {
+            String val = (String) Value;
+                     Settings.Secure.putInt(mCr, Settings.Secure.NOTIFICATIONS_BEHAVIOUR,
+            Integer.valueOf(val));
+            int index = mNotificationsBeh.findIndexOfValue(val);
+            mNotificationsBeh.setSummary(mNotificationsBeh.getEntries()[index]);
+            return true;
+        }
+        return false;
     }
 
     private boolean removePreferenceIfPackageNotInstalled(Preference preference) {
@@ -134,13 +153,6 @@ public class Revolt extends SettingsPreferenceFragment implements
                 Log.e(TAG, "package " + packageName + " not installed, hiding preference.");
                 getPreferenceScreen().removePreference(preference);
                 return true;
-        } else if (preference == mNotificationsBeh) {
-            String val = (String) Value;
-                     Settings.Secure.putInt(mCr, Settings.Secure.NOTIFICATIONS_BEHAVIOUR,
-            Integer.valueOf(val));
-            int index = mNotificationsBeh.findIndexOfValue(val);
-            mNotificationsBeh.setSummary(mNotificationsBeh.getEntries()[index]);
-            return true;
             }
         }
         return false;

@@ -91,7 +91,7 @@ public class CustomDpiGroupPreference extends SeekBarDialogPreference implements
         String[] groupsStringArray = list.split("\\|");
         mGroupsList = new ArrayList<Integer>();
         for (String s : groupsStringArray) {
-            if (s != null && !s.equals("")) {
+            if (s != null && s != "") {
                 mGroupsList.add(Integer.parseInt(s));
             }
         }

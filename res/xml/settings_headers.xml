@@ -95,13 +95,6 @@
     <!-- ReVolt Settings -->
     <header android:title="@string/header_category_revolt" />
 
-    <!-- CM Profiles -->
-    <header
-        android:id="@+id/profiles_settings"
-        android:icon="@drawable/ic_settings_profiles"
-        android:fragment="com.android.settings.profiles.ProfilesSettings"
-        android:title="@string/profiles_settings_title" />
-
     <!-- ReVolt Links -->
     <header
         android:id="@+id/revolt_customizations"
@@ -113,7 +106,6 @@
     <header
         android:id="@+id/dark_settings"
         android:icon="@drawable/ic_settings_multiuser"
-        android:fragment="com.android.settings.slim.TRDSEnabler"
         android:title="@string/dark_settings_title" />
 
     <!-- About ReVolt ROM -->

@@ -4969,4 +4969,6 @@
     <string name="brightness_slider_bottom">On the bottom</string>
     <string name="brightness_slider_none">Don\'t Show</string>
 
+    <!-- Paranoid Settings -->
+    <string name="hybrid_settings">Hybrid Settings</string>
 </resources>

@@ -1616,8 +1616,6 @@
         <activity android:name=".profiles.NFCProfile"
                 android:theme="@android:style/Theme.NoDisplay">
 
-        <activity android:name=".rv.Targets" />
-
         <activity android:name="net.margaritov.preference.colorpicker" />
 
         <activity android:name="Settings$RevoltActivity"

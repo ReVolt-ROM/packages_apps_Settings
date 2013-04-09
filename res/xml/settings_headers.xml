@@ -102,17 +102,6 @@
         android:fragment="com.android.settings.Revolt"
         android:title="@string/revolt_custom_title" />
 
-    <!-- Hybrid Settings -->
-    <header
-        android:id="@+id/hybrid_settings"
-        android:icon="@drawable/ic_hybrid_settings"
-        android:title="@string/hybrid_settings">
-        <intent
-            android:action="android.intent.action.MAIN"
-            android:targetPackage="com.paranoid.preferences"
-            android:targetClass="com.paranoid.preferences.MainActivity" />
-    </header>
-
     <!-- TRDS by Slim -->
     <header
         android:id="@+id/dark_settings"
@@ -167,24 +156,15 @@
         android:icon="@drawable/ic_settings_dpi"
         android:title="@string/lcd_density" />
 
-    <!-- Xposed Frameworks Installer -->
-    <header 
-            android:icon="@drawable/ic_settings_advanced"
-            android:title="@string/xposed_frameworks_settings">
+    <!-- Hybrid Settings -->
+    <header
+        android:id="@+id/hybrid_settings"
+        android:icon="@drawable/ic_hybrid_settings"
+        android:title="@string/hybrid_settings">
         <intent
-                android:action="android.intent.action.MAIN"
-                android:targetPackage="de.robv.android.xposed.installer"
-                android:targetClass="de.robv.android.xposed.installer.XposedInstallerActivity" />
-   </header>
-
-   <!-- Xposed Controller -->
-   <header 
-            android:icon="@drawable/ic_settings_multiuser"
-            android:title="@string/xposed_dpi_settings">
-        <intent
-                android:action="android.intent.action.MAIN"
-                android:targetPackage="de.robv.android.xposed.mods.appsettings"
-                android:targetClass="de.robv.android.xposed.mods.appsettings.XposedModActivity" />
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="com.paranoid.preferences"
+            android:targetClass="com.paranoid.preferences.MainActivity" />
     </header>
 
     <!-- DEVICE -->

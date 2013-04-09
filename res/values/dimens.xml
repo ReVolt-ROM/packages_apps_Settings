@@ -68,4 +68,7 @@
     <!-- height of an expanded list item in edit playlist mode -->
     <dimen name="expanded_height">128dip</dimen>
 
+    <!-- Notification Shortcuts -->
+    <dimen name="notification_shortcut_picker_left_padding">36dip</dimen>
+
 </resources>

@@ -120,8 +120,8 @@ public class Revolt extends SettingsPreferenceFragment implements
          return true;    
      }
 
-    public boolean onPreferenceChange(Preference preference, Object nrewValue) {
-        final String key = preference.getKey();
+     public boolean onPreferenceChange(Preference preference, Object Value) {
+         final String key = preference.getKey();
         return true;
     }
 

@@ -4468,7 +4468,7 @@
     <!-- AOKP Customizations Section -->
     <string name="quick_links_title">QUICK LINKS</string>
     <!-- AOKP ROM Control Specific App for Customizations -->
-    <string name="rom_control_title">ROM Control</string>
+    <string name="rom_control_title">ReVolt Control</string>
     <!-- Themeing Section -->
     <string name="themes_title">Themes</string>
     <!-- Performance Control app for Kernel Under/Over Clocking -->

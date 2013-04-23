@@ -108,12 +108,12 @@
         android:icon="@drawable/ic_settings_multiuser"
         android:title="@string/dark_settings_title" />
 
-    <!-- About ReVolt ROM >
+    <!-- About ReVolt ROM -->
     <header
         android:id="@+id/about_rom"
         android:fragment="com.android.settings.rv.About"
         android:icon="@drawable/ic_settings_about_rv"
-        android:title="@string/about_rv_settings_title" / -->
+        android:title="@string/about_rv_settings_title" />
 
     <!-- Update Me -->
     <header android:id="@+id/updateme_settings"

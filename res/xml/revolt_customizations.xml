@@ -26,7 +26,7 @@
         android:summary="@string/power_menu_expanded_desktop_summary"
 	android:defaultValue="false" />
 
-  <!-- FontSize Controlling System >
+  <!-- FontSize Controlling System -->
   <PreferenceScreen
         android:key="font_size"
         android:icon="@drawable/ic_font_link"
@@ -35,7 +35,7 @@
         <intent android:action="android.intent.action.MAIN"
                 android:targetPackage="com.WhiteLight.FontSizeFree"
                 android:targetClass="com.WhiteLight.FontSizeFree.FontSize" />
-  </PreferenceScreen -->
+  </PreferenceScreen >
 
  </PreferenceCategory>
 
@@ -64,12 +64,12 @@
 
  </PreferenceCategory>
 
- <!-- Clocl Header >
+ <!-- Clocl Header -->
  <PreferenceCategory
         android:key="clock"
         android:title="@string/clock_header">
 
-  <- Lock by CyanogenMod ->
+  <!-- Lock by CyanogenMod -->
   <PreferenceScreen
         android:key="lock_clock"
         android:icon="@drawable/ic_clock_link"
@@ -80,7 +80,7 @@
                 android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
   </PreferenceScreen>
 
- </PreferenceCategory -->
+ </PreferenceCategory >
 
  <!-- Notification & StatusBar Header -->
  <PreferenceCategory

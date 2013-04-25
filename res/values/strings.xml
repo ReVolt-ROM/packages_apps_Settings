@@ -4471,8 +4471,6 @@
     <string name="rom_control_title">ROM Control</string>
     <!-- Themeing Section -->
     <string name="themes_title">Themes</string>
-    <!-- Performance Control app for Kernel Under/Over Clocking -->
-    <string name="performance_title">Performance Control</string>
 
     <!-- ReVolt Build Version -->
     <string name="mod_version">ReVolt Version</string>

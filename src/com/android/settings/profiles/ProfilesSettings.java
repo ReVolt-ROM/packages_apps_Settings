@@ -30,7 +30,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
-import android.preference.PreferenceActivity;
+import android.preference.PreferenceDrawerActivity;
 import android.provider.Settings;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -126,8 +126,8 @@ public class ProfilesSettings extends SettingsPreferenceFragment {
         //Switch
         mActionBarSwitch = new Switch(activity);
 
-        if (activity instanceof PreferenceActivity) {
-            PreferenceActivity preferenceActivity = (PreferenceActivity) activity;
+        if (activity instanceof PreferenceDrawerActivity) {
+            PreferenceDrawerActivity preferenceActivity = (PreferenceDrawerActivity) activity;
             if (preferenceActivity.onIsHidingHeaders() || !preferenceActivity.onIsMultiPane()) {
                 final int padding = activity.getResources().getDimensionPixelSize(
                         R.dimen.action_bar_switch_padding);

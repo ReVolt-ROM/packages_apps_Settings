@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!--  Copyright (C) 2007 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
@@ -36,6 +36,10 @@
     <string name="turn_off_radio" msgid="1820294552893884115">"כבה רדיו"</string>
     <string name="sms_over_ims_on" msgid="5085290395865632925">"הפעל SMS באמצעות IMS"</string>
     <string name="sms_over_ims_off" msgid="8354792045992793959">"כבה SMS באמצעות IMS"</string>
+   <string name="app_security_title">אבטחת אפליקציה</string>
+    <string name="sms_security_check_limit_title">הגבלת הודעות SMS</string>
+    <string name="sms_security_check_limit_summary">הצגת הודעה שתמנע מיישומים לשלוח הודעות SMS בתדירת גבוהה מדי. מגבלה נוכחית: %d הודעות 15 דקות</string>
+    <string name="sms_security_check_limit_default">30 (ברירת מחדל)</string>
     <string name="ims_reg_required_on" msgid="3885152087309614653">"הפעל את הדרישה להרשמת IMS"</string>
     <string name="ims_reg_required_off" msgid="1720570343422743943">"כבה את הדרישה להרשמת IMS"</string>
     <string name="lte_ram_dump_on" msgid="8568568019520172177">"הפעל פעולת Dump של lte RAM"</string>
@@ -1830,4 +1834,630 @@
     <string name="user_picture_title" msgid="7297782792000291692">"זיהוי תמונה"</string>
     <string name="cell_broadcast_settings" msgid="8415582011920085222">"שידורים סלולריים"</string>
     <string name="cell_broadcast_settings_summary" msgid="3301339398950905913">"בחר את סוגי התראות החירום להצגה."</string>
+    <!-- AOKP Customizations Section -->
+    <string name="quick_links_title">קישורים מהירם</string>
+    <!-- AOKP ROM Control Specific App for Customizations -->
+    <string name="rom_control_title">ניהול רום</string>
+    <!-- Themeing Section -->
+    <string name="themes_title">ערכות נושא</string>
+
+    <!-- ReVolt Build Version -->
+    <string name="mod_version">גירסאת ReVolt</string>
+    <!-- Default Value -->
+    <string name="mod_version_default">לא ידוע</string>
+
+    <!-- Anonymous Statistics #CM -->
+    <!-- About device screen, list item title. Takes the user to the screen about opting in or out of anonymous statistics. -->
+    <string name="anonymous_statistics_title">AOKP סטטיסטיקות</string>
+    <string name="anonymous_statistics_summary">עזור לAOKP כדי להשתפר ע"י שליחת סטטיסטיקות אלו.</string>
+    <string name="anonymous_statistics_warning_title">אודות</string>
+    <string name="anonymous_statistics_warning">הצטרפות לסטטיסטיקת AOKP תאפשר נתונים שאינם אישיים שיוגשו ל
+         מפתחים של AOKP כדי לעקוב אחר התקנות ייחודיות בכל התקנים.המידע שנמסר כולל מזהה ייחודי,
+         שאינו מאפשר ידע על הפרטיות שלך או מידע אישי.הנתונים יוגשו פעם בשבוע, במהלך boot. \ N \ n לקבלת דוגמה של הנתונים שהוגשו, הקש על תצוגה מקדימה של נתונים.</string>
+    <string name="enable_reporting_title">אפשר דיווח</string>
+    <string name="preview_data_title">הצג נתונים</string>
+    <string name="preview_data_summary">%s</string>
+    <string name="view_stats_title">ראה סטטיסטיקות</string>
+    <string name="anonymous_learn_more">למד עוד</string>
+
+    <!-- Anonymous Statistics - Notification -->
+    <string name="anonymous_notification_desc">אפשר או השבת סטטיסטיקות AOKP</string>
+
+    <!-- Anonymous Statistics - Preview -->
+    <string name="preview_id_title">מזהה ייחודי</string>
+    <string name="preview_device_title">מכשיר</string>
+    <string name="preview_version_title">גירסא</string>
+    <string name="preview_country_title">מדינה</string>
+    <string name="preview_carrier_title">מוביל</string>
+
+    <!-- Quiet hours #CM -->
+    <string name="quiet_hours_title">שעות שקטות</string>
+    <string name="quiet_hours_summary">הגדר את השעות שבהם המכשיר אמור להיות שקט</string>
+    <string name="quiet_hours_enabled_title">אפשר שעות שקטות</string>
+    <string name="quiet_hours_start">התחל שעות שקטות</string>
+    <string name="quiet_hours_start_summary">מתי להתחיל אכיפת שעות שקטות</string>
+    <string name="quiet_hours_end">סיום שעות שקטות</string>
+    <string name="quiet_hours_end_summary">מתי להפסיק אכיפת שעות שקטות</string>
+    <string name="quiet_hours_notifications_title">השתק צליל התראות</string>
+    <string name="quiet_hours_ringer_title">השתק צלצולי הטלפון</string>
+    <string name="quiet_hours_still_title">השבת רטט</string>
+    <string name="quiet_hours_dim_title">השבת התראות אור</string>
+    <string name="quiet_hours_active_from">הפעל מ</string>
+    <string name="quiet_hours_active_to">ל</string>
+
+    <!-- Lock screen vibrate settings -->
+    <string name="lockscreen_vibrate_enabled_title">רטט</string>
+    <string name="lockscreen_vibrate_enabled_head">הפעל רטט שהמכשיר ננעל</string>
+
+    <!-- Screen security - Screen security   -->
+    <string name="screen_security_category">אבטחת מסך</string>
+    <string name="screen_security_title">נעילת מסך</string>
+    <string name="screen_security_summary">הצג או שנה הגדרות של נעילת המסך,עיכוב והזמן הנותר של מסך הנעילה</string>
+    <string name="additional_options_title">אפשרויות נוספות</string>
+    <string name="unlock_menu_unlock_title">פתיחת תפריט</string>
+    <string name="unlock_menu_unlock_summary">לחיצה על לחצן התפריט תפתח את המכשיר</string>
+    <string name="unlock_home_unlock_title">נעילת לחצן הבית</string>
+    <string name="unlock_home_unlock_summary">לחיצה על לחצן הבית תפתח את המכשיר</string>
+    <string name="unlock_quick_unlock_control_title">פתיחה מהירה</string>
+    <string name="unlock_quick_unlock_control_summary">בטל נעילה באופן אוטומטי כאשר הקוד האישי או הסיסמא שנכתבה נכונה</string>
+
+    <!-- Slide lock delay -->
+    <string name="delay_and_timeout_title">עיכוב נעילה</string>
+    <string name="slide_lock_delay_title">עיכוב נעילת מסך</string>
+    <string name="slide_lock_timeout_delay_title">עיכוב אחרי הזמן שנותר</string>
+    <string name="slide_lock_screenoff_delay_title">עיכוב לאחרי הכיבוי</string>
+    <string name="slide_lock_delay_none">ריק</string>
+    <string name="slide_lock_delay_1s">שנייה אחת</string>
+    <string name="slide_lock_delay_5s">5 שניות</string>
+    <string name="slide_lock_delay_10s">10 שניות</string>
+    <string name="slide_lock_delay_15s">15 שניות</string>
+    <string name="slide_lock_delay_30s">30 שניות</string>
+    <string name="slide_lock_delay_1m">דקה אחת</string>
+    <string name="slide_lock_delay_5m">5 דקות</string>
+    <string name="slide_lock_delay_10m">10 דקות</string>
+    <string name="slide_lock_delay_30m">30 דקות</string>
+
+    <!-- Expanded Desktop -->
+    <string name="power_menu_expanded_desktop">הרחב שולחן עבודה</string>
+    <string name="power_menu_expanded_desktop_summary">מוסיף אפשרות בתפריט הכיבוי שמסתיר את סטאטוס ההתראות ואת סרגל הניווט </string>
+
+    <!-- time range preference -->
+    <string name="start_time_title">התחל</string>
+    <string name="end_time_title">סיים</string>
+
+    <string name="vibration_title">רטט</string>
+    <string name="link_volume_ringtones">קישורי ווליום</string>
+    <string name="link_volume_mutes">השתק קישורי ווליום</string>
+
+    <!-- Hostname setting -->
+    <string name="device_hostname">מכשיר מארח</string>
+    
+    <!-- Sprint Tools -->
+    <string name="sprint_tools_title">כלי ספרינט</string>
+
+    <!-- ReVolt Customizations -->
+    <string name="header_category_revolt">ReVolt התאמה אישת</string>
+    <!-- OTA UpdateMe Center -->
+    <string name="update_settings_title">ReVolt מרכז עידכונים</string>
+
+    <!-- About ReVolt -->
+    <string name="about_rv_settings_title">אודות Revolt</string>
+    <string name="about_revolt">אודות ReVolt</string>
+    <string name="about_revolt_summary">ריק</string>
+    <string name="app_name">ReVolt</string>
+    <string name="devs">יזם</string>
+    <string name="donate_johnhany97">http://forum.xda-developers.com/donatetome.php?u=4655909</string>
+    <string name="donate_cyanogenmod">http://forum.cyanogenmod.com/donate</string>
+    <string name="donate_aokp">http://aokp.co/</string>
+    <string name="revolt">ReVolt</string>
+    <string name="revolt_website_title">ReVolt אתר רשמי</string>
+    <string name="revolt_website_summary">מצא חדשות ועידכונים אחרונים מהאתר הרישמי של ReVolt.</string>
+    <string name="title_about">אודות ReVolt</string>
+    <string name="revolt_fb_title">ReVolt בפייסבוק</string>
+    <string name="revolt_fb_summary">לחץ \'אהבתי\' בדף הפייסבוק הרישמי של ReVolt לעידכונים</string>
+    <string name="revolt_source_title">ReVolt מקורות</string>
+    <string name="revolt_source_summary">קבל את המקורות של ReVolt בGitHub</string>
+
+    <!-- LMT Settings -->
+    <string name="lmt_settings">הגדרות LMT</string>
+
+    <!-- Per App Dpi Frameworks Controlling System (ParanoidAndroid prefs) -->
+    <string name="dpi_settings">DPI &amp;  הגדרות טאבלט</string>
+
+    <!-- Paranoid Lockscreen -->
+    <string name="icon_picker_type">בחר סוג סמל:</string>
+    <string name="icon_default">ברירת מחדל</string>
+    <string name="icon_presets">הגדרות קבועות מראש</string>
+    <string name="icon_custom">מותאם אישית</string>
+    <string name="lock_screen_shortcuts_title">קיצורים</string>
+    <string name="lock_screen_shortcuts_reset_message">איפוס קיצורי נעילת מסך?</string>
+    <string name="lock_screen_shortcuts_summary">הצג או שנה קיצורי דרך מותאמים אישית של נעילת המסך</string>
+    <string name="lock_screen_shortcuts_add">@string/profiles_add</string>
+    <string name="lock_screen_shortcuts_reset">איפוס</string>
+    <string name="lock_screen_shortcuts_limit">רק 6 קיצורים מותרים!</string>
+
+    <!-- Lock screen shortcuts -->
+    <string name="choose_app">בחר אפליקציה</string>
+    <string name="dialog_delete_title">מחק</string>
+    <string name="dialog_delete_message">מחק פריט מסומן?</string>
+    <string name="picker_activities">פעילויות</string>
+    <string name="select_custom_app_title">בחר יישום מותאם אישית</string>
+    <string name="select_custom_activity_title">בחר פעילות מותאמת אישית</string>
+    <string name="icon_picker_choose_icon_title">בחר סמל</string>
+    <string name="icon_picker_alarm">אזעקה</string>
+    <string name="icon_picker_browser">דפדפן</string>
+    <string name="icon_picker_calendar">לוח שנה</string>
+    <string name="icon_picker_camera">מצלמה</string>
+    <string name="icon_picker_chrome">Chrome</string>
+    <string name="icon_picker_email">דואר אלקטרוני</string>
+    <string name="icon_picker_email2">Email Holo</string>
+    <string name="icon_picker_facebook">פייסבןק</string>
+    <string name="icon_picker_gallery">גלרייה</string>
+    <string name="icon_picker_google_small">גוגל(קטן)</string>
+    <string name="icon_picker_googleplus">Google Plus</string>
+    <string name="icon_picker_googletalk">Google Talk</string>
+    <string name="icon_picker_maps">מפות</string>
+    <string name="icon_picker_movie">סרטים</string>
+    <string name="icon_picker_music">מוסיקה</string>
+    <string name="icon_picker_nav_normal">ניווט</string>
+    <string name="icon_picker_phone">פלאפון</string>
+    <string name="icon_picker_podcast">פודקאסט</string>
+    <string name="icon_picker_rss">Rss</string>
+    <string name="icon_picker_search">חפש</string>
+    <string name="icon_picker_sms">הודעות</string>
+    <string name="icon_picker_twitter">טוויטר</string>
+
+    <!-- AOKP specific sound settings
+    <string name="camera_sounds">צלילי מצלמה</string> ** TODO ** -->
+    <string name="safe_headset_volume_title">ווליום אוזניות בטווח בטוח</string>
+
+
+    <!-- Profiles settings  -->
+    <string name="profiles_settings_title">פרופילים</string>
+    <string name="profiles_general_title">כללי</string>
+    <string name="profiles_add">הוסף</string>
+    <string name="profile_menu_delete">מחק</string>
+    <string name="profile_settings_title">פרופיל</string>
+    <string name="profile_empty_list_profiles_off">כדי להגיד ולהשתמש בפרופילי המערכת,הפעל את \'פרופילים\'.</string>
+    <string name="ok">אישור</string>
+
+    <!-- Add Profile -->
+    <string name="add_profile_dialog_title">צור פרופיל חדש</string>
+    <string name="profile_name_title">שם</string>
+    <string name="profile_profile_name_prompt">הזן שם לפרופיל החדש</string>
+    <string name="menu_new_profile">פרופיל חדש</string>
+    <string name="menu_new_profile_summary">הוסף והגדר פרופיל חדש</string>
+    <string name="new_profile_name">&lt;פרופיל חדש&gt;</string>
+
+    <!-- Rename Dialog  -->
+    <string name="rename_dialog_title">שנה שם</string>
+    <string name="rename_dialog_message">הזן שם חדש</string>
+    <string name="duplicate_profile_name">שכפל שם פרופיל!</string>
+    <string name="duplicate_appgroup_name">שכפל שם קבוצת יישום!</string>
+
+    <!-- Reset Profiles -->
+    <string name="profile_reset_title">איפוס</string>
+    <string name="profile_reset_message">למחוק את הפרופילים שנוצרו ע"י המשתמש וקבוצות יישום ולשחזר אותם לברירת מחדל?</string>
+
+    <!-- Delete confimation messages -->
+    <string name="profile_delete_confirm">מחק פרופיל זה?</string>
+    <string name="profile_app_delete_confirm">הסר אפליקציה זו?</string>
+    <string name="profile_cannot_delete">לא ניתן למחוק פרופיל פעיל!</string>
+
+    <!-- Profile Config screen PreferenceGroup titles -->
+    <string name="profile_connectionoverrides_title">חיבור עוקף</string>
+    <string name="profile_volumeoverrides_title">עקיפת נפח</string>
+    <string name="profile_vibratoroverrides_title">עקיפת רטט</string>
+    <string name="connection_state_disabled">השבת</string>
+    <string name="connection_state_enabled">הפעל</string>
+    <string name="volume_override_summary">הגדר ל</string>
+    <string name="vibrator_state_disabled">השבת</string>
+    <string name="vibrator_state_enabled">הפעל</string>
+    <string name="vibrator_state_silent">רק במצב שקט</string>
+
+    <!-- Menu item for managing profiles -->
+    <string name="profile_profiles_manage">פרופילםים</string>
+    <string name="profile_profile_manage">נהל פרופילים</string>
+    <string name="profile_applist_manage">רשימת יישומים</string>
+    <string name="profile_appgroups_manage">קבוצת יישומים</string>
+    <string name="profile_appgroup_manage">נהל קבוצת יישומים</string>
+
+    <!-- Profile settings screen, section header for settings related to notification profiles -->
+    <string name="profile_settings">הגדרות פרופילם</string>
+    <string name="profile_name">שם</string>
+
+    <!-- Profile Settings sound modes labels -->
+    <string name="sound_mode">מצב התראות</string>
+    <string name="ringer_mode">מצב צלצול</string>
+    <string name="lights_mode">מצב אורות</string>
+    <string name="vibrate_mode">מצב רטט</string>
+    <string name="choose_soundtone">בחר צליל התראה</string>
+    <string name="choose_ringtone">בחר צלצול</string>
+    <string name="silent_mode_title">מצב שקט</string>
+
+    <!-- Sound settings screen, setting option name to pick ringtone (a list dialog comes up)-->
+    <string name="soundtone_title">צלצול התראות</string>
+    <string name="soundtone_summary">""</string>
+
+    <!-- Title for application group setting screen -->
+    <string name="profile_appgroups_title">קבוצת ישומים</string>
+    <string name="profile_applist_title">יישומים</string>
+    <string name="profile_new_appgroup">קבוצת יישומים חדשה</string>
+    <string name="profile_delete_appgroup">למחוק קבוצת יישומים זאת?</string>
+    <string name="profile_appgroup_name_prompt">הזן שם לקבוצת יישומים החדשה</string>
+    <string name="profile_appgroup_name_title">שם</string>
+    <string name="profile_add_app">הוסף יישום</string>
+    <string name="profile_delete_app">הסר יישום</string>
+
+    <!-- Add application dialog box title -->
+    <string name="profile_choose_app">הוסף יישום</string>
+    <string name="profile_settings_header">הגדרות פרופילים</string>
+
+    <!-- Profiles - system settings -->
+    <string name="profile_system_settings_title">הגדרות מערכת</string>
+    <string name="profile_lockmode_title">מצב נעילת מסך</string>
+    <string name="profile_lockmode_default">ברירת מחדל</string>
+    <string name="profile_lockmode_insecure">לא בטוח</string>
+    <string name="profile_lockmode_disabled">מושבת</string>
+    <string name="profile_lockmode_default_summary">השתמש בברירת מחדל של המערכת</string>
+    <string name="profile_lockmode_insecure_summary">בחר נעילת מסך לא בטוחה</string>
+    <string name="profile_lockmode_disabled_summary">נעילת מסך מושבתת</string>
+    <string name="profile_airplanemode_title">מצב טיסה</string>
+    <string name="profile_airplanemode_default">ברירת מחדל</string>
+    <string name="profile_airplanemode_enabled">מופעל</string>
+    <string name="profile_airplanemode_disabled">מושבת</string>
+    <string name="profile_airplanemode_default_summary">השתמש בברירת מחדל של המערכת</string>
+    <string name="profile_airplanemode_enabled_summary">מצב טיסה מופעל</string>
+    <string name="profile_airplanemode_disabled_summary">מצב טיסה מושבת</string>
+    <string name="profile_disable_screen_lock_summary">השבת נעילת מסך שפרופיל זה פועל</string>
+
+    <string name="vibrator_type_ringer">שיחות</string>
+    <string name="vibrator_type_notification">התראות</string>
+
+    <!-- Connection override toggles (not all are used at this time ) -->
+    <string name="possibleButtons">לחצנים אפשריים</string>
+    <string name="toggleWifi">Wi-Fi</string>
+    <string name="toggleWifiAp">נקודת חמה Wi - Fi נידת</string>
+    <string name="toggleBluetooth">בלוטוס</string>
+    <string name="toggleGPS">GPS</string>
+    <string name="toggleData">נתוני נייד</string>
+    <string name="toggleSync">סינכרון נתונים</string>
+    <string name="toggle2g3g">2G/3G</string>
+    <string name="toggleSound">מצב רגיל</string>
+    <string name="toggleBrightness">בהירות</string>
+    <string name="toggleAutoRotate">סיבוב מסך אוטומטי</string>
+    <string name="toggleScreenTimeout">מסך כבוי</string>
+    <string name="toggleAirplane">מטוס</string>
+    <string name="toggleFlashlight">פנס</string>
+    <string name="toggleLockScreen">נעילת מסך</string>
+    <string name="toggleWimax">WiMAX</string>
+
+    <string name="profile_write_nfc_tag">הוסף לתג NFC</string>
+    <string name="profile_write_touch_tag">גע בתג כדי להוסיף</string>
+    <string name="profile_write_success">תג נוסף בהצלחה!</string>
+    <string name="profile_write_failed">הוספת תג נכשלה!</string>
+    <string name="profile_selected">פרופיל נבחר: %1$s</string>
+    <string name="profile_nfc_text">כתיבת פרופיל לתג NFC מאפשרת להקשה על התג כדי לבחור את הפרופיל. הקשה בפעם שנייה יבחר את הפרופיל שנבחר בעבר.</string>
+    <string name="profile_unknown_nfc_tag">פרופיל לא ידוע</string>
+    <string name="profile_add_nfc_text">תג NFC זה מתייחס לפרופיל ידוע. הצמדת תג NFC זה לפרופיל הקיים תאפשר לבחירת הפרופיל בעתיד.</string>
+    <string name="profile_select">בחר פרופיל</string>
+
+    <!--- Volume key cursor control -->
+    <string name="volume_key_cursor_control_title">מרכז שליטה על עוצמת הקול</string>
+    <string name="volume_key_cursor_control_off">מושבת</string>
+    <string name="volume_key_cursor_control_on">ווליום למעלה/למטה מעביר את הסמן שמאלה/ימינה</string>
+    <string name="volume_key_cursor_control_on_reverse">ווליום למעלה/למטה מעביר את הסמן ימינה/שמאלה</string>
+
+    <!-- Revolt Customs -->
+    <string name="revolt_custom_title">התאמה אישית</string>
+
+    <!-- Dark Revolt TRDS, All by SLIM Roms -->
+    <string name="dark_settings_title">שחור ReVolt</string>
+
+    <!-- LCD Density -->
+    <string name="dpi">DPI</string>
+    <string name="lcd_density_title">DPI החליף</string>
+    <string name="lcd_density">DPI מחליף</string>
+    <string name="lcd_density_summary">שנה את ה - DPI של המכשיר שלך</string>
+    <string name="current_lcd_density">"צפיפות LCD נוכחית: "</string>
+    <string name="lcd_density_wizard">צפיפות אשף LCD:</string>
+    <string name="follow_through_title">עקוב אחרי השלבים!</string>
+    <string name="follow_through_summary">וודא שאתה עוקב שלב אחרי שלב במדוייק לפני שאתה עובר לשלב הבא.</string>
+    <string name="stock_density_title">1. שנה צפיפות LCD לStock</string>
+    <string name="stock_density_summary">טאבלטים וטלפוניםי ישנים משתמשים ב160. רוב הטלפונים משתמשים ב240.
+גלאקסי S3 משתמש ב320 כברירת מחדל.</string>
+    <string name="stock_density_changed_summary">"צפיפות מוגדרת ל: "</string>
+    <string name="reboot_title">2.הפעלה מחדש!</string>
+    <string name="reboot_summary">חזור לכאן אחרי ההפעלה מחדש והשלם את השלבים הנותרים!</string>
+    <string name="clear_market_data_title">3. נקה את כל נתוני ה-Market הרלוונטים.</string>
+    <string name="clear_market_data_summary">צעד זה מנקה נתונים מ-Market,שירותי Google play ושירותי Google framework..</string>
+    <string name="clear_market_data_cleared">הנתונים נוקו בהצלחה!</string>
+    <string name="clear_market_data_donot_cleared">"הנתונים לא הצליחו להתנקות,נקה נתונים אלה בעצמך!"</string>
+    <string name="reboot_cleardata_title">4. הפעלה מחדש!</string>
+    <string name="reboot_cleardata_summary">חזור לכאן אחרי ההפעלה מחדש והשלם את השלבים הנותרים!</string>
+    <string name="open_market_title">5. פתח Market ולחץ אשר</string>
+    <string name="open_market_summary">לחץ על הלחצן \'חזרה\' מתי שסיימת פה.</string>
+    <string name="open_market_summary_could_not_open">"לא ניתן לפתוח את הMarket!אם אתה בטוח שהתקנת את היישום הפעל אותו מהלאנצ\'ר."</string>
+    <string name="custom_density_title">6. שנה צפיפות למה שבחרת!</string>
+    <string name="custom_density_summary">אם אי פעם יש לך בעיות תאימות עם ה-market,תהיה בטוחה שתחזור לכאן ותחזור על התהליך.</string>
+    <string name="custom_density_summary_invalid">"צפיפות לא חוקית!"</string>
+    <string name="custom_density">התאמה אישית</string>
+    <string name="set_custom_density_title">הגדר צפיפות מותאמת אישית</string>
+    <string name="set_custom_density_set">הגדר</string>
+    <string name="custom_density_dialog_title">"אזהרה!"</string>
+    <string name="custom_density_dialog_summary">"שינוי צפיפות ה-LCD שלך יכול לגרום להתנהגות בלתי צפויה של היישום. אם אתם נתקלים בחוסר התאמה של היישום market חזור לכאן ואפס את התהליך משלב 1 ."</string>
+    <string name="custom_density_dialog_button_got">קיבלת!</string>
+    <string name="custom_density_dialog_button_reboot">הפעל מחדש עכשיו</string>
+
+    <!-- Font Size -->
+    <string name="font_size_title">גודל גופן</string>
+    <string name="font_size_summary">נהל את גודל הגופן של המערכת</string>
+
+    <!-- cLock by CyanogenMod -->
+    <string name="lock_clock_title">שעון</string>
+    <string name="lock_clock_summary">ווידג\'ט שעון מותאם אישית מבית Cyanogenmod</string>
+
+    <!-- Pie controls -->
+    <string name="pie_controls_title">ניהול Pie</string>
+    <string name="pie_controls_summary">אפשר ניווט ודיווח באגים</string>
+    <string name="pie_targets_title">מטרות</string>
+    <string name="pie_gravity_title">גובה Pie</string>
+    <string name="pie_gravity_summary">בחר את המיקום שה-Pie יהיה</string>
+    <string name="pie_gravity_top">למעלה</string>
+    <string name="pie_gravity_bottom">למטה</string>
+    <string name="pie_gravity_right">ימין</string>
+    <string name="pie_gravity_left">שמאל</string>
+    <string name="pie_mode_title">סגנון Pie</string>
+    <string name="pie_mode_summary">למד איך לנהל את האנימציות ותוספות מצב יטופלו.</string>
+    <string name="pie_mode_bare">גלה</string>
+    <string name="pie_mode_quick">מהר</string>
+    <string name="pie_mode_default">ברירת מחדל</string>
+    <string name="pie_mode_slow">איטי</string>
+    <string name="pie_size_title">גודל Pie</string>
+    <string name="pie_size_summary">הגדר גודל מקשי Pie</string>
+    <string name="pie_size_small">קטן</string>
+    <string name="pie_size_default">@string/pie_mode_default</string>
+    <string name="pie_size_large">גדול</string>
+    <string name="pie_size_gigantic">ענק</string>
+    <string name="pie_color_title">הגדרות צבע Pie</string>
+    <string name="pie_color_style_title">סגנון צבע Pie</string>
+    <string name="pie_background_title">צבע רקע</string>
+    <string name="pie_select_title">צבע נבחר</string>
+    <string name="pie_outlines_title">מתווה צבע</string>
+    <string name="pie_status_clock_title">צבע שעון</string>
+    <string name="pie_status_title">צבע שורת מצב</string>
+    <string name="pie_chevron_left_title">צבע שברון שמאלי</string>
+    <string name="pie_chevron_right_title">צבע שברון ימיני</string>
+    <string name="pie_juice_title">צבע סוללה</string>
+    <string name="pie_button_color_title">צבע לחצנים</string>
+    <string name="pie_gap_title">מרווח Pie</string>
+    <string name="pie_gap_summary">התאם את הפער שמפריד בין אלמנט ה-Pie</string>
+    <string name="pie_gap_none">ריק</string>
+    <string name="pie_gap_small">קטן</string>
+    <string name="pie_gap_big">גדול</string>
+    <string name="pie_gap_huge">ענק (ברירת מחדל)</string>
+    <string name="pie_center_title">Pie במרכז</string>
+    <string name="pie_center_summary">אם לא מסומן, Pie יופיע איפה שהאצבעות שלך מפעילות אותו.</string>
+    <string name="pie_trigger_title">גודל Trigger</string>
+    <string name="pie_trigger_summary">קבע את גודל השטח שיפעיל את לחצני ה-Pie</string>
+    <string name="pie_trigger_small">קטן</string>
+    <string name="pie_trigger_normal">בינוני (ברירת מחדל)</string>
+    <string name="pie_trigger_big">גדול</string>
+    <string name="pie_trigger_huge">ענק</string>
+    <string name="pie_notifications_title">אפשר מטרת התראות</string>
+    <string name="pie_notifications_summary">יאפשר,יתן לפאנל ההתראות ולההגדרות המהירות פעילים שתזיז אותם עם האצבע.</string>
+    <string name="pie_menu_title">מראה לחצן תפריט תמיד</string>
+    <string name="pie_menu_summary">אם תרצה או לא לחצני התפריט תמיד יופיע כשתצטרך אותם.</string>
+    <string name="pie_search_title">הראה כפתור חיפוש</string>
+    <string name="pie_stick_title">מנע סיבוב מסך</string>
+    <string name="pie_stick_summary">אם מסומן Pie ישאר במסך שלא יסתובב לא משנה איפה הוא נמצא(לאורך או לרוחב)</string>
+    <string name="pie_search_summary">אפשר גישה ל-GoogleNow דרך Pie</string>
+    <string name="pie_lastapp_title">כפתור יישום אחרון</string>
+    <string name="pie_lastapp_summary">אפשר כפתור יישום אחרון בPie</string>
+    <string name="all_color">צבעים מותאמים אישית</string>
+    <string name="stock_color">צבעי ברירת מחדל</string>
+    <string name="pie_restart_launcher_title">הפעל מחדש את הלאנצ\'ר</string>
+    <string name="pie_restart_launcher_summary">שינוי גודל מסך יכול לגרום לבעיות חמורות,אופציה זאת מאפשרת ללאנצ\'ר שלך להחזיר הכל כפי שהיה לפניכן.</string>
+
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">בוחר צבע</string>
+    <string name="press_color_to_apply">לחץ על הצבע כדי להחל שינויים אלו</string>
+    <string name="arrow_right">→</string>
+    <string name="arrow_down">↓</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint">#FF000000</string>
+    <string name="set">מוכן</string>
+    <string name="ics_color">!!!</string>
+
+    <!-- STweaks -->
+    <string name="stweaks_title">קרנל Tweaks</string>
+
+    <!-- Shortcut picker -->
+    <string name="use_custom_app_title">בחר יישום מותאם אישית</string>
+    <string name="use_custom_app_summary">השתמש ביישום מותאם אישית במקום ביישום האחרונים.</string>
+    <string name="group_applications">יישומים</string>
+
+
+    <!-- CyanogenMod: Lockscreen Slider Shortcuts -->
+    <string name="lockscreen_target_info">גרור את המחוון למטרות להקצות קיצורי דרך</string>
+    <string name="lockscreen_target_title">מטרות נעילת מסך</string>
+    <string name="lockscreen_target_summary">הצג או שנה מטרות מחוון המותאם אישית</string>
+    <string name="lockscreen_target_reset">איפוס קיצורי דרך של נעילת המסך לברירת מחדל</string>
+    <string name="lockscreen_target_save">קיצורי הדרך של נעילת המסך נשמרו.</string>
+    <string name="lockscreen_target_reset_title">איפוס</string>
+    <string name="lockscreen_target_reset_message">למחוק את כל קיצורי של מסך הנעילה שנוצרו ע"י המשתמש ולשחזר לברירת מחדל?</string>
+    <string name="lockscreen_target_empty">ריק</string>
+    <string name="lockscreen_target_edit_title">שנה קיצורי דרך וסמלים</string>
+    <string name="lockscreen_target_edit_msg">בחר או שנה את הישום הרצוי או פעילות והסמל המקושר</string>
+
+    <!-- Icon Picker -->
+    <string name="icon_picker_title">בחר מקור סמלים</string>
+    <string name="icon_picker_system_icons_title">סמלי מערכת</string>
+    <string name="icon_picker_gallery_title">גלריה</string>
+    <string name="icon_picker_pack_title">חבילת סמלים</string>
+
+    <!-- Powerwidget -->
+    <string name="power_widget">כיבוי ווידג\'ט</string>
+    <string name="power_widget_summary">התאם אישית את לחצן כיבוי הווידג\'ט.</string>
+    <string name="title_expanded_widget">לחצן כיבוי ווידג\'ט</string>
+    <string name="power_widget_buttons">לחצני ווידג\'ט</string>
+    <string name="power_widget_behavior">התנהגות ווידג\'ט</string>
+    <string name="title_expanded_hide_onchange">סגור מגירה (בשינוי)</string>
+    <string name="title_expanded_hide_indicator">הסתר אינדיקטורים</string>
+    <string name="title_expanded_hide_scrollbar">הסתר פס גלילה</string>
+    <string name="title_widget_picker">לחצני ווידג\'ט</string>
+    <string name="summary_widget_picker">הצג או שנה את הכפתורים המוצגים</string>
+    <string name="title_widget_order">סידור לחצנים</string>
+    <string name="summary_widget_order">הצג או שנה את סדר הלחצנים</string>
+    <string name="title_buttons">לחצנים</string>
+    <string name="title_toggle_wifi">Wi-Fi</string>
+    <string name="title_toggle_bluetooth">בלוטוס</string>
+    <string name="title_toggle_gps">GPS</string>
+    <string name="title_toggle_sound">צליל</string>
+    <string name="title_toggle_brightness">בהירות</string>
+    <string name="title_toggle_sync">סנכרן</string>
+    <string name="title_toggle_wifiap">Wi-Fi AP</string>
+    <string name="title_toggle_screentimeout">כיבוי מסך</string>
+    <string name="title_toggle_mobiledata">נתוני נייד</string>
+    <string name="title_toggle_lockscreen">נעילת מסך</string>
+    <string name="title_toggle_networkmode">מצבי רשת</string>
+    <string name="title_toggle_autorotate">סיבוב מסך אוטומטי</string>
+    <string name="title_toggle_airplane">מצב טיסה</string>
+    <string name="title_toggle_flashlight">פנס LED</string>
+    <string name="title_toggle_sleep">עבור למצב שינה</string>
+    <string name="title_toggle_media_play_pause">נגן/עצור מוסיקה</string>
+    <string name="title_toggle_media_previous">רצועת מוסיקה הקודמת</string>
+    <string name="title_toggle_media_next">רצועת המוסיקה הבאה</string>
+    <string name="title_toggle_lte">LTE</string>
+    <string name="title_toggle_wimax">WiMAX</string>
+    <string name="title_button_modes">מצבי לחצנים</string>
+    <string name="pref_brightness_mode_title">מצבי בהירות</string>
+    <string name="pref_brightness_mode_summary">הצג או שנה את מצבי הבהירות</string>
+    <string name="cm_brightness_mode_auto">אוטומטי</string>
+    <string name="cm_brightness_mode_dim">עמום</string>
+    <string name="pref_network_mode_title">מצבי רשת</string>
+    <string name="pref_screentimeout_mode_title">מצבי כיבוי המסך</string>
+    <string name="pref_ring_mode_title">מצבי קול</string>
+    <string name="pref_ring_mode_summary">הצג או שנה את מצבי לחצני הקול</string>
+    <string name="cm_sound_mode_silent">שקט</string>
+    <string name="cm_sound_mode_vibrate">רטט</string>
+    <string name="cm_sound_mode_sound">צליל</string>
+    <string name="cm_sound_mode_soundVibrate">צליל &amp; ורטט</string>
+    <string name="pref_flash_mode_title">מצב תאורה</string>
+    <string name="expanded_haptic_feedback_title">משוב Haptic</string>
+    <string name="power_widget_additional_options_cat">אפשרויות נוספות</string>
+    <string name="right_clock">שעון בצד ימין</string>
+    <string name="center_clock">שעון במרכז</string>
+    <string name="brightness_location_title">מיקום מחוון בהירות</string>
+    <string name="brightness_slider_top">למעלה</string>
+    <string name="brightness_slider_bottom">בתחתית</string>
+    <string name="brightness_slider_none">אל תראה</string>
+
+    <!-- Paranoid Settings -->
+    <string name="hybrid_settings">הגדרות Hybrid</string>
+
+    <!-- Customization Titles -->
+    <string name="general_ui_header">ממשק משתמש כללי</string>
+    <string name="clock_header">שעון</string>
+    <string name="lockscreen_header">נעילת מסך</string>
+    <string name="statusbar_header">בר התראות  &amp; מגירת התראות</string>
+
+    <!-- Shortcut picker -->
+    <string name="use_custom_app_title">השתמש ביישום מותאם אישית</string>
+    <string name="use_custom_app_summary">השתמש ביישום מותאם אישית במקום שיח היישומים האחרון</string>
+    <string name="group_applications">יישומים</string>
+
+    <!-- Notification Shortcuts -->
+    <string name="notification_shortcuts_grouptitle">קיצורים</string>
+    <string name="notification_shortcuts_settings_title">קיצורי התראות</string>
+    <string name="notification_shortcuts_settings_summary">הראה קיצורי דרך במגירת ההתראות</string>
+    <string name="notification_shortcuts_empty_title">ריק</string>
+    <string name="notification_shortcuts_edit_title">ערוך קיצורי דרך</string>
+    <string name="notification_shortcuts_edit_msg">בחר או שנה את היישום או הסמל הרצויים</string>
+    <string name="notification_shortcuts_reset_title">נקה קיצורי דרך</string>
+    <string name="notification_shortcuts_category_reset_title">איפוס</string>
+    <string name="notification_shortcuts_title">קיצורי דרך</string>
+    <string name="notification_shortcuts_icon_picker_stock_icons_title">סמלי Stock</string>
+    <string name="notification_shortcuts_quantity_title">מספרי קיצורי דרך</string>
+    <string name="notification_shortcuts_quantity_summary">מספר קיצורי הדרך להצגה</string>
+    <string name="notification_shortcuts_move_text">שנה סדר קיצורי-דרך</string>
+    <string name="notification_shortcuts_move_up">הזז <xliff:g id="app_name">%s</xliff:g> אחד למעלה</string>
+    <string name="notification_shortcuts_move_down">הזז <xliff:g id="app_name">%s</xliff:g> אחד למטה</string>
+    <string name="notification_shortcuts_color_title">צבעי הסמלים של קיצורי הדרך</string>
+    <string name="notification_shortcuts_color_summary">צבע את הStock ו/או סמלי קיצורי ליישום</string>
+    <string name="notification_shortcuts_colorize_toggle_title">צבע סמלי יישומים</string>
+    <string name="notification_shortcuts_colorize_toggle_summary">צבע כל סמלי יישומים בעלי צבע הסמל שנבחר</string>
+    <string name="notification_shortcuts_hide_carrier_title">הסתר תווית נושאת</string>
+
+    <!-- Notification Icons -->
+    <string name="notification_shortcuts_icon_picker_alarm">אזעקה</string>
+    <string name="notification_shortcuts_icon_picker_andy">אנדי</string>
+    <string name="notification_shortcuts_icon_picker_battery">סוללה</string>
+    <string name="notification_shortcuts_icon_picker_browser">דפדפן</string>
+    <string name="notification_shortcuts_icon_picker_calendar">לוח שנה</string>
+    <string name="notification_shortcuts_icon_picker_camera">מצלמה</string>
+    <string name="notification_shortcuts_icon_picker_cloud">ענן</string>
+    <string name="notification_shortcuts_icon_picker_contact">אנשי קשר</string>
+    <string name="notification_shortcuts_icon_picker_directdial">חיוג ישיר</string>
+    <string name="notification_shortcuts_icon_picker_directmessage">הודעה ישירה</string>
+    <string name="notification_shortcuts_icon_picker_email">דואר אלקרטוני</string>
+    <string name="notification_shortcuts_icon_picker_email2">דוא"ל2</string>
+    <string name="notification_shortcuts_icon_picker_facebook">פייסבוק</string>
+    <string name="notification_shortcuts_icon_picker_favorite">אהוב</string>
+    <string name="notification_shortcuts_icon_picker_file_browser">דפדפן</string>
+    <string name="notification_shortcuts_icon_picker_file_browser2">דפדפן2</string>
+    <string name="notification_shortcuts_icon_picker_gallery">גלרייה</string>
+    <string name="notification_shortcuts_icon_picker_google_small">גוגל</string>
+    <string name="notification_shortcuts_icon_picker_gplus">Google Plus</string>
+    <string name="notification_shortcuts_icon_picker_gtalk">GTalk</string>
+    <string name="notification_shortcuts_icon_picker_help">עזרה</string>
+    <string name="notification_shortcuts_icon_picker_joystick">ג\'ויסטיק</string>
+    <string name="notification_shortcuts_icon_picker_key">מפחות/חשבונות</string>
+    <string name="notification_shortcuts_icon_picker_laptop">מחשב נייד</string>
+    <string name="notification_shortcuts_icon_picker_luggage">טיול</string>
+    <string name="notification_shortcuts_icon_picker_maps">מפות</string>
+    <string name="notification_shortcuts_icon_picker_market">מרקט</string>
+    <string name="notification_shortcuts_icon_picker_movie">סרטים</string>
+    <string name="notification_shortcuts_icon_picker_music">מוסיקה</string>
+    <string name="notification_shortcuts_icon_picker_nav">ניווט</string>
+    <string name="notification_shortcuts_icon_picker_phone">טלפון</string>
+    <string name="notification_shortcuts_icon_picker_pinterest">Pinterest</string>
+    <string name="notification_shortcuts_icon_picker_play">הפעל</string>
+    <string name="notification_shortcuts_icon_picker_podcast">פודקאסט</string>
+    <string name="notification_shortcuts_icon_picker_quicksettings">הגדרות מהירות</string>
+    <string name="notification_shortcuts_icon_picker_rss">RSS פיד</string>
+    <string name="notification_shortcuts_icon_picker_sdcard">כרטיס זיכרון</string>
+    <string name="notification_shortcuts_icon_picker_search">חפש</string>
+    <string name="notification_shortcuts_icon_picker_sms">הודעות</string>
+    <string name="notification_shortcuts_icon_picker_terminal">מסוף</string>
+    <string name="notification_shortcuts_icon_picker_twitter">טוויטר</string>
+    <string name="notification_shortcuts_icon_picker_unlock">לפתוח</string>
+
+   <!-- Lockscreen See Through (PA) -->
+   <string name="lockscreen_seethrough">לראות דרך מסך הנעילה</string>
+   <string name="lockscreen_seethrough_summary">מאפשר לך לראות את מסך הבית שלך מאחורי מסך נעילה, יכול גם להציג יישום פועל.</string>
+
+    <!-- Custom lock screen background (CM) -->
+    <string name="lockscreen_custom_background_title">רקע</string>
+    <string name="lockscreen_custom_background_dialog_title">בחר צבע</string>
+    <string name="lockscreen_background_result_successful">הרקע השתנה בהצלחה</string>
+    <string name="lockscreen_background_result_not_successful">אין אפשרות לשנות רקע</string>
+    <string name="lockscreen_background_color_fill">מילוי צבע</string>
+    <string name="lockscreen_background_custom_image">תמונה מותאמת אישית</string>
+    <string name="lockscreen_background_default_wallpaper">רקע ברירת מחדל</string>
+
+    <!-- Permissions Management -->
+    <string name="permissions_settings_title">הרשאות</string>
+
+    <!-- Category title for power sound notification specific Settings.
+         [CHAR LIMIT=40] -->
+    <string name="power_notifications_category_title">צלילי הפעלה</string>
+    <!-- Sound settings, power notifications enable/disable, setting check box label -->
+    <string name="power_notifications_enable_title">הפעל</string>
+    <!-- Sound settings, power notifications vibrate enable/disable, setting check box label -->
+    <string name="power_notifications_vibrate_title">רטט</string>
+    <!-- Sound settings, power notifications ringtone selection, preference label -->
+    <string name="power_notifications_ringtone_title">צלילי התראות</string>
+    <!-- Sound settings, power notifications label for ringtone == none -->
+    <string name="power_notifications_ringtone_silent">שקט</string>
 </resources>

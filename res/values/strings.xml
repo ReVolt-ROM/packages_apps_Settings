@@ -5015,6 +5015,10 @@
     <string name="lockscreen_header">Lock Screen</string>
     <string name="statusbar_header">StatusBar &amp; Notification Drawer</string>
 
+    <!-- System Interface settings -->
+    <string name="system_settings_title">System</string>
+    <string name="system_interface_title">System interface</string>
+
     <!-- Shortcut picker -->
     <string name="use_custom_app_title">Use custom application</string>
     <string name="use_custom_app_summary">Use custom application instead of the recent applications dialog</string>

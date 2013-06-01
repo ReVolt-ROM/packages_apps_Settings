@@ -16,8 +16,6 @@
 
 package com.android.settings.profiles;
 
-import static com.android.internal.util.cm.QSUtils.*;
-
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -93,21 +91,14 @@ public class ProfileConfig extends SettingsPreferenceFragment
         };
 
         mConnections = new ArrayList<ConnectionItem>();
-        if (deviceSupportsBluetooth()) {
-            mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_BLUETOOTH, getString(R.string.toggleBluetooth)));
-        }
+        mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_MOBILEDATA, getString(R.string.toggleData)));
+        mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_BLUETOOTH, getString(R.string.toggleBluetooth))); 
         mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_GPS, getString(R.string.toggleGPS)));
         mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_WIFI, getString(R.string.toggleWifi)));
         mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_SYNC, getString(R.string.toggleSync)));
-        if (deviceSupportsMobileData(getActivity())) {
-            mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_MOBILEDATA, getString(R.string.toggleData)));
-            mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_WIFIAP, getString(R.string.toggleWifiAp)));
-        }
+        mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_NFC, getString(R.string.toggleNfc)));
         if (WimaxHelper.isWimaxSupported(getActivity())) {
             mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_WIMAX, getString(R.string.toggleWimax)));
-        }
-        if (deviceSupportsNfc(getActivity())) {
-            mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_NFC, getString(R.string.toggleNfc)));
         }
 
         addPreferencesFromResource(R.xml.profile_config);

@@ -52,4 +52,3 @@ class WrapperDrawable extends Drawable {
         return mDrawable.getIntrinsicWidth();
     }
 }
-

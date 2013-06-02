@@ -321,4 +321,3 @@ public class LruCache<K, V> {
                 maxSize, hitCount, missCount, hitPercent);
     }
 }
-

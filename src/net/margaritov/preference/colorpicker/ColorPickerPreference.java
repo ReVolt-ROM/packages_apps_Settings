@@ -263,4 +263,3 @@ public class ColorPickerPreference extends Preference implements
     }
 
 }
-

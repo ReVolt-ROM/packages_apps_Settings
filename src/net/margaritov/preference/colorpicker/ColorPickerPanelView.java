@@ -169,4 +169,3 @@ public class ColorPickerPanelView extends View {
     }
 
 }
-

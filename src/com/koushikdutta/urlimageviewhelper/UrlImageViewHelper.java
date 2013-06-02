@@ -508,4 +508,3 @@ public final class UrlImageViewHelper {
     private static Hashtable<ImageView, String> mPendingViews = new Hashtable<ImageView, String>();
     private static Hashtable<String, ArrayList<ImageView>> mPendingDownloads = new Hashtable<String, ArrayList<ImageView>>();
 }
-

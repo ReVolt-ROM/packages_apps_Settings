@@ -38,6 +38,9 @@ public class DeveloperPreference extends Preference {
 
     private ImageView twitterButton;
     private ImageView donateButton;
+    private ImageView githubButton;
+    private ImageView googleButton;
+    private ImageView facebookButton;
     private ImageView photoView;
 
     private TextView devName;
@@ -45,6 +48,9 @@ public class DeveloperPreference extends Preference {
     private String nameDev;
     private String twitterName;
     private String donateLink;
+    private String githubLink;
+    private String googleLink;
+    private String facebookLink;
 
     public DeveloperPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -53,6 +59,9 @@ public class DeveloperPreference extends Preference {
         nameDev = a.getString(R.styleable.DeveloperPreference_nameDev);
         twitterName = a.getString(R.styleable.DeveloperPreference_twitterHandle);
         donateLink = a.getString(R.styleable.DeveloperPreference_donateLink);
+        githubLink = a.getString(R.styleable.DeveloperPreference_githubLink);
+        googleLink = a.getString(R.styleable.DeveloperPreference_googleLink);
+        facebookLink = a.getString(R.styleable.DeveloperPreference_facebookLink);
         a.recycle();
     }
 
@@ -64,6 +73,9 @@ public class DeveloperPreference extends Preference {
 
         twitterButton = (ImageView) layout.findViewById(R.id.twitter_button);
         donateButton = (ImageView) layout.findViewById(R.id.donate_button);
+        githubButton = (ImageView) layout.findViewById(R.id.github_button);
+        googleButton = (ImageView) layout.findViewById(R.id.google_button);
+        facebookButton = (ImageView) layout.findViewById(R.id.facebook_button);
         devName = (TextView) layout.findViewById(R.id.name);
         photoView = (ImageView) layout.findViewById(R.id.photo);
 
@@ -88,6 +100,54 @@ public class DeveloperPreference extends Preference {
             donateButton.setOnClickListener(openDonate);
         } else {
             donateButton.setVisibility(View.GONE);
+        }
+
+        if (githubLink != null) {
+            final OnClickListener openGithub = new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Uri githubURL = Uri.parse(githubLink);
+                    final Intent intent = new Intent(Intent.ACTION_VIEW, githubURL);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    getContext().startActivity(intent);
+                }
+            };
+
+            githubButton.setOnClickListener(openGithub);
+        } else {
+            githubButton.setVisibility(View.GONE);
+        }
+
+        if (googleLink != null) {
+            final OnClickListener openGoogle = new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Uri googleURL = Uri.parse(googleLink);
+                    final Intent intent = new Intent(Intent.ACTION_VIEW, googleURL);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    getContext().startActivity(intent);
+                }
+            };
+
+            googleButton.setOnClickListener(openGoogle);
+        } else {
+            googleButton.setVisibility(View.GONE);
+        }
+
+        if (facebookLink != null) {
+            final OnClickListener openFacebook = new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Uri facebookURL = Uri.parse(facebookLink);
+                    final Intent intent = new Intent(Intent.ACTION_VIEW, facebookURL);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    getContext().startActivity(intent);
+                }
+            };
+
+            facebookButton.setOnClickListener(openFacebook);
+        } else {
+            facebookButton.setVisibility(View.GONE);
         }
 
         if (twitterName != null) {

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 The ReVolt ROM Project
+ * Copyright (C) 2013 Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,19 +34,13 @@ public class About extends SettingsPreferenceFragment {
 
     public static final String TAG = "About";
 
-    Preference mSupportUrl;
-    Preference mSourceUrl;
-    Preference mFacebookUrl;
-    Preference mGooglePlusUrl;
+    Preference mSiteUrl;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.about_rom);
-        mSupportUrl = findPreference("revolt_support");
-        mSourceUrl = findPreference("revolt_source");
-        mFacebookUrl = findPreference("revolt_facebook");
-        mGooglePlusUrl = findPreference("revolt_googleplus");
+        mSiteUrl = findPreference("revolt_site");
 
         PreferenceGroup devsGroup = (PreferenceGroup) findPreference("devs");
         ArrayList<Preference> devs = new ArrayList<Preference>();
@@ -66,14 +60,8 @@ public class About extends SettingsPreferenceFragment {
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (preference == mSupportUrl) {
-            launchUrl("http://www.google.com");
-        } else if (preference == mSourceUrl) {
-            launchUrl("http://github.com/ReVolt-ROM");
-        } else if (preference == mFacebookUrl) {
-            launchUrl("http://facebook.com/ReVoltROM");
-        } else if (preference == mGooglePlusUrl) {
-            launchUrl("https://plus.google.com/");
+        if (preference == mSiteUrl) {
+            launchUrl("http://revolt.iminisoft.org/");
         }
 
         return super.onPreferenceTreeClick(preferenceScreen, preference);
@@ -83,5 +71,11 @@ public class About extends SettingsPreferenceFragment {
         Uri uriUrl = Uri.parse(url);
         Intent donate = new Intent(Intent.ACTION_VIEW, uriUrl);
         getActivity().startActivity(donate);
+        Intent github = new Intent(Intent.ACTION_VIEW, uriUrl);
+        getActivity().startActivity(github);
+        Intent google = new Intent(Intent.ACTION_VIEW, uriUrl);
+        getActivity().startActivity(google);
+        Intent facebook = new Intent(Intent.ACTION_VIEW, uriUrl);
+        getActivity().startActivity(facebook);
     }
 }

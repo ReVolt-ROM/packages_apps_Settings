@@ -65,7 +65,7 @@
     <!-- ROM Control -->
     <header android:id="@+id/rom_control"
             android:title="@string/rom_control_title"
-            android:icon="@drawable/ic_settings_about_rv" >
+            android:icon="@drawable/ic_settings_rom_control" >
         <intent
                 android:action="android.intent.action.MAIN"
                 android:targetClass="com.aokp.romcontrol.ROMControlActivity"
@@ -82,7 +82,17 @@
                 android:targetClass="com.tmobile.themechooser.ThemeChooser" />
     </header>
 
-    <!-- ReVolt Settings -->
+   <!-- Device Options -->
+    <header android:id="@+id/advanced_settings"
+            android:title="@string/advanced_settings_title"
+            android:icon="@drawable/ic_settings_advanced">
+        <intent
+                android:action="com.cyanogenmod.action.LAUNCH_DEVICE_SETTINGS"
+                android:targetPackage="com.cyanogenmod.settings.device"
+                android:targetClass="com.cyanogenmod.settings.device.DeviceSettings" />
+    </header>
+
+    <!-- Customizations Section -->
     <header android:title="@string/header_category_revolt" />
 
     <!-- ReVolt Links -->
@@ -125,26 +135,8 @@
                 android:targetClass="com.gokhanmoral.stweaks.app.MainActivity" />
     </header>
 
-    <!-- LMT Settings -->
-    <header 
-            android:id="@+id/lmt_settings"
-            android:icon="@drawable/ic_menu_scan_network"
-            android:title="@string/lmt_settings">
-        <intent
-                android:action="android.intent.action.MAIN"
-                android:targetPackage="com.android.lmt"
-                android:targetClass="com.android.lmt.LMT" />
-    </header>
-
     <!-- DPI Settings -->
     <header android:title="@string/dpi_settings" />
-
-    <!-- DPI Changer -->
-    <header
-        android:id="@+id/dpi_changer"
-        android:fragment="com.android.settings.DPI"
-        android:icon="@drawable/ic_settings_dpi"
-        android:title="@string/lcd_density" />
 
     <!-- Hybrid Settings -->
     <header
@@ -215,7 +207,7 @@
     <header android:id="@+id/personal_section"
         android:title="@string/header_category_personal" />
 
-    <!-- Profiles -->
+    <!-- CM Profiles -->
     <header
         android:id="@+id/profiles_settings"
         android:icon="@drawable/ic_settings_profiles"
@@ -250,16 +242,6 @@
         android:title="@string/privacy_settings"
         android:id="@+id/privacy_settings" />
 
-    <!-- Advanced Device Specific Settings by CyanogenMod -->
-    <header android:id="@+id/advanced_settings"
-            android:title="@string/advanced_settings_title"
-            android:icon="@drawable/ic_settings_advanced">
-        <intent
-                android:action="com.cyanogenmod.action.LAUNCH_DEVICE_SETTINGS"
-                android:targetPackage="com.cyanogenmod.settings.device"
-                android:targetClass="com.cyanogenmod.settings.device.DeviceSettings" />
-    </header>
-
     <!--  ACCOUNTS section -->
     <header
             android:id="@+id/account_settings"
@@ -280,7 +262,7 @@
     <!-- Superuser -->
     <header
         android:id="@+id/superuser"
-        android:fragment="com.android.settings.cyanogenmod.superuser.PolicyNativeFragment"
+        android:fragment="com.android.settings.rv.superuser.PolicyNativeFragment"
         android:icon="@drawable/ic_action_permission"
         android:title="@string/superuser" />
 

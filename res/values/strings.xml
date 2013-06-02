@@ -63,12 +63,6 @@
     <!-- Phone SMS over IMS off. Only shown in diagnostic screen, so precise translation is not needed. -->
     <string name="sms_over_ims_off">Turn off SMS over IMS</string>
 
-    <!--- Sms security limit -->
-    <string name="app_security_title">App security</string>
-    <string name="sms_security_check_limit_title">SMS message limit</string>
-    <string name="sms_security_check_limit_summary">Display an alert dialog to prevent applications from sending SMS messages too frequently. Current limit: %d messages in 15 minutes</string>
-    <string name="sms_security_check_limit_default">30 (Default)</string>
-
     <!-- Phone SMS over IMS IMS registration required on. Only shown in diagnostic screen, so precise translation is not needed. -->
     <string name="ims_reg_required_on">Turn on IMS registration required</string>
     <!-- Phone IMS registration required off. Only shown in diagnostic screen, so precise translation is not needed. -->
@@ -362,6 +356,15 @@
 
     <!-- Bluetooth phone book permission Alert Activity checkbox text [CHAR LIMIT=none] -->
     <string name="bluetooth_pb_remember_choice">Don\'t ask again</string>
+
+    <!-- Activity label of BluetoothMasPermissionActivity, also used as Strings in the permission dialog [CHAR LIMIT=none] -->
+    <string name="bluetooth_mas_request">"Message Access request"</string>
+
+    <!-- Bluetooth MAS permission Alert Activity text [CHAR LIMIT=none] -->
+    <string name="bluetooth_mas_acceptance_dialog_text">%1$s would like to access your messages. Give access to %2$s?</string>
+
+    <!-- Bluetooth MAS permission Alert Activity checkbox text [CHAR LIMIT=none] -->
+    <string name="bluetooth_mas_remember_choice">Don\'t ask again</string>
 
     <!-- Date & time settings screen title -->
     <string name="date_and_time">Date &amp; time settings</string>
@@ -1445,13 +1448,6 @@
     <!-- Do not translate.  Concise terminology for wifi with 802.1x EAP security -->
     <string name="wifi_security_eap">802.1x EAP</string>
 
-    <string name="wifi_mode">Mode</string>
-    <string name="wifi_mode_ibss">Ad-Hoc (IBSS) Network</string>
-    <string name="wifi_mode_ibss_short">Ad-Hoc</string>
-
-    <string name="wifi_ibss_freq_title">Channel / Frequency</string>
-    <string name="wifi_channel">Channel</string>
-    <string name="wifi_mhz">MHz</string>
 
     <!-- Button label to connect to a Wi-Fi network -->
     <string name="wifi_connect">Connect</string>
@@ -1494,12 +1490,6 @@
     <string name="wifi_setting_frequency_band_summary">Specify the frequency range of operation</string>
     <!-- Wi-Fi settings screen, error message when the frequency band could not be set [CHAR LIMIT=50]. -->
     <string name="wifi_setting_frequency_band_error">There was a problem setting the frequency band.</string>
-    <!-- Wi-Fi settings screen, advanced, title of the item to show the Wi-Fi device's MAC address. -->
-    <string name="wifi_setting_countrycode_title">Wi-Fi region code</string>
-    <!-- Wi-Fi settings screen, setting summary for setting the wifi frequency band [CHAR LIMIT=50]-->
-    <string name="wifi_setting_countrycode_summary">Specify the region code for Wi-Fi</string>
-    <!-- Wi-Fi settings screen, error message when the frequency band could not be set [CHAR LIMIT=50]. -->
-    <string name="wifi_setting_countrycode_error">There was a problem setting the region code.</string>
     <!-- Wi-Fi settings screen, advanced, title of the item to show the Wi-Fi device's MAC address. -->
     <string name="wifi_advanced_mac_address_title">MAC address</string>
     <!-- Title of the screen to adjust IP settings -->
@@ -2369,8 +2359,6 @@
     <string name="about_settings_summary">View legal info, status, software version</string>
     <!-- About phone settings screen, setting option name to go to dialog that shows legal info -->
     <string name="legal_information">Legal information</string>
-    <!-- About phone settings screen, setting option name to see a list of contributors -->
-    <string name="contributors_title">Contributors</string>
     <!-- About phone settings screen, setting option name to show regulatory information [CHAR LIMIT=25] -->
     <string name="regulatory_information">Regulatory information</string>
     <!-- Note: this may be replaced by a more-specific title of the activity that will get launched --> <skip />
@@ -2470,6 +2458,10 @@
     <string name="lockpattern_settings_enable_summary">Must draw pattern to unlock screen</string>
     <!-- Security & location settings screen, setting check box title. This setting controls whether a visible green line is drawn as the user moves his finger around while drawing the unlock pattern.  If checked, this line is drawn.  If unchecked, there is nothing drawn so the user does not reveal his pattern while he unlocks the phone.-->
     <string name="lockpattern_settings_enable_visible_pattern_title">Make pattern visible</string>
+    <!-- Security & location settings screen, setting check box title. This setting controls whether a visible red line will be drawn after the user has drawn the unlock pattern incorrectly.  If checked, this line is drawn.  If unchecked, there is nothing drawn so the user does not reveal his pattern while he unlocks the phone.-->
+    <string name="lockpattern_settings_enable_error_path_title">Show pattern error</string>
+    <!-- Security & location settings screen, setting check box title. This setting controls whether the dots will be drawn when using the lockscreen pattern.-->
+    <string name="lockpattern_settings_enable_dots_title">Show pattern dots</string>
     <!-- Security & location settings screen, setting check box title. This setting controls whether tactile feedback will be produced when the user draws the pattern.-->
     <string name="lockpattern_settings_enable_tactile_feedback_title">Vibrate on touch</string>
     <!-- Security & location settings screen, setting check box title. This controls whether the device locks immediately when the power button is pressed. [CHAR LIMIT=28]-->
@@ -3096,15 +3088,6 @@
     <!-- Message of dialog confirming that user wants to protect external storage. [CHAR LIMIT=NONE] -->
     <string name="enforce_read_external_confirm_message" product="default">When SD card is protected, apps must request permission to read data from external storage.\n\nSome apps may not work until updated by their developers.</string>
 
-    <!-- Setting checkbox title for root access -->
-    <string name="root_access">Root access</string>
-    <string name="root_access_warning_title">Allow root access?</string>
-    <string name="root_access_warning_message">Allowing applications to request root access is very dangerous and could compromise the security of your system!</string>
-    <string name="root_access_none">Disabled</string>
-    <string name="root_access_apps">Apps only</string>
-    <string name="root_access_adb">ADB only</string>
-    <string name="root_access_all">Apps and ADB</string>
-
     <!-- Title for the screen that lets the user choose a gadget to add to the home screen
          (or other screens that can host gadgets).  Note to translators: we're still determining
          the final name for Gadgets/Widgets, so please translate both for now. -->
@@ -3183,7 +3166,7 @@
     <!-- Summary for the accessibility preference to auto update screen magnification. [CHAR LIMIT=50] -->
     <string name="accessibility_toggle_screen_magnification_auto_update_preference_summary">Update
         screen magnification on app transitions</string>
-    <string name="accessibility_home_button_answers_call_title">Home button answers call</string>
+    <string name="accessibility_home_button_answers_call_title">Home button answers call.</string>
     <!-- Title for the accessibility preference to power button to end a call. [CHAR LIMIT=35] -->
     <string name="accessibility_power_button_ends_call_prerefence_title">Power button ends call</string>
     <!-- Title for the accessibility preference to speak passwords. [CHAR LIMIT=35] -->
@@ -4465,16 +4448,116 @@
     <!-- Cell Broadcast settings description [CHAR LIMIT=100] -->
     <string name="cell_broadcast_settings_summary">Select the types of emergency alerts to display.</string>
 
-    <!-- AOKP Customizations Section -->
-    <string name="quick_links_title">QUICK LINKS</string>
-    <!-- AOKP ROM Control Specific App for Customizations -->
+    <!-- Pie controls -->
+    <string name="pie_controls_title">Pie controls</string>
+    <string name="pie_controls_summary">Allows navigation and status report</string>
+    <string name="pie_targets_title">Targets</string>
+    <string name="pie_gravity_title">Pie gravity</string>
+    <string name="pie_gravity_summary">Select the location where Pie will be placed at</string>
+    <string name="pie_gravity_top">Top</string>
+    <string name="pie_gravity_bottom">Bottom</string>
+    <string name="pie_gravity_right">Right</string>
+    <string name="pie_gravity_left">Left</string>
+    <string name="pie_mode_title">Pie style</string>
+    <string name="pie_mode_summary">Manage how animations and status additions will be handled</string>
+    <string name="pie_mode_bare">Bare</string>
+    <string name="pie_mode_quick">Quick</string>
+    <string name="pie_mode_default">Default</string>
+    <string name="pie_mode_slow">Slow</string>
+    <string name="pie_size_title">Pie size</string>
+    <string name="pie_size_summary">Define Pie controls size</string>
+    <string name="pie_size_small">Small</string>
+    <string name="pie_size_default">@string/pie_mode_default</string>
+    <string name="pie_size_large">Large</string>
+    <string name="pie_size_gigantic">Gigantic</string>
+    <string name="pie_color_title">Pie color settings</string>
+    <string name="pie_color_style_title">Pie color style</string>
+    <string name="pie_background_title">Background color</string>
+    <string name="pie_select_title">Selection color</string>
+    <string name="pie_outlines_title">Outlines color</string>
+    <string name="pie_status_clock_title">Clock color</string>
+    <string name="pie_status_title">Status color</string>
+    <string name="pie_chevron_left_title">Left chevron color</string>
+    <string name="pie_chevron_right_title">Right chevron color</string>
+    <string name="pie_juice_title">Battery juice color</string>
+    <string name="pie_button_color_title">Buttons color</string>
+    <string name="pie_angle_title">Pie angle</string>
+    <string name="pie_angle_summary">Adjust the angle of pie\'s egdes from the attachment</string>
+    <string name="pie_angle_none">None (old)</string>
+    <string name="pie_angle_small">Small</string>
+    <string name="pie_angle_big">Normal (default)</string>
+    <string name="pie_angle_huge">Big</string>
+    <string name="pie_angle_super">Huge</string>
+    <string name="pie_gap_title">Item gap</string>
+    <string name="pie_gap_summary">Adjust the gap that separates pie elements</string>
+    <string name="pie_gap_none">None</string>
+    <string name="pie_gap_small">Small</string>
+    <string name="pie_gap_big">Big (default)</string>
+    <string name="pie_gap_huge">Huge</string>
+    <string name="pie_center_title">Middle alignment</string>
+    <string name="pie_center_summary">Center pie on the trigger edge</string>
+    <string name="pie_trigger_title">Trigger size</string>
+    <string name="pie_trigger_summary">Determine the size of the triggering area that will start pie controls</string>
+    <string name="pie_trigger_small">Small</string>
+    <string name="pie_trigger_normal">Normal (Default)</string>
+    <string name="pie_trigger_big">Big</string>
+    <string name="pie_trigger_huge">Huge</string>
+    <string name="pie_notifications_title">Enable Chevron Targets</string>
+    <string name="pie_notifications_summary">Enabling, will let the Notification panels and QuickSettings active when swipe.</string>
+    <string name="pie_menu_title">Show menu button always</string>
+    <string name="pie_menu_summary">Whether or not the menu button will appear when unneeded</string>
+    <string name="pie_search_title">Show search button</string>
+    <string name="pie_search_summary">Access to GoogleNow via Pie</string>
+    <string name="pie_lastapp_title">Last App button</string>
+    <string name="pie_lastapp_summary">Enable last app button on Pie</string>
+    <string name="pie_stick_title">Prevent rotation</string>
+    <string name="pie_stick_summary">If checked Pie will stay in place no matter which orientation</string>
+    <string name="all_color">Custom Colors</string>
+    <string name="stock_color">Default Colors</string>
+    <string name="pie_restart_launcher_title">Restart Launcher</string>
+    <string name="pie_restart_launcher_summary">Changing screensize can have adverse effects. This option allows your launcher to regain sanity, the cost is a slight blackout (recommended)</string>
+
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">Color Picker</string>
+    <string name="press_color_to_apply">Press on Color to apply</string>
+    <string name="arrow_right">→</string>
+    <string name="arrow_down">↓</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint">#FF000000</string>
+    <string name="set">Set</string>
+    <string name="ics_color">!!!</string>
+
+    <!-- cLock by CyanogenMod -->
+    <string name="lock_clock_title">cLock</string>
+    <string name="lock_clock_summary">View or change how the \'cLock\' Home and Lock screen widgets will display</string>
+
+    <!-- ReVolt -->
+    <string name="header_category_revolt">REVOLT CUSTOMIZATIONS</string>
+
+    <!-- ReVolt Updates Center -->
+    <string name="update_settings_title">ReVolt Updates Center</string>
+
+    <!-- ReVolt Links -->
+    <string name="revolt_custom_title">Customizations</string>
+
+    <!--- Sms security limit -->
+    <string name="app_security_title">App security</string>
+    <string name="sms_security_check_limit_title">SMS message limit</string>
+    <string name="sms_security_check_limit_summary">Display an alert dialog to prevent applications from sending SMS messages too frequently. Current limit: %d messages in 15 minutes</string>
+    <string name="sms_security_check_limit_default">30 (Default)</string>
+
+    <!-- Quick Links -->
+    <string name="quick_links_title">Quick Links</string>
+
+    <!-- ROM Control by AOKP -->
     <string name="rom_control_title">ROM Control</string>
-    <!-- Themeing Section -->
+
+    <!-- Theming System -->
     <string name="themes_title">Themes</string>
 
-    <!-- ReVolt Build Version -->
-    <string name="mod_version">ReVolt Version</string>
-    <!-- Default Value -->
+    <!-- ReVolt Version -->
+    <string name="rv_version">ReVolt version</string>
+    <!-- Default Value id prop not found -->
     <string name="mod_version_default">Unknown</string>
 
     <!-- Anonymous Statistics #CM -->
@@ -4516,6 +4599,64 @@
     <string name="quiet_hours_active_from">Active from</string>
     <string name="quiet_hours_active_to">to</string>
 
+    <string name="font_size_title">Font Size</string>
+    <string name="font_size_summary">Control the System Font Size</string>
+
+    <!-- Customizations Titles -->
+    <string name="general_ui_header">General UI</string>
+    <string name="clock_header">Clock</string>
+    <string name="lockscreen_header">Lock Screen</string>
+    <string name="hardware_keys_header">Hardware Keys</string>
+    <string name="statusbar_header">StatusBar &amp; Notification Drawer</string>
+
+    <!-- About ReVolt -->
+    <string name="about_rv_settings_title">About Revolt</string>
+    <string name="about_revolt">About ReVolt</string>
+    <string name="about_revolt_summary">@null</string>
+    <string name="app_name">ReVolt</string>
+    <string name="devs">Developer</string>
+    <string name="maintainers">Maintainers</string>
+    <string name="contributors_title">Contributers</string>
+    <string name="support_team">Support Team</string>
+    <string name="donate_johnhany97">http://forum.xda-developers.com/donatetome.php?u=4655909</string>
+    <string name="donate_cyanogenmod">http://forum.cyanogenmod.com/donate</string>
+    <string name="github_cyanogenmod">http://github.com/CyanogenMod/</string>
+    <string name="donate_aokp">http://aokp.co/</string>
+    <string name="github_aokp">http://github.com/AOKP/</string>
+    <string name="revolt">ReVolt</string>
+    <string name="google_revolt">https://plus.google.com/communities/100772381458091248250</string>
+    <string name="facebook_revolt">http://www.facebook.com/ReVoltROM</string>
+    <string name="github_revolt">http://github.com/ReVolt-ROM</string>
+    <string name="github_hazed">http://github.com/Hazedabeast</string>
+    <string name="github_tpoint75">http://github.com/TPoint75</string>
+    <string name="revolt_site_title">ReVolt WebSite</string>
+    <string name="revolt_site_summary">Find Latest News and Updates from the Official ReVolt Website.</string>
+    <string name="title_about">About ReVolt</string>
+
+    <!-- Hardware keys -->
+    <string name="hardware_keys_title">Hardware keys</string>
+    <string name="hardware_keys_summary">View or change hardware keys actions</string>
+    <string name="hardware_keys_bindings_title">Key actions</string>
+    <string name="hardware_keys_enable_custom_title">Enable custom actions</string>
+    <string name="hardware_keys_home_long_press_title">Home key (long press)</string>
+    <string name="hardware_keys_menu_press_title">Menu key</string>
+    <string name="hardware_keys_menu_long_press_title">Menu key (long press)</string>
+    <string name="hardware_keys_assist_press_title">Search key</string>
+    <string name="hardware_keys_assist_long_press_title">Search key (long press)</string>
+    <string name="hardware_keys_app_switch_press_title">App switch key</string>
+    <string name="hardware_keys_app_switch_long_press_title">App switch key (long press)</string>
+    <string name="hardware_keys_show_overflow_title">Show action overflow</string>
+    <string name="hardware_keys_show_overflow_summary">Display the 3-dot overflow menu button within apps</string>
+    <string name="hardware_keys_show_overflow_toast_enable">The action overflow button may not be visible until apps are restarted</string>
+    <string name="hardware_keys_show_overflow_toast_disable">The action overflow button may not be hidden until apps are restarted</string>
+    <string name="hardware_keys_action_nothing">No action</string>
+    <string name="hardware_keys_action_menu">Open/close menu</string>
+    <string name="hardware_keys_action_app_switch">Recent apps switcher</string>
+    <string name="hardware_keys_action_search">Search assistant</string>
+    <string name="hardware_keys_action_voice_search">Voice search</string>
+    <string name="hardware_keys_action_in_app_search">In-app search</string>
+    <string name="hardware_keys_action_torch">Toggle torch</string>
+
     <!-- Lock screen vibrate settings -->
     <string name="lockscreen_vibrate_enabled_title">Vibrate</string>
     <string name="lockscreen_vibrate_enabled_head">Vibrate when unlocking</string>
@@ -4550,98 +4691,32 @@
 
     <!-- Expanded Desktop -->
     <string name="power_menu_expanded_desktop">Expanded desktop</string>
-    <string name="power_menu_expanded_desktop_summary">Adds option in power menu to hide status and navigation bar.</string>
-
+    <string name="power_menu_expanded_desktop_summary">Adds option in Power menu to hide status and navigation bar.</string>
+  
     <!-- time range preference -->
     <string name="start_time_title">Start</string>
     <string name="end_time_title">End</string>
-
     <string name="vibration_title">Phone vibration</string>
     <string name="link_volume_ringtones">Link volumes</string>
     <string name="link_volume_mutes">Link mute states</string>
 
-    <!-- Hostname setting -->
-    <string name="device_hostname">Device hostname</string>
-    
-    <!-- Sprint Tools -->
-    <string name="sprint_tools_title">Sprint Tools</string>
+    <!-- Paranoid Settings -->
+    <string name="dpi_settings">DPI &amp; LAYOUT SETTINGS</string>
+    <string name="hybrid_settings">Hybrid Settings</string>
 
-    <!-- ReVolt Customizations -->
-    <string name="header_category_revolt">REVOLT CUSTOMIZATION</string>
-    <!-- OTA UpdateMe Center -->
-    <string name="update_settings_title">ReVolt Updates Center</string>
+    <!-- Lockscreen See Through -->
+    <string name="lockscreen_seethrough">Lockscreen See through</string>
+    <string name="lockscreen_seethrough_summary">Allows you to see your homescreen behind the lock screen including apps.</string>
 
-    <!-- About ReVolt -->
-    <string name="about_rv_settings_title">About Revolt</string>
-    <string name="about_revolt">About ReVolt</string>
-    <string name="about_revolt_summary">@null</string>
-    <string name="app_name">ReVolt</string>
-    <string name="devs">Developer</string>
-    <string name="donate_johnhany97">http://forum.xda-developers.com/donatetome.php?u=4655909</string>
-    <string name="donate_cyanogenmod">http://forum.cyanogenmod.com/donate</string>
-    <string name="donate_aokp">http://aokp.co/</string>
-    <string name="revolt">ReVolt</string>
-    <string name="revolt_website_title">ReVolt WebSite</string>
-    <string name="revolt_website_summary">Find Latest News and Updates from the Official ReVolt Website.</string>
-    <string name="title_about">About ReVolt</string>
-    <string name="revolt_fb_title">ReVolt on Facebook</string>
-    <string name="revolt_fb_summary">Like the Official ReVolt ROM Facebook page for updates.</string>
-    <string name="revolt_source_title">ReVolt Sources</string>
-    <string name="revolt_source_summary">Get the Source of ReVolt ROM at GitHub</string>
-
-    <!-- LMT Settings -->
-    <string name="lmt_settings">LMT Settings</string>
-
-    <!-- Per App Dpi Frameworks Controlling System (ParanoidAndroid prefs) -->
-    <string name="dpi_settings">DPI &amp; TABLET SETTINGS</string>
-
-    <!-- Paranoid Lockscreen -->
-    <string name="icon_picker_type">Select icon type:</string>
-    <string name="icon_default">Default</string>
-    <string name="icon_presets">Presets</string>
-    <string name="icon_custom">Custom</string>
-    <string name="lock_screen_shortcuts_title">Shortcuts</string>
-    <string name="lock_screen_shortcuts_reset_message">Reset lock screen shortcuts?</string>
-    <string name="lock_screen_shortcuts_summary">View or change custom lock screen shortcuts</string>
-    <string name="lock_screen_shortcuts_add">@string/profiles_add</string>
-    <string name="lock_screen_shortcuts_reset">Reset</string>
-    <string name="lock_screen_shortcuts_limit">Only 6 shorcuts are allowed!</string>
-
-    <!-- Lock screen shortcuts -->
-    <string name="choose_app">Choose application</string>
-    <string name="dialog_delete_title">Delete</string>
-    <string name="dialog_delete_message">Remove selected item?</string>
-    <string name="picker_activities">Activities</string>
-    <string name="select_custom_app_title">Select custom application</string>
-    <string name="select_custom_activity_title">Select custom activity</string>
-    <string name="icon_picker_choose_icon_title">Choose icon</string>
-    <string name="icon_picker_alarm">Alarm</string>
-    <string name="icon_picker_browser">Browser</string>
-    <string name="icon_picker_calendar">Calendar</string>
-    <string name="icon_picker_camera">Camera</string>
-    <string name="icon_picker_chrome">Chrome</string>
-    <string name="icon_picker_email">Email</string>
-    <string name="icon_picker_email2">Email Holo</string>
-    <string name="icon_picker_facebook">Facebook</string>
-    <string name="icon_picker_gallery">Gallery</string>
-    <string name="icon_picker_google_small">Google (small)</string>
-    <string name="icon_picker_googleplus">Google Plus</string>
-    <string name="icon_picker_googletalk">Google Talk</string>
-    <string name="icon_picker_maps">Maps</string>
-    <string name="icon_picker_movie">Movie</string>
-    <string name="icon_picker_music">Music</string>
-    <string name="icon_picker_nav_normal">Navigation</string>
-    <string name="icon_picker_phone">Phone</string>
-    <string name="icon_picker_podcast">Podcast</string>
-    <string name="icon_picker_rss">Rss</string>
-    <string name="icon_picker_search">Search</string>
-    <string name="icon_picker_sms">Messaging</string>
-    <string name="icon_picker_twitter">Twitter</string>
+    <string name="dark_settings_title">Dark ReVolt</string>
 
     <!-- AOKP specific sound settings
     <string name="camera_sounds">Camera sounds</string> ** TODO ** -->
     <string name="safe_headset_volume_title">Safe headset volume</string>
 
+    <!-- USB Mass Storage -->
+    <string name="usb_mass_storage_title">Mass storage</string>
+    <string name="usb_mass_storage_summary">Enable USB mass storage</string>
 
     <!-- Profiles settings  -->
     <string name="profiles_settings_title">Profiles</string>
@@ -4693,6 +4768,9 @@
     <string name="profile_appgroups_manage">Application groups</string>
     <string name="profile_appgroup_manage">Manage application group</string>
 
+    <!-- STweaks -->
+    <string name="stweaks_title">Kernel Tweaks</string>
+
     <!-- Profile settings screen, section header for settings related to notification profiles -->
     <string name="profile_settings">Profile settings</string>
     <string name="profile_name">Name</string>
@@ -4734,12 +4812,6 @@
     <string name="profile_lockmode_insecure_summary">Use insecure lock screen</string>
     <string name="profile_lockmode_disabled_summary">Lock screen is disabled</string>
     <string name="profile_airplanemode_title">Airplane mode</string>
-    <string name="profile_airplanemode_default">Default</string>
-    <string name="profile_airplanemode_enabled">Enabled</string>
-    <string name="profile_airplanemode_disabled">Disabled</string>
-    <string name="profile_airplanemode_default_summary">Use system default</string>
-    <string name="profile_airplanemode_enabled_summary">Airplane mode is enabled</string>
-    <string name="profile_airplanemode_disabled_summary">Airplane mode is disabled</string>
     <string name="profile_disable_screen_lock_summary">Disable lock screen security while this profile is active</string>
 
     <string name="vibrator_type_ringer">Calls</string>
@@ -4780,246 +4852,39 @@
     <string name="volume_key_cursor_control_on">Volume up/down moves cursor left/right</string>
     <string name="volume_key_cursor_control_on_reverse">Volume up/down moves cursor right/left</string>
 
-    <!-- Revolt Customs -->
-    <string name="revolt_custom_title">Customizations</string>
+    <!-- Hostname setting -->
+    <string name="device_hostname">Device hostname</string>
 
-    <!-- Dark Revolt TRDS, All by SLIM Roms -->
-    <string name="dark_settings_title">Dark ReVolt</string>
+    <!-- Increasing Ring Volume --> 
+    <string name="increasing_ring_title">Ascending ringtone</string>
+    <string name="checkbox_increasing_ring">Enable</string>
+    <string name="increasing_ring_min_volume_title">Ringing start volume</string>
+    <string name="increasing_ring_volume_notice">Notice:\nAs the start volume is set higher than the ringer volume, the ring tone will be played using the ringer volume.</string>
+    <string name="increasing_ring_interval_title">Increase interval</string>
+    <string name="increasing_ring_interval_eachring">On each ring</string>
+    <string name="increasing_ring_interval_half_second">0.5 seconds</string>
+    <string name="increasing_ring_interval_1second">1 second</string>
+    <string name="increasing_ring_interval_2seconds">2 seconds</string>
+    <string name="increasing_ring_interval_3seconds">3 seconds</string>
+    <string name="increasing_ring_interval_5seconds">5 seconds</string>
+    <string name="increasing_ring_interval_10seconds">10 seconds</string>
 
-    <!-- LCD Density -->
-    <string name="dpi">DPI</string>
-    <string name="lcd_density_title">DPI Changer</string>
-    <string name="lcd_density">DPI Changing</string>
-    <string name="lcd_density_summary">Change the DPI of your device</string>
-    <string name="current_lcd_density">"Current LCD Density: "</string>
-    <string name="lcd_density_wizard">LCD Density Wizard</string>
-    <string name="follow_through_title">Follow through!</string>
-    <string name="follow_through_summary">Make sure you follow the steps one-by-one and complete each one before proceeding to the next.</string>
-    <string name="stock_density_title">1. Change LCD Density to stock value</string>
-    <string name="stock_density_summary">Tablets and older phones use 160. Most phones use 240. Galaxy S3 uses 320 by default.</string>
-    <string name="stock_density_changed_summary">"Density set to: "</string>
-    <string name="reboot_title">2. Reboot!</string>
-    <string name="reboot_summary">Come back here after the reboot and complete the rest of the steps!</string>
-    <string name="clear_market_data_title">3. Clear all relevant market data.</string>
-    <string name="clear_market_data_summary">This step clears data from market, google play services and google services framework.</string>
-    <string name="clear_market_data_cleared">Data successfully cleared</string>
-    <string name="clear_market_data_donot_cleared">"Data couldn't be cleared, please clear it yourself!"</string>
-    <string name="reboot_cleardata_title">4. Reboot!</string>
-    <string name="reboot_cleardata_summary">Come back here after the reboot and complete the rest of the steps!</string>
-    <string name="open_market_title">5. Open Market and hit accept</string>
-    <string name="open_market_summary">Press back when done to return here.</string>
-    <string name="open_market_summary_could_not_open">"Couldn't open the market! If you're sure it's installed, open it yourself from the launcher."</string>
-    <string name="custom_density_title">6. Change density to whatever you like!</string>
-    <string name="custom_density_summary">If you ever have compatibility issues with the market, be sure to return here and repeat the process.</string>
-    <string name="custom_density_summary_invalid">"INVALID DENSITY!"</string>
-    <string name="custom_density">custom</string>
-    <string name="set_custom_density_title">Set custom density</string>
-    <string name="set_custom_density_set">Set</string>
-    <string name="custom_density_dialog_title">"WARNING!"</string>
-    <string name="custom_density_dialog_summary">"Changing your LCD density can cause unexpected app behavior. If you encounter market app incompatibility please return here and restart the process from step 1."</string>
-    <string name="custom_density_dialog_button_got">Got it!</string>
-    <string name="custom_density_dialog_button_reboot">Reboot now</string>
+    <!-- Low Battery Warning -->
+    <string name="pref_low_battery_warning_policy_title">Low battery warning</string>
 
-    <!-- Font Size -->
-    <string name="font_size_title">Font Size</string>
-    <string name="font_size_summary">Control the System Font Size</string>
-
-    <!-- cLock by CyanogenMod -->
-    <string name="lock_clock_title">cLock</string>
-    <string name="lock_clock_summary">Customize CyanogenMod LockClock Widget for Lockscreen</string>
-
-    <!-- Pie controls -->
-    <string name="pie_controls_title">Pie controls</string>
-    <string name="pie_controls_summary">Allows navigation and status report</string>
-    <string name="pie_targets_title">Targets</string>
-    <string name="pie_gravity_title">Pie gravity</string>
-    <string name="pie_gravity_summary">Select the location where Pie will be placed at</string>
-    <string name="pie_gravity_top">Top</string>
-    <string name="pie_gravity_bottom">Bottom</string>
-    <string name="pie_gravity_right">Right</string>
-    <string name="pie_gravity_left">Left</string>
-    <string name="pie_mode_title">Pie style</string>
-    <string name="pie_mode_summary">Manage how animations and status additions will be handled</string>
-    <string name="pie_mode_bare">Bare</string>
-    <string name="pie_mode_quick">Quick</string>
-    <string name="pie_mode_default">Default</string>
-    <string name="pie_mode_slow">Slow</string>
-    <string name="pie_size_title">Pie size</string>
-    <string name="pie_size_summary">Define Pie controls size</string>
-    <string name="pie_size_small">Small</string>
-    <string name="pie_size_default">@string/pie_mode_default</string>
-    <string name="pie_size_large">Large</string>
-    <string name="pie_size_gigantic">Gigantic</string>
-    <string name="pie_color_title">Pie color settings</string>
-    <string name="pie_color_style_title">Pie color style</string>
-    <string name="pie_background_title">Background color</string>
-    <string name="pie_select_title">Selection color</string>
-    <string name="pie_outlines_title">Outlines color</string>
-    <string name="pie_status_clock_title">Clock color</string>
-    <string name="pie_status_title">Status color</string>
-    <string name="pie_chevron_left_title">Left chevron color</string>
-    <string name="pie_chevron_right_title">Right chevron color</string>
-    <string name="pie_juice_title">Battery juice color</string>
-    <string name="pie_button_color_title">Buttons color</string>
-    <string name="pie_gap_title">Pie gap</string>
-    <string name="pie_gap_summary">Adjust the gap that separates Pie elements</string>
-    <string name="pie_gap_none">None</string>
-    <string name="pie_gap_small">Small</string>
-    <string name="pie_gap_big">Big</string>
-    <string name="pie_gap_huge">Huge (Default)</string>
-    <string name="pie_center_title">Center pie</string>
-    <string name="pie_center_summary">If un-checked, pie will appear where your fingers trigger it</string>
-    <string name="pie_trigger_title">Trigger size</string>
-    <string name="pie_trigger_summary">Determine the size of the triggering area that will start pie controls</string>
-    <string name="pie_trigger_small">Small</string>
-    <string name="pie_trigger_normal">Normal (Default)</string>
-    <string name="pie_trigger_big">Big</string>
-    <string name="pie_trigger_huge">Huge</string>
-    <string name="pie_notifications_title">Enable Chevron Targets</string>
-    <string name="pie_notifications_summary">Enabling, will let the Notification panels and QuickSettings active when swipe.</string>
-    <string name="pie_menu_title">Show menu button always</string>
-    <string name="pie_menu_summary">Whether or not the menu button will appear when unneeded</string>
-    <string name="pie_search_title">Show search button</string>
-    <string name="pie_stick_title">Prevent rotation</string>
-    <string name="pie_stick_summary">If checked Pie will stay in place no matter which orientation</string>
-    <string name="pie_search_summary">Access to GoogleNow via Pie</string>
-    <string name="pie_lastapp_title">Last App button</string>
-    <string name="pie_lastapp_summary">Enable last app button on Pie</string>
-    <string name="all_color">Custom Colors</string>
-    <string name="stock_color">Default Colors</string>
-    <string name="pie_restart_launcher_title">Restart Launcher</string>
-    <string name="pie_restart_launcher_summary">Changing screensize can have adverse effects. This option allows your launcher to regain sanity, the cost is a slight blackout (recommended)</string>
-
-    <!-- Color Picker -->
-    <string name="dialog_color_picker">Color Picker</string>
-    <string name="press_color_to_apply">Press on Color to apply</string>
-    <string name="arrow_right">→</string>
-    <string name="arrow_down">↓</string>
-    <string name="hex">Hex:</string>
-    <string name="hex_hint">#FF000000</string>
-    <string name="set">Set</string>
-    <string name="ics_color">!!!</string>
-
-    <!-- STweaks -->
-    <string name="stweaks_title">Kernel Tweaks</string>
+    <!-- Setting checkbox title for root access -->
+    <string name="root_access">Root access</string>
+    <string name="root_access_warning_title">Allow root access?</string>
+    <string name="root_access_warning_message">Allowing applications to request root access is very dangerous and could compromise the security of your system!</string>
+    <string name="root_access_none">Disabled</string>
+    <string name="root_access_apps">Apps only</string>
+    <string name="root_access_adb">ADB only</string>
+    <string name="root_access_all">Apps and ADB</string> 
 
     <!-- Shortcut picker -->
-    <string name="use_custom_app_title">Use custom application</string>
-    <string name="use_custom_app_summary">Use custom application instead of the recent applications dialog</string>
-    <string name="group_applications">Applications</string>
-
-
-    <!-- CyanogenMod: Lockscreen Slider Shortcuts -->
-    <string name="lockscreen_target_info">Drag the slider to targets to assign shortcuts</string>
-    <string name="lockscreen_target_title">Lockscreen Targets</string>
-    <string name="lockscreen_target_summary">View or change custom slider targets</string>
-    <string name="lockscreen_target_reset">Lock screen shortcuts reset to default</string>
-    <string name="lockscreen_target_save">Lock screen shortcuts saved</string>
-    <string name="lockscreen_target_reset_title">Reset</string>
-    <string name="lockscreen_target_reset_message">Delete all user created lock screen shortcuts and restore to default?</string>
-    <string name="lockscreen_target_empty">Empty</string>
-    <string name="lockscreen_target_edit_title">Edit shortcut and icon</string>
-    <string name="lockscreen_target_edit_msg">Select or change the desired application or activity and the associated icon</string>
-
-    <!-- Icon Picker -->
-    <string name="icon_picker_title">Choose icon source</string>
-    <string name="icon_picker_system_icons_title">System icons</string>
-    <string name="icon_picker_gallery_title">Gallery</string>
-    <string name="icon_picker_pack_title">Icon pack</string>
-    
-        <!-- Hardware keys for non navigation bar devices -->
-    <string name="hardware_keys_title">Hardware keys</string>
-    <string name="hardware_keys_bindings_title">Key actions</string>
-    <string name="hardware_keys_enable_custom_title">Enable custom actions</string>
-    <string name="hardware_keys_home_long_press_title">Home key (long press)</string>
-    <string name="hardware_keys_menu_press_title">Menu key</string>
-    <string name="hardware_keys_menu_long_press_title">Menu key (long press)</string>
-    <string name="hardware_keys_assist_press_title">Search key</string>
-    <string name="hardware_keys_assist_long_press_title">Search key (long press)</string>
-    <string name="hardware_keys_app_switch_press_title">App switch key</string>
-    <string name="hardware_keys_app_switch_long_press_title">App switch key (long press)</string>
-    <string name="hardware_keys_show_overflow_title">Show action overflow</string>
-    <string name="hardware_keys_show_overflow_summary">Display the 3-dot overflow menu button within apps</string>
-    <string name="hardware_keys_show_overflow_toast_enable">The action overflow button may not be visible until apps are restarted</string>
-    <string name="hardware_keys_show_overflow_toast_disable">The action overflow button may not be hidden until apps are restarted</string>
-    <string name="hardware_keys_action_nothing">No action</string>
-    <string name="hardware_keys_action_menu">Open/close menu</string>
-    <string name="hardware_keys_action_app_switch">Recent apps switcher</string>
-    <string name="hardware_keys_action_search">Search assistant</string>
-    <string name="hardware_keys_action_voice_search">Voice search</string>
-    <string name="hardware_keys_action_in_app_search">In-app search</string>
-
-    <!-- Powerwidget -->
-    <string name="power_widget">Powerwidget</string>
-    <string name="power_widget_summary">Customize the elements of powerwidget.</string>
-    <string name="title_expanded_widget">Powerwidget</string>
-    <string name="power_widget_buttons">Widget Buttons</string>
-    <string name="power_widget_behavior">Widget Behavior</string>
-    <string name="title_expanded_hide_onchange">Close Drawer (On Change)</string>
-    <string name="title_expanded_hide_indicator">Hide Indicators</string>
-    <string name="title_expanded_hide_scrollbar">Hide Scrollbar</string>
-    <string name="title_widget_picker">Widget Buttons</string>
-    <string name="summary_widget_picker">View or change the displayed buttons</string>
-    <string name="title_widget_order">Button Order</string>
-    <string name="summary_widget_order">View or change the order of the buttons</string>
-    <string name="title_buttons">Buttons</string>
-    <string name="title_toggle_wifi">Wi-Fi</string>
-    <string name="title_toggle_bluetooth">Bluetooth</string>
-    <string name="title_toggle_gps">GPS</string>
-    <string name="title_toggle_sound">Sound</string>
-    <string name="title_toggle_brightness">Brightness</string>
-    <string name="title_toggle_sync">Sync</string>
-    <string name="title_toggle_wifiap">Wi-Fi AP</string>
-    <string name="title_toggle_screentimeout">Screen Timeout</string>
-    <string name="title_toggle_mobiledata">Mobile Data</string>
-    <string name="title_toggle_lockscreen">Lockscreen</string>
-    <string name="title_toggle_networkmode">Network Mode</string>
-    <string name="title_toggle_autorotate">Orientation</string>
-    <string name="title_toggle_airplane">Airplane Mode</string>
-    <string name="title_toggle_flashlight">LED Flashlight</string>
-    <string name="title_toggle_sleep">Go To Sleep</string>
-    <string name="title_toggle_media_play_pause">Play/Pause Music</string>
-    <string name="title_toggle_media_previous">Previous Music Track</string>
-    <string name="title_toggle_media_next">Next Music Track</string>
-    <string name="title_toggle_lte">LTE</string>
-    <string name="title_toggle_wimax">WiMAX</string>
-    <string name="title_button_modes">Button Modes</string>
-    <string name="pref_brightness_mode_title">Brightness Modes</string>
-    <string name="pref_brightness_mode_summary">View or change the brightness modes</string>
-    <string name="cm_brightness_mode_auto">Auto</string>
-    <string name="cm_brightness_mode_dim">Dim</string>
-    <string name="pref_network_mode_title">Network Modes</string>
-    <string name="pref_screentimeout_mode_title">Screen Timeout Modes</string>
-    <string name="pref_ring_mode_title">Sound Modes</string>
-    <string name="pref_ring_mode_summary">View or change the sound button modes</string>
-    <string name="cm_sound_mode_silent">Silent</string>
-    <string name="cm_sound_mode_vibrate">Vibrate</string>
-    <string name="cm_sound_mode_sound">Sound</string>
-    <string name="cm_sound_mode_soundVibrate">Sound &amp; Vibrate</string>
-    <string name="pref_flash_mode_title">Flash Mode</string>
-    <string name="expanded_haptic_feedback_title">Haptic Feedback</string>
-    <string name="power_widget_additional_options_cat">Additional options</string>
-    <string name="right_clock">Right clock</string>
-    <string name="center_clock">Center clock</string>
-    <string name="brightness_location_title">Brightness slider location</string>
-    <string name="brightness_slider_top">On top</string>
-    <string name="brightness_slider_bottom">On the bottom</string>
-    <string name="brightness_slider_none">Don\'t Show</string>
-
-    <!-- Paranoid Settings -->
-    <string name="hybrid_settings">Hybrid Settings</string>
-
-    <!-- Customization Titles -->
-    <string name="general_ui_header">General UI</string>
-    <string name="clock_header">Clock</string>
-    <string name="lockscreen_header">Lock Screen</string>
-    <string name="statusbar_header">StatusBar &amp; Notification Drawer</string>
-
-    <!-- System Interface settings -->
-    <string name="system_settings_title">System</string>
-    <string name="system_interface_title">System interface</string>
-
-    <!-- Shortcut picker -->
+    <string name="picker_activities">Activities</string>
+    <string name="select_custom_app_title">Select custom application</string>
+    <string name="select_custom_activity_title">Select custom activity</string>
     <string name="use_custom_app_title">Use custom application</string>
     <string name="use_custom_app_summary">Use custom application instead of the recent applications dialog</string>
     <string name="group_applications">Applications</string>
@@ -5090,33 +4955,82 @@
     <string name="notification_shortcuts_icon_picker_twitter">Twitter</string>
     <string name="notification_shortcuts_icon_picker_unlock">Unlock</string>
 
-   <!-- Lockscreen See Through (PA) -->
-   <string name="lockscreen_seethrough">Lockscreen See through</string>
-   <string name="lockscreen_seethrough_summary">Allows you to see your Home Screen behind the lock screen, also can view running application.</string>
+    <!-- Icon Picker -->
+    <string name="icon_picker_title">Choose icon source</string>
+    <string name="icon_picker_system_icons_title">System icons</string>
+    <string name="icon_picker_choose_icon_title">Choose icon</string>
+    <string name="icon_picker_gallery_title">Gallery</string>
+    <string name="icon_picker_pack_title">Icon pack</string>
 
-    <!-- Custom lock screen background (CM) -->
+    <!-- System Interface settings -->
+    <string name="system_settings_title">System</string>
+    <string name="system_interface_title">System interface</string> 
+
+    <!-- Powerwidget -->
+    <string name="power_widget">Powerwidget</string>
+    <string name="power_widget_summary">Customize the elements of powerwidget.</string>
+    <string name="title_expanded_widget">Powerwidget</string>
+    <string name="power_widget_buttons">Widget Buttons</string>
+    <string name="power_widget_behavior">Widget Behavior</string>
+    <string name="title_expanded_hide_onchange">Close Drawer (On Change)</string>
+    <string name="title_expanded_hide_indicator">Hide Indicators</string>
+    <string name="title_expanded_hide_scrollbar">Hide Scrollbar</string>
+    <string name="title_widget_picker">Widget Buttons</string>
+    <string name="summary_widget_picker">View or change the displayed buttons</string>
+    <string name="title_widget_order">Button Order</string>
+    <string name="summary_widget_order">View or change the order of the buttons</string>
+    <string name="title_buttons">Buttons</string>
+    <string name="title_toggle_wifi">Wi-Fi</string>
+    <string name="title_toggle_bluetooth">Bluetooth</string>
+    <string name="title_toggle_gps">GPS</string>
+    <string name="title_toggle_sound">Sound</string>
+    <string name="title_toggle_brightness">Brightness</string>
+    <string name="title_toggle_sync">Sync</string>
+    <string name="title_toggle_wifiap">Wi-Fi AP</string>
+    <string name="title_toggle_screentimeout">Screen Timeout</string>
+    <string name="title_toggle_mobiledata">Mobile Data</string>
+    <string name="title_toggle_lockscreen">Lockscreen</string>
+    <string name="title_toggle_networkmode">Network Mode</string>
+    <string name="title_toggle_autorotate">Orientation</string>
+    <string name="title_toggle_airplane">Airplane Mode</string>
+    <string name="title_toggle_flashlight">LED Flashlight</string>
+    <string name="title_toggle_sleep">Go To Sleep</string>
+    <string name="title_toggle_media_play_pause">Play/Pause Music</string>
+    <string name="title_toggle_media_previous">Previous Music Track</string>
+    <string name="title_toggle_media_next">Next Music Track</string>
+    <string name="title_toggle_lte">LTE</string>
+    <string name="title_toggle_wimax">WiMAX</string>
+    <string name="title_button_modes">Button Modes</string>
+    <string name="pref_brightness_mode_title">Brightness Modes</string>
+    <string name="pref_brightness_mode_summary">View or change the brightness modes</string>
+    <string name="cm_brightness_mode_auto">Auto</string>
+    <string name="cm_brightness_mode_dim">Dim</string>
+    <string name="pref_network_mode_title">Network Modes</string>
+    <string name="pref_screentimeout_mode_title">Screen Timeout Modes</string>
+    <string name="pref_ring_mode_title">Sound Modes</string>
+    <string name="pref_ring_mode_summary">View or change the sound button modes</string>
+    <string name="cm_sound_mode_silent">Silent</string>
+    <string name="cm_sound_mode_vibrate">Vibrate</string>
+    <string name="cm_sound_mode_sound">Sound</string>
+    <string name="cm_sound_mode_soundVibrate">Sound &amp; Vibrate</string>
+    <string name="pref_flash_mode_title">Flash Mode</string>
+    <string name="expanded_haptic_feedback_title">Haptic Feedback</string>
+    <string name="power_widget_additional_options_cat">Additional options</string>
+    <string name="right_clock">Right clock</string>
+    <string name="center_clock">Center clock</string>
+    <string name="brightness_location_title">Brightness slider location</string>
+    <string name="brightness_slider_top">On top</string>
+    <string name="brightness_slider_bottom">On the bottom</string>
+    <string name="brightness_slider_none">Don\'t Show</string>
+
+    <!-- Custom lock screen background -->
     <string name="lockscreen_custom_background_title">Background</string>
     <string name="lockscreen_custom_background_dialog_title">Choose color</string>
-    <string name="lockscreen_background_result_successful">Background changed Successfully</string>
-    <string name="lockscreen_background_result_not_successful">Background Could not be changed</string>
+    <string name="lockscreen_background_result_successful">Background changed successfully</string>
+    <string name="lockscreen_background_result_not_successful">Background could not be changed</string>
     <string name="lockscreen_background_color_fill">Color fill</string>
     <string name="lockscreen_background_custom_image">Custom image</string>
     <string name="lockscreen_background_default_wallpaper">Default wallpaper</string>
-
-    <!-- Permissions Management -->
-    <string name="permissions_settings_title">Permissions</string>
-
-    <!-- Category title for power sound notification specific Settings.
-         [CHAR LIMIT=40] -->
-    <string name="power_notifications_category_title">Power sounds</string>
-    <!-- Sound settings, power notifications enable/disable, setting check box label -->
-    <string name="power_notifications_enable_title">Enable</string>
-    <!-- Sound settings, power notifications vibrate enable/disable, setting check box label -->
-    <string name="power_notifications_vibrate_title">Vibrate</string>
-    <!-- Sound settings, power notifications ringtone selection, preference label -->
-    <string name="power_notifications_ringtone_title">Notification sound</string>
-    <!-- Sound settings, power notifications label for ringtone == none -->
-    <string name="power_notifications_ringtone_silent">Silent</string>
 
     <!-- Automatic brightness customization -->
     <string name="light_sensor_current_value">Current light sensor value: <xliff:g id="light_level">%d</xliff:g> lux</string>
@@ -5173,4 +5087,18 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="auto_brightness_sensitivity_veryhigh">Very high</string>
 
     <string name="ok">OK</string>
+
+    <!-- Category title for power sound notification specific Settings.
+         [CHAR LIMIT=40] -->
+    <string name="power_notifications_category_title">Power sounds</string>
+    <!-- Sound settings, power notifications enable/disable, setting check box label -->
+    <string name="power_notifications_enable_title">Enable</string>
+    <!-- Sound settings, power notifications vibrate enable/disable, setting check box label -->
+    <string name="power_notifications_vibrate_title">Vibrate</string>
+    <!-- Sound settings, power notifications ringtone selection, preference label -->
+    <string name="power_notifications_ringtone_title">Notification sound</string>
+    <!-- Sound settings, power notifications label for ringtone == none -->
+    <string name="power_notifications_ringtone_silent">Silent</string>
+    <!-- Permissions Management -->
+    <string name="permissions_settings_title">Permissions</string>
 </resources>

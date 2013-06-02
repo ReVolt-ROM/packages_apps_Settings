@@ -130,4 +130,3 @@ public class ProfilesList extends SettingsPreferenceFragment implements
         }
     }
 }
-

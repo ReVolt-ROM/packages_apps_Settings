@@ -20,7 +20,7 @@
     <PreferenceScreen
             android:key="pie_color"
             android:title="@string/pie_color_title"
-            android:fragment="com.android.settings.paranoid.PieColor" />
+            android:fragment="com.android.settings.paranoid.PieColor" /> 
 
     <PreferenceCategory
         android:key="pie_control"
@@ -63,6 +63,14 @@
             android:summary="@string/pie_mode_summary"
             android:entries="@array/entries_pie_mode"
             android:entryValues="@array/values_pie_mode" />
+
+        <ListPreference
+            android:key="pie_angle"
+            android:dialogTitle="@string/pie_angle_title"
+            android:title="@string/pie_angle_title"
+            android:summary="@string/pie_angle_summary"
+            android:entries="@array/entries_pie_angle"
+            android:entryValues="@array/values_pie_angle" />
 
         <ListPreference
             android:key="pie_gap"

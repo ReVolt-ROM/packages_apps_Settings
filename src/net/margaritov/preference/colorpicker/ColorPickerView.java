@@ -951,4 +951,3 @@ public class ColorPickerView extends View {
         return mAlphaSliderText;
     }
 }
-

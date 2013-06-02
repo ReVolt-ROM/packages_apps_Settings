@@ -73,4 +73,3 @@ public class ImageListPreference extends ListPreference {
         super.onPrepareDialogBuilder(builder);
     }
 }
-

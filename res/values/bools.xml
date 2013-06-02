@@ -37,4 +37,7 @@
 
     <!-- Add option to add CDMA tools -->
     <bool name="is_sprint_device">false</bool>
+
+    <!-- Whether device has hardware buttons -->
+    <bool name="has_hardware_buttons">true</bool>
 </resources>

@@ -97,7 +97,7 @@
         <!-- Only system/su can open this activity -->
         <!-- This activity will then call the MultitaskSuRequestActivity to create a new task stack -->
         <activity
-            android:name=".cyanogenmod.superuser.RequestActivity"
+            android:name=".rv.superuser.RequestActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/superuser"
             android:launchMode="singleTask"
@@ -110,7 +110,7 @@
         <!-- This is activity is started in multiuser mode when the user invoking su -->
         <!-- is not the device owner (user id 0). -->
         <activity
-            android:name=".cyanogenmod.superuser.NotifyActivity"
+            android:name=".rv.superuser.NotifyActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/superuser"
             android:launchMode="singleTask"
@@ -122,7 +122,7 @@
 
         <!-- Multiple instances of this activity can be running for multiple su requests -->
         <activity
-            android:name=".cyanogenmod.superuser.MultitaskSuRequestActivity"
+            android:name=".rv.superuser.MultitaskSuRequestActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -132,9 +132,8 @@
             android:theme="@style/RequestThemeDark" />
 
         <receiver
-            android:name=".cyanogenmod.superuser.SuReceiver"
+            android:name=".rv.superuser.SuReceiver"
             android:permission="android.permission.REPORT_SUPERUSER" />
-
 
         <!-- Settings -->
 
@@ -317,11 +316,9 @@
             </intent-filter>
         </activity-alias>
 
-
         <activity android:name="Settings$ApnSettingsActivity" android:label="@string/apn_settings"
                   android:configChanges="orientation|keyboardHidden|screenSize"
                   android:launchMode="singleTask" android:clearTaskOnLaunch="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.settings.APN_SETTINGS" />
@@ -1565,15 +1562,19 @@
                 android:resource="@id/display_settings" />
         </activity>
 
-        <activity android:name="DPI" />
+        <!-- Customizations -->
+        <activity android:name="Revolt" />
 
-        <!-- Paranoid PIE UI -->
+        <!-- About -->
+        <activity android:name=".rv.About" />
+
+        <!-- Pie -->
         <activity android:name=".paranoid.Pie" />
         <activity android:name=".paranoid.PieColor" />
 
-        <activity android:name=".cyanogenmod.PowerWidget" />
-
         <!-- CyanogenMod activities Start -->
+
+        <activity android:name=".cyanogenmod.PowerWidget" />
 
         <activity android:name=".profiles.ProfilesSettings" />
 
@@ -1596,6 +1597,20 @@
                 <category android:name="android.intent.category.DEFAULT"/>
                 <data android:mimeType="cm/profile" />
             </intent-filter>
+        </activity>
+
+        <activity android:name="Settings$QuietHoursSettingsActivity"
+                android:label="@string/quiet_hours_title"
+                android:taskAffinity=""
+                android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.QuietHours" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                android:resource="@id/sound_settings" />
         </activity>
 
         <!-- Notification Shortcuts -->
@@ -1622,29 +1637,14 @@
                 android:label="@string/revolt_custom_title"
                 android:taskAffinity=""
                 android:excludeFromRecents="true">
-        </activity>
-
-        <activity android:name=".profiles.NFCProfile"
-                android:theme="@android:style/Theme.NoDisplay">
-            <intent-filter>
-                <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <data android:mimeType="cm/profile" />
-            </intent-filter>
-        </activity>
-
-        <activity android:name="Settings$QuietHoursSettingsActivity"
-                android:label="@string/quiet_hours_title"
-                android:taskAffinity=""
-                android:excludeFromRecents="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.QuietHours" />
+                android:value="com.android.settings.Revolt" />
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
-                android:resource="@id/sound_settings" />
+                android:resource="@id/revolt_customizations" />
         </activity>
 
         <activity android:name="Settings$PieActivity"
@@ -1659,6 +1659,20 @@
                 android:value="com.android.settings.paranoid.Pie" />
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
                 android:resource="@id/revolt_customizations" />
+        </activity>
+
+        <activity android:name="Settings$ProfilesSettingsActivity"
+                android:label="@string/profiles_settings_title"
+                android:taskAffinity=""
+                android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.profiles.ProfilesSettings" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                android:resource="@id/profiles_settings" />
         </activity>
 
         <receiver android:name=".widget.SettingsAppWidgetProvider"
@@ -1699,14 +1713,6 @@
                 <action android:name="android.bluetooth.intent.DISCOVERABLE_TIMEOUT" />
             </intent-filter>
         </receiver>
-
-        <activity android:name="Revolt" />
-
-        <activity android:name=".rv.About" />
-
-        <activity android:name=".rv.Shortcuts" />
-
-        <activity android:name=".cyanogenmod.LockscreenButtons" />
 
         <!-- Watch for ContactsContract.Profile changes and update the user's photo.  -->
         <receiver android:name=".users.ProfileUpdateReceiver">

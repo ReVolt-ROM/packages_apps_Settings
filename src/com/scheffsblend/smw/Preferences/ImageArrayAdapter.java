@@ -61,4 +61,3 @@ public class ImageArrayAdapter extends ArrayAdapter<CharSequence> {
         return row;
     }
 }
-

@@ -190,7 +190,7 @@ public class DevelopmentSettings extends PreferenceFragment
     private CheckBoxPreference mShowAllANRs;
 
     private ListPreference mRootAccess;
-    private Object mSelectedRootValue;
+    private Object mSelectedRootValue; 
 
     private final ArrayList<Preference> mAllPrefs = new ArrayList<Preference>();
     private final ArrayList<CheckBoxPreference> mResetCbPrefs
@@ -302,7 +302,7 @@ public class DevelopmentSettings extends PreferenceFragment
 
         mRootAccess = (ListPreference) findPreference(ROOT_ACCESS_KEY);
         mRootAccess.setOnPreferenceChangeListener(this);
-        removeRootOptionsIfRequired();
+        removeRootOptionsIfRequired(); 
     }
 
     private void disableForUser(Preference pref) {
@@ -329,7 +329,7 @@ public class DevelopmentSettings extends PreferenceFragment
                 getPreferenceScreen().removePreference(mRootAccess);
             }
         }
-    }
+    } 
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
@@ -340,7 +340,7 @@ public class DevelopmentSettings extends PreferenceFragment
 
         final int padding = activity.getResources().getDimensionPixelSize(
                 R.dimen.action_bar_switch_padding);
-        mEnabledSwitch.setPadding(0, 0, padding, 0);
+        mEnabledSwitch.setPaddingRelative(0, 0, padding, 0);
         mEnabledSwitch.setOnCheckedChangeListener(this);
     }
 
@@ -509,7 +509,7 @@ public class DevelopmentSettings extends PreferenceFragment
                     Settings.Secure.ADB_ENABLED, 1);
         }
         updateRootAccessOptions();
-    }
+    } 
 
     private void updateHdcpValues() {
         int index = 1; // Defaults to drm-only. Needs to match with R.array.hdcp_checking_values
@@ -1206,7 +1206,7 @@ public class DevelopmentSettings extends PreferenceFragment
         if (mRootDialog != null) {
             mRootDialog.dismiss();
             mRootDialog = null;
-        }
+        } 
     }
 
     public void onClick(DialogInterface dialog, int which) {
@@ -1239,7 +1239,7 @@ public class DevelopmentSettings extends PreferenceFragment
             } else {
                 // Reset the option
                 writeRootAccessOptions("0");
-            }
+            } 
         }
     }
 

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.aokpstats;
+package com.android.settings.revoltstats;
 
 import android.os.Bundle;
 import android.preference.Preference;

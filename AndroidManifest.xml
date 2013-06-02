@@ -1543,7 +1543,7 @@
                 android:configChanges="orientation|keyboardHidden|screenSize"
                 android:clearTaskOnLaunch="true">
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.aokpstats.AnonymousStats" />
+                android:value="com.android.settings.revoltstats.AnonymousStats" />
         </activity>
 
         <activity android:name="Settings$DreamSettingsActivity"
@@ -1692,7 +1692,7 @@
             <meta-data android:name="android.appwidget.provider" android:resource="@xml/appwidget_info" />
         </receiver>
         
-        <receiver android:name=".aokpstats.ReportingServiceManager"
+        <receiver android:name=".revoltstats.ReportingServiceManager"
             android:enabled="true"
             android:exported="false"
             android:label="ReportingServiceManager">
@@ -1705,7 +1705,7 @@
         <service android:label="ReportingService"
             android:enabled="true"
             android:exported="false"
-            android:name=".aokpstats.ReportingService">
+            android:name=".revoltstats.ReportingService">
         </service>
 
         <receiver android:name=".bluetooth.BluetoothDiscoverableTimeoutReceiver">

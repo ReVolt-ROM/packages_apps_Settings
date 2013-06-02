@@ -45,12 +45,12 @@
                     android:targetClass="com.android.settings.deviceinfo.Status" />
         </PreferenceScreen>
         
-        <!-- Anonymous statistics - (AOKPStats) -->
+        <!-- Anonymous statistics - (REVOLTStats) -->
         <PreferenceScreen
-            android:key="aokpstats"
+            android:key="revoltstats"
             android:title="@string/anonymous_statistics_title"
             android:summary="@string/anonymous_statistics_summary"
-            android:fragment="com.android.settings.aokpstats.AnonymousStats" >
+            android:fragment="com.android.settings.revoltstats.AnonymousStats" >
         </PreferenceScreen>
 
         <!-- Legal Information -->

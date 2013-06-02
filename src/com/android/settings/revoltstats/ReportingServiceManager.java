@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.aokpstats;
+package com.android.settings.revoltstats;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
@@ -42,7 +42,7 @@ public class ReportingServiceManager extends BroadcastReceiver {
     }
 
     protected static void setAlarm (Context ctx) {
-        SharedPreferences prefs = ctx.getSharedPreferences("AOKPStats", 0);
+        SharedPreferences prefs = ctx.getSharedPreferences("REVOLTStats", 0);
         prefs.edit().putBoolean(AnonymousStats.ANONYMOUS_ALARM_SET, false).apply();
         boolean optedIn = prefs.getBoolean(AnonymousStats.ANONYMOUS_OPT_IN, true);
         boolean firstBoot = prefs.getBoolean(AnonymousStats.ANONYMOUS_FIRST_BOOT, true);
@@ -72,7 +72,7 @@ public class ReportingServiceManager extends BroadcastReceiver {
         ConnectivityManager cm = (ConnectivityManager) ctx.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = cm.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
-            SharedPreferences prefs = ctx.getSharedPreferences("AOKPStats", 0);
+            SharedPreferences prefs = ctx.getSharedPreferences("REVOLTStats", 0);
             long lastSynced = prefs.getLong(AnonymousStats.ANONYMOUS_LAST_CHECKED, 0);
             boolean firstBoot = prefs.getBoolean(AnonymousStats.ANONYMOUS_FIRST_BOOT, true);
             boolean optedIn = prefs.getBoolean(AnonymousStats.ANONYMOUS_OPT_IN, true);
@@ -87,7 +87,7 @@ public class ReportingServiceManager extends BroadcastReceiver {
             } else if (System.currentTimeMillis() - lastSynced >= tFrame) {
                 shouldSync = true;
             } else if (!repVer.equals(Utilities.getModVersion())) {
-                Log.i("AOKPStats", "AOKP version changed!");
+                Log.i("REVOLTStats", "ReVolt version changed!");
                 shouldSync = true;
             }
             if ((shouldSync && optedIn) || firstBoot) {

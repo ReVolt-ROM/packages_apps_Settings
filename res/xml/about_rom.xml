@@ -28,9 +28,10 @@
 
 		<com.android.settings.widgets.DeveloperPreference
             android:title="Johnhany97"
-            rv:nameDev="Johnhany97"
+            rv:nameDev="John Hany"
             rv:twitterHandle="jhany97"
-            rv:donateLink="@string/donate_johnhany97" />
+            rv:donateLink="@string/donate_johnhany97"
+            rv:githubLink="@string/github_johnhany97" />
 
         </PreferenceCategory>
 
@@ -59,7 +60,7 @@
 		<com.android.settings.widgets.DeveloperPreference
             android:title="TheWierd"
             rv:nameDev="Bjorn N."
-            rv:twitterHandle="" />
+            rv:googleLink="@string/google_TheWierd" />
 
 		<com.android.settings.widgets.DeveloperPreference
             android:title="Hypnautikz"

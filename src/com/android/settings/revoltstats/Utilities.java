@@ -67,11 +67,23 @@ public class Utilities {
     }
 
     public static String getDevice() {
-        return SystemProperties.get("ro.product.device");
+        String device = SystemProperties.get("ro.revolt.device");
+        return device == null ? SystemProperties.get("ro.product.device") : device;
     }
 
     public static String getModVersion() {
-        return SystemProperties.get("ro.revolt.version");
+        String version = SystemProperties.get("ro.revolt.version");
+        String branch = SystemProperties.get("ro.revolt.branch");
+        if (version == null || branch == null || !version.startsWith("ReVolt") || version.contains("Unofficial")) {
+            return "KANG";
+        } else {
+            String[] splitVer = version.split("-");
+            if (version.contains("Nightly")) {
+                return "Nightly" + "-" + splitVer[4]; // exact milestone version
+            } else {
+                return "Stable" + "-" + splitVer[3]; // nightly || unofficial
+            }
+        }
     }
 
     public static String digest(String input) {

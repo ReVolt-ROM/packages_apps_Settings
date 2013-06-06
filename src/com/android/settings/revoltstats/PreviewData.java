@@ -47,3 +47,4 @@ public class PreviewData extends SettingsPreferenceFragment {
         prefSet.findPreference(CARRIER).setSummary(Utilities.getCarrier(context));
     }
 }
+

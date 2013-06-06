@@ -23,6 +23,14 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.IBinder;
 import android.util.Log;
+
+import org.apache.http.NameValuePair;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -58,9 +66,9 @@ public class ReportingService extends Service {
         return Service.START_REDELIVER_INTENT;
     }
 
-    private class StatsUploadTask extends AsyncTask<Void, Void, Void> {
+    private class StatsUploadTask extends AsyncTask<Void, Void, Boolean> {
         @Override
-        protected Void doInBackground(Void... params) {
+        protected Boolean doInBackground(Void... params) {
             String deviceId = Utilities.getUniqueID(getApplicationContext());
             String deviceName = Utilities.getDevice();
             String deviceVersion = Utilities.getModVersion();
@@ -90,13 +98,24 @@ public class ReportingService extends Service {
         }
 
         @Override
-        protected void onPostExecute(Void result) {
+        protected void onPostExecute(Boolean result) {
             final Context context = ReportingService.this;
-            final SharedPreferences prefs = AnonymousStats.getPreferences(context);
-            prefs.edit().putLong(AnonymousStats.ANONYMOUS_LAST_CHECKED,
-                    System.currentTimeMillis()).apply();
-            ReportingServiceManager.setAlarm(context, 0);
+            long interval;
+
+            if (result) {
+                final SharedPreferences prefs = AnonymousStats.getPreferences(context);
+                prefs.edit().putLong(AnonymousStats.ANONYMOUS_LAST_CHECKED,
+                        System.currentTimeMillis()).apply();
+                // use set interval
+                interval = 0;
+            } else {
+                // error, try again in 3 hours
+                interval = 3L * 60L * 60L * 1000L;
+            }
+
+            ReportingServiceManager.setAlarm(context, interval);
             stopSelf();
         }
     }
 }
+

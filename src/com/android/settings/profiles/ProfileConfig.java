@@ -28,9 +28,11 @@ import android.app.ProfileManager;
 import android.app.SilentModeSettings;
 import android.app.StreamSettings;
 import android.app.admin.DevicePolicyManager;
+import android.bluetooth.BluetoothAdapter;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.media.AudioManager;
 import android.net.wimax.WimaxHelper;
 import android.nfc.NfcAdapter;
@@ -91,15 +93,24 @@ public class ProfileConfig extends SettingsPreferenceFragment
         };
 
         mConnections = new ArrayList<ConnectionItem>();
-        mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_MOBILEDATA, getString(R.string.toggleData)));
-        mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_BLUETOOTH, getString(R.string.toggleBluetooth)));
+        if (BluetoothAdapter.getDefaultAdapter() != null) {
+            mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_BLUETOOTH, getString(R.string.toggleBluetooth)));
+        }
         mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_GPS, getString(R.string.toggleGPS)));
         mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_WIFI, getString(R.string.toggleWifi)));
         mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_SYNC, getString(R.string.toggleSync)));
-        mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_WIFIAP, getString(R.string.toggleWifiAp)));
-        mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_NFC, getString(R.string.toggleNfc)));
+
+        PackageManager pm = getActivity().getPackageManager();
+        boolean isMobileData = pm.hasSystemFeature(PackageManager.FEATURE_TELEPHONY);
+        if (isMobileData) {
+            mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_MOBILEDATA, getString(R.string.toggleData)));
+            mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_WIFIAP, getString(R.string.toggleWifiAp)));
+        }
         if (WimaxHelper.isWimaxSupported(getActivity())) {
             mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_WIMAX, getString(R.string.toggleWimax)));
+        }
+        if (NfcAdapter.getDefaultAdapter(getActivity()) != null) {
+            mConnections.add(new ConnectionItem(ConnectionSettings.PROFILE_CONNECTION_NFC, getString(R.string.toggleNfc)));
         }
 
         addPreferencesFromResource(R.xml.profile_config);
@@ -440,4 +451,3 @@ public class ProfileConfig extends SettingsPreferenceFragment
         }
     }
 }
-

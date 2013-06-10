@@ -15,11 +15,7 @@
 -->
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-        android:title="@string/Halo_settings">
-
-    <PreferenceCategory
-        android:key="Halo_status"
-        android:title="@string/tool_bar_status_header">
+        android:title="@string/halo_settings">
 
          <CheckBoxPreference
             android:key="quick_pulldown"
@@ -46,7 +42,5 @@
             android:title="@string/halo_reversed_title"
             android:summary="@string/halo_reversed_summary"
             android:defaultValue="true" />
-
-    </PreferenceCategory>
 
 </PreferenceScreen>

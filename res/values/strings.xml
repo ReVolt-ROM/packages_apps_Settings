@@ -4584,6 +4584,9 @@
     <string name="tool_bar_navigation_header">Navigation bar</string>
 
     <!-- HALO -->
+    <string name="halo_settings">HALO settings</string>
+    <string name="halo_title">HALO</string>
+    <string name="halo_summary">customize HALO</string>
     <string name="halo_hide_title">Hide HALO after activity</string>
     <string name="halo_hide_summary">HALO will appear for incoming tasks and scroll out of sight after a while</string>
     <string name="halo_reversed_title">Reverse HALO gestures</string>

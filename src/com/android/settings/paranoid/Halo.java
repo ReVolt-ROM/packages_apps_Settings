@@ -26,6 +26,7 @@ import android.content.DialogInterface.OnClickListener;
 import android.content.DialogInterface.OnMultiChoiceClickListener;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.ServiceManager;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -52,14 +53,15 @@ public class Halo extends SettingsPreferenceFragment
     private INotificationManager mNotificationManager;
     private int mAllowedLocations;
 
-    protected Handler mHandler;
-    private SettingsObserver mSettingsObserver;
+    private static final String KEY_HALO_STATE = "halo_state";
+    private static final String KEY_HALO_HIDE = "halo_hide";
+    private static final String KEY_HALO_REVERSED = "halo_reversed"; 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.holo_settings);
+        addPreferencesFromResource(R.xml.halo_settings);
         PreferenceScreen prefSet = getPreferenceScreen();
 
         mContext = getActivity();
@@ -78,6 +80,7 @@ public class Halo extends SettingsPreferenceFragment
         mHaloReversed = (CheckBoxPreference) prefSet.findPreference(KEY_HALO_REVERSED);
         mHaloReversed.setChecked(Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.HALO_REVERSED, 1) == 1);
+        }
 
     private boolean isHaloPolicyBlack() {
         try {
@@ -113,17 +116,5 @@ public class Halo extends SettingsPreferenceFragment
             return true;
         }
         return false;
-    }
-
-    class SettingsObserver extends ContentObserver {
-        SettingsObserver(Handler handler) {
-            super(handler);
-            observe();
-        }
-
-        @Override
-        public void onChange(boolean selfChange) {
-            Helpers.restartSystemUI();
-        }
     }
 }

@@ -4403,6 +4403,9 @@
 
     <!-- Label for are-notifications-enabled checkbox in app details [CHAR LIMIT=20] -->
     <string name="app_notifications_switch_label">Show notifications</string>
+    <!-- Label for are-notifications-enabled checkbox in app details [CHAR LIMIT=20] -->
+    <string name="app_halo_label_black">Blacklist HALO notifications</string>
+    <string name="app_halo_label_white">Whitelist HALO notifications</string>
 
     <!--  Help URLs for some screens. Not specified here. Specified in product overlays --><skip/>
     <!-- Help menu label [CHAR LIMIT=20] -->
@@ -4447,6 +4450,267 @@
     <string name="cell_broadcast_settings">Cell broadcasts</string>
     <!-- Cell Broadcast settings description [CHAR LIMIT=100] -->
     <string name="cell_broadcast_settings_summary">Select the types of emergency alerts to display.</string>
+    
+    <!-- ======================================================================================= -->
+    <!-- PARANOIDANDROID STUFF -->
+    <!-- ======================================================================================= -->
+
+    <!-- Sound settings screen -->
+    <string name="link_volume_ringtones">Link ringtone &amp; notifications volumes</string>
+    <string name="link_volume_mutes">Silent mode affects notifications</string>
+    <string name="volume_overlay_title">Volume panel style</string>
+    <string name="volume_overlay_single">Single</string>
+    <string name="volume_overlay_expandable">Expandable</string>
+    <string name="volume_overlay_expanded">Expanded</string>
+    <string name="volume_overlay_none">None</string>
+    <string name="volume_ring_only_description">Ringtone</string>
+    <string name="notification_sound_limiter_title">Notification sound limit</string>
+    <string name="notification_sound_limiter_summary">Sets the allowed delay between incoming notifications</string>
+    <string name="notification_sound_default_time">Default</string>
+    <string name="volume_keys_control_ring_stream">Volume keys control ringtone volume</string>
+
+    <!-- Display settings screen, notification light settings -->
+    <string name="notification_light_general_title">General</string>
+    <string name="notification_light_applist_title">Applications</string>
+    <string name="notification_light_use_custom">Use custom values</string>
+    <string name="notification_light_add">Add</string>
+    <string name="notification_light_reset">Reset</string>
+    <string name="notification_light_enabled">Enabled</string>
+    <string name="notification_light_disabled">Disabled</string>
+    <string name="notification_light_default_value">Default</string>
+    <string name="choose_app">Choose application</string>
+
+    <!-- Notification light dialogs -->
+    <string name="edit_light_settings">Edit light settings</string>
+    <string name="pulse_speed_title">Pulse length and speed</string>
+    <string name="picker_arrow" translatable="false">→</string>
+    <string name="default_time">Normal</string>
+    <string name="custom_time">Custom</string>
+    <string name="dialog_delete_title">Delete</string>
+    <string name="dialog_delete_message">Remove selected item?</string>
+    <string name="dialog_test">Test</string>
+    <string name="dialog_test_message">Turn the screen off to see the selected notification in action or dismiss this dialog to stop the test</string>
+    <string name="dialog_test_button">Dismiss</string>
+
+    <!-- Values for the notification light pulse spinners -->
+    <string name="pulse_length_always_on">Always on</string>
+    <string name="pulse_length_very_short">Very short</string>
+    <string name="pulse_length_short">Short</string>
+    <string name="pulse_length_normal">Normal</string>
+    <string name="pulse_length_long">Long</string>
+    <string name="pulse_length_very_long">Very long</string>
+    <string name="pulse_speed_very_fast">Very fast</string>
+    <string name="pulse_speed_fast">Fast</string>
+    <string name="pulse_speed_normal">Normal</string>
+    <string name="pulse_speed_slow">Slow</string>
+    <string name="pulse_speed_very_slow">Very slow</string>
+
+    <!-- Battery light settings  -->
+    <string name="battery_light_title">Battery light</string>
+    <string name="battery_low_pulse_title">Pulse if battery low</string>
+    <string name="battery_light_list_title">Colors</string>
+    <string name="battery_light_low_color_title">Battery low</string>
+    <string name="battery_light_medium_color_title">Charging</string>
+    <string name="battery_light_full_color_title">Fully charged</string>
+    
+    <!-- Customization main menu category heading [CHAR LIMIT=40] -->
+    <string name="header_category_customization">Customization</string>
+
+    <!-- Lock screen sub menu [CHAR LIMIT=30] -->
+    <string name="lock_screen_settings">Lock screen</string>
+    <!-- Allow rotation -->
+    <string name="allow_rotate_title">Allow rotation</string>
+    <string name="allow_rotate_summary">Enables landscape mode on lock screen</string>
+    <!-- Quick Unlock -->
+    <string name="allow_quick_unlock_title">Quick Unlock</string>
+    <string name="allow_quick_unlock_summary">Enables quick unlock for lock screen</string>
+    <!-- Lock screen see through -->
+    <string name="see_through_title">See through</string>
+    <string name="see_through_summary">Allows to see the application behind the lock screen</string>
+    <!-- Maximize widgets -->
+    <string name="maximize_widgets_title">Maximize widgets</string>
+    <string name="maximize_widgets_summary">Show widgets maximized and the unlock minimized when the screen is turned on</string>
+    <!-- Home screen widgets -->
+    <string name="home_screen_widgets_title">Home screen widgets</string>
+    <string name="home_screen_widgets_summary">Allows widgets from the home screen to be added on lock screen</string>
+    <string name="home_screen_widgets_warning_title">This may be dangerous!</string>
+    <string name="home_screen_widgets_warning">Allowing home screen widgets to be added on lock screen, may lead to security issues, do you want to continue?</string>
+    <!-- Shortcuts -->
+    <string name="lock_screen_shortcuts_title">Shortcuts</string>
+    <string name="lock_screen_shortcuts_summary">View or change custom lock screen shortcuts</string>
+    <string name="lock_screen_shortcuts_add">@string/notification_light_add</string>
+    <string name="lock_screen_shortcuts_reset">Reset</string>
+    <string name="lock_screen_shortcuts_reset_message">Reset lock screen shortcuts?</string>
+    <string name="lock_screen_shortcuts_limit">Only 6 shorcuts are allowed!</string>
+    <string name="icon_picker_type">Select icon type:</string>
+    <string name="icon_default">Default</string>
+    <string name="icon_presets">Presets</string>
+    <string name="icon_custom">Custom</string>
+    <string name="icon_picker_choose_icon_title">Choose icon</string>
+    <string name="icon_picker_alarm">Alarm</string>
+    <string name="icon_picker_browser">Browser</string>
+    <string name="icon_picker_calendar">Calendar</string>
+    <string name="icon_picker_camera">Camera</string>
+    <string name="icon_picker_email">Email</string>
+    <string name="icon_picker_email2">Email Holo</string>
+    <string name="icon_picker_facebook">Facebook</string>
+    <string name="icon_picker_gallery">Gallery</string>
+    <string name="icon_picker_google_small">Google (small)</string>
+    <string name="icon_picker_googleplus">Google Plus</string>
+    <string name="icon_picker_googletalk">Google Talk</string>
+    <string name="icon_picker_maps">Maps</string>
+    <string name="icon_picker_movie">Movie</string>
+    <string name="icon_picker_music">Music</string>
+    <string name="icon_picker_nav">Navigation</string>
+    <string name="icon_picker_phone">Phone</string>
+    <string name="icon_picker_podcast">Podcast</string>
+    <string name="icon_picker_rss">Rss</string>
+    <string name="icon_picker_sms">Messaging</string>
+    <string name="icon_picker_twitter">Twitter</string>
+
+    <!-- Volume sub settings -->
+    <string name="volume_button_setting_title">Volume buttons settings</string>
+    <!-- Volume music controls -->
+    <string name="volbtn_music_controls_title">Volume rocker music controls</string>
+    <string name="volbtn_music_controls_summary">When screen off, long-pressing the volume rockers will seek music tracks</string>
+
+    <!-- Wakeup options -->
+    <string name="pref_volume_wake_title">Volume rocker wake</string>
+    <string name="pref_volume_wake_summary">Pressing the volume rocker will wake your device</string>
+
+    <!-- Bars sub menu [CHAR LIMIT=30] -->
+    <string name="tool_bar_settings">Toolbars</string>
+    <string name="tool_bar_status_header">Status bar</string>
+    <string name="tool_bar_navigation_header">Navigation bar</string>
+
+    <!-- HALO -->
+    <string name="halo_hide_title">Hide HALO after activity</string>
+    <string name="halo_hide_summary">HALO will appear for incoming tasks and scroll out of sight after a while</string>
+    <string name="halo_reversed_title">Reverse HALO gestures</string>
+    <string name="halo_reversed_summary">Applies tasking or dragging to the double-tap-swipe gesture</string>
+    <string name="halo_state_title">HALO policy</string>
+    <string name="halo_state_summary">For black/white-listing notifications pinging through HALO</string>
+    <string name="halo_state_black">Black list</string>
+    <string name="halo_state_white">White list</string>
+
+    <!-- Quick pulldown -->
+    <string name="quick_pulldown_title">Quick pulldown</string>
+    <string name="quick_pulldown_summary">Edge of status bar will pull down Quick Settings</string>
+    <!-- Show clock -->
+    <string name="show_clock_title">Show clock</string>
+    <!-- Circle battery -->
+    <string name="circle_battery_title">Circle battery</string>
+    <!-- AM/PM style -->
+    <string name="am_pm_style_title">AM/PM style</string>
+    <string name="status_bar_size_normal">Normal</string>
+    <string name="status_bar_size_small">Small</string>
+    <string name="status_bar_hidden">Hidden (default)</string>
+    <string name="status_bar_am_pm_info">24-hour clock is enabled</string>
+    <!-- Status bar notification count -->
+    <string name="status_bar_notif_count_title">Notification count</string>
+    <string name="status_bar_notif_count_summary">Display number of pending notifications on the status bar</string>
+    <!-- Split menu -->
+    <string name="navigation_bar_tabui_menu_title">Split menu button</string>
+    <string name="navigation_bar_tabui_menu_summary">Show separate menu button instead of merging it to recents button</string>
+    <!-- Status bar notification limit -->
+    <string name="status_bar_max_notifications_title">Limit of notifications</string>
+    <string name="status_bar_max_notifications_summary">Select the limit of notification icons to be shown on status bar. Applies only to portrait orientation</string>
+    <!-- Do not disturb -->
+    <string name="status_bar_donotdisturb_title">Do not disturb</string>
+    <string name="status_bar_donotdisturb_summary">Disable ticker animation for incoming notifications</string>
+
+    <!-- Quick settings panel  -->
+    <string name="quick_settings_panel_title">Quick Settings panel</string>
+    <string name="quick_settings_title">Quick Settings</string>
+    <string name="title_static_tiles">Static tiles</string>
+    <string name="tile_picker_title">Tiles and layout</string>
+    <string name="tile_picker_summary">View, select or change the layout of the displayed tiles</string>
+    <string name="tile_choose_title">Choose a tile</string>
+
+    <string name="title_tile_airplane">Airplane mode</string>
+    <string name="title_tile_battery">Battery stats</string>
+    <string name="title_tile_bluetooth">Bluetooth</string>
+    <string name="title_tile_brightness">Brightness</string>
+    <string name="title_tile_sleep">Go to sleep</string>
+    <string name="title_tile_gps">GPS</string>
+    <string name="title_tile_torch">Torch</string>
+    <string name="title_tile_lockscreen">Lock screen</string>
+    <string name="title_tile_lte">LTE</string>
+    <string name="title_tile_mobiledata">Mobile data</string>
+    <string name="title_tile_profile">Profile</string>
+    <string name="title_tile_autorotate">Orientation</string>
+    <string name="title_tile_settings">Settings</string>
+    <string name="title_tile_sound">Sound</string>
+    <string name="title_tile_sync">Sync</string>
+    <string name="title_tile_wifiap">Wi-Fi AP</string>
+    <string name="title_tile_wifi">Wi-Fi</string>
+    <string name="title_tile_wimax">WiMAX</string>
+    <string name="title_tile_user">User switcher</string>
+    <string name="title_tile_networkmode">Network mode</string>
+    <string name="title_tile_nfc">NFC</string>
+    <string name="title_tile_screen_timeout">Screen timeout</string>
+    <string name="title_tile_usb_tether">USB Tether</string>
+    <string name="title_tile_quiet_hours">Quiet hours</string>
+    <string name="title_tile_desktop_mode">Pie</string>
+    <string name="title_tile_hybrid">@string/hybrid_settings</string>
+    <string name="title_tile_volume">Volume</string>
+
+    <string name="title_dynamic_tiles">Dynamic tiles</string>
+    <string name="dynamic_tiles_note_title">Note</string>
+    <string name="dynamic_tiles_note_summary">Dynamic tiles are not always visible and will only show up if triggered by a system event</string>
+    <string name="title_dynamic_alarm">Alarm clock</string>
+    <string name="title_dynamic_bugreport">Bug report</string>
+    <string name="title_dynamic_ime">IME changer</string>
+    <string name="title_dynamic_usbtether">@string/title_tile_usb_tether</string>
+    <string name="title_dynamic_wifi">Wi-Fi display</string>
+
+    <string name="title_general">General</string>
+    <string name="title_quick_pulldown">Quick pulldown</string>
+    <string name="summary_quick_pulldown">%1$s edge of the status bar pulls down Quick Settings</string>
+    <string name="quick_pulldown_summary_left">Left</string>
+    <string name="quick_pulldown_summary_right">Right</string>
+    <string name="quick_pulldown_off">Off</string>
+    <string name="quick_pulldown_left">Left</string>
+    <string name="quick_pulldown_right">Right</string>
+    <string name="title_collapse_panel">Auto close panel</string>
+    <string name="summary_collapse_panel">Close the Quick Settings panel upon toggle</string>
+
+    <!-- Reset tiles -->
+    <string name="tiles_add_title">Add</string>
+    <string name="tiles_reset_title">Reset</string>
+    <string name="tiles_reset_message">Restore the default displayed tiles and layout?</string>
+
+    <!-- Hardware keys -->
+    <string name="hardware_keys_title">Hardware keys</string>
+    <string name="hardware_keys_bindings_title">Key actions</string>
+    <string name="hardware_keys_enable_custom_title">Enable custom actions</string>
+    <string name="hardware_keys_home_long_press_title">Home key (long press)</string>
+    <string name="hardware_keys_menu_press_title">Menu key</string>
+    <string name="hardware_keys_menu_long_press_title">Menu key (long press)</string>
+    <string name="hardware_keys_assist_press_title">Search key</string>
+    <string name="hardware_keys_assist_long_press_title">Search key (long press)</string>
+    <string name="hardware_keys_app_switch_press_title">App switch key</string>
+    <string name="hardware_keys_app_switch_long_press_title">App switch key (long press)</string>
+    <string name="hardware_keys_show_overflow_title">Show action overflow</string>
+    <string name="hardware_keys_show_overflow_summary">Display the 3-dot overflow menu button within apps</string>
+    <string name="hardware_keys_show_overflow_toast_enable">The action overflow button may not be visible until apps are restarted</string>
+    <string name="hardware_keys_show_overflow_toast_disable">The action overflow button may not be hidden until apps are restarted</string>
+    <string name="hardware_keys_action_nothing">No action</string>
+    <string name="hardware_keys_action_menu">Open/close menu</string>
+    <string name="hardware_keys_action_app_switch">Recent apps switcher</string>
+    <string name="hardware_keys_action_search">Search assistant</string>
+    <string name="hardware_keys_action_voice_search">Voice search</string>
+    <string name="hardware_keys_action_in_app_search">In-app search</string>
+    <string name="additional_options_title">Additional options</string>
+
+    <string name="pref_ring_mode_title">Sound modes</string>
+    <string name="pref_ring_mode_summary">View or change the Sound button modes</string>
+    <string name="pref_network_mode_title">Network modes</string>
+    <string name="pref_screentimeout_mode_title">Screen timeout modes</string>
+    <string name="cm_sound_mode_silent">Silent</string>
+    <string name="cm_sound_mode_vibrate">Vibrate</string>
+    <string name="cm_sound_mode_sound">Sound</string>
+    <string name="cm_sound_mode_soundVibrate">Sound &amp; Vibrate</string>
 
     <!-- Pie controls -->
     <string name="pie_controls_title">Pie controls</string>

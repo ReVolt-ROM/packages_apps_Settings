@@ -10,6 +10,13 @@
         android:key="general_ui"
         android:title="@string/general_ui_header">
 
+  <!-- Halo UI by ParanoidAndroid -->
+  <PreferenceScreen
+        android:key="halo_control"
+        android:fragment="com.android.settings.paranoid.Halo"
+        android:title="@string/halo_title"
+        android:summary="@string/halo_summary" />
+
   <!-- Pie UI by ParanoidAndroid -->
   <PreferenceScreen
         android:key="pie_control"

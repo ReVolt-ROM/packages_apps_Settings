@@ -15,7 +15,7 @@
 -->
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-        android:title="@string/halo_settings">
+        android:title="@string/halo_settings_title">
 
         <ListPreference
             android:key="halo_state"

@@ -15,8 +15,8 @@
         android:key="halo_control"
         android:icon="@drawable/ic_settings_halo"
         android:fragment="com.android.settings.paranoid.Halo"
-        android:title="@string/halo_title"
-        android:summary="@string/halo_summary" />
+        android:title="@string/halo_settings_title"
+        android:summary="@string/halo_settings_summary" />
 
   <!-- Pie UI by ParanoidAndroid -->
   <PreferenceScreen

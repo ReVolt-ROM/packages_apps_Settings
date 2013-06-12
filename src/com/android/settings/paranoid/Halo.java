@@ -16,6 +16,7 @@
 
 package com.android.settings.paranoid;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.INotificationManager;
 import android.content.Context;
@@ -30,6 +31,7 @@ import android.os.ServiceManager;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
+import android.preference.PreferenceActivity;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 import android.preference.Preference.OnPreferenceClickListener;
@@ -51,7 +53,6 @@ public class Halo extends SettingsPreferenceFragment
 
     private Context mContext;
     private INotificationManager mNotificationManager;
-    private int mAllowedLocations;
 
     private static final String KEY_HALO_STATE = "halo_state";
     private static final String KEY_HALO_HIDE = "halo_hide";

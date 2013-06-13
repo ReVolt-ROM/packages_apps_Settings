@@ -4585,24 +4585,6 @@
     <string name="tool_bar_status_header">Status bar</string>
     <string name="tool_bar_navigation_header">Navigation bar</string>
 
-    <!-- HALO -->
-    <string name="halo_enabled_title">Enable HALO</string>
-    <string name="halo_enabled_summary">Completely enable or disable HALO</string>
-    <string name="halo_settings_title">Halo configuration</string>
-    <string name="halo_settings_summary">Configure Halo</string>
-    <string name="halo_hide_title">Hide Halo after activity</string>
-    <string name="halo_hide_summary">Halo will appear for incoming tasks and scroll out of sight after a while</string>
-    <string name="halo_reversed_title">Reverse Halo gestures</string>
-    <string name="halo_reversed_summary">Applies tasking or dragging to the double-tap-swipe gesture</string>
-    <string name="halo_state_title">Halo policy</string>
-    <string name="halo_state_summary">For black/white-listing notifications pinging through Halo</string>
-    <string name="halo_state_black">Black list</string>
-    <string name="halo_state_white">White list</string>
-    <string name="halo_pause_title">Halo pause active app</string>
-    <string name="halo_pause_summary">When opening an app with Halo the underlying app will get paused (enabled by default on low memory devices)</string>
-    <string name="halo_app_title">Halo)))</string>
-    <string name="halo_app_summary">Control Which apps to stay in notifications to be able to access always through Halo</string>
-
     <!-- Quick pulldown -->
     <string name="quick_pulldown_title">Quick pulldown</string>
     <string name="quick_pulldown_summary">Edge of status bar will pull down Quick Settings</string>
@@ -4897,6 +4879,24 @@
     <string name="revolt_site_title">ReVolt WebSite</string>
     <string name="revolt_site_summary">Find Latest News and Updates from the Official ReVolt Website.</string>
     <string name="title_about">About ReVolt</string>
+
+    <!-- HALO -->
+    <string name="halo_enabled_title">Enable HALO</string>
+    <string name="halo_enabled_summary">Completely enable or disable HALO</string>
+    <string name="halo_settings_title">Halo configuration</string>
+    <string name="halo_settings_summary">Configure Halo</string>
+    <string name="halo_hide_title">Hide Halo after activity</string>
+    <string name="halo_hide_summary">Halo will appear for incoming tasks and scroll out of sight after a while</string>
+    <string name="halo_reversed_title">Reverse HALO</string>
+    <string name="halo_reversed_summary">Applies for task switching and HALO moving gestures</string> 
+    <string name="halo_state_title">Halo policy</string>
+    <string name="halo_state_summary">Enables black/white listing notifications shown in HALO</string>
+    <string name="halo_state_black">Black list</string>
+    <string name="halo_state_white">White list</string>
+    <string name="halo_pause_title">Pause active app</string>
+    <string name="halo_pause_summary">When opening an app with HALO the underlying app will get paused (enabled by default on low RAM devices)</string>
+    <string name="halo_app_title">Halo)))</string>
+    <string name="halo_app_summary">Control Which apps to stay in notifications to be able to access always through Halo</string>
 
     <!-- Hardware keys -->
     <string name="hardware_keys_title">Hardware keys</string>

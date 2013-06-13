@@ -14,8 +14,9 @@
      limitations under the License.
 -->
 
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-        android:title="@string/halo_settings_title">
+<PreferenceScreen 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/halo_settings_title">
 
         <ListPreference
             android:key="halo_state"
@@ -41,5 +42,14 @@
             android:key="halo_pause"
             android:title="@string/halo_pause_title"
             android:summary="@string/halo_pause_summary" />
+
+        <PreferenceScreen
+            android:key="halo_app"
+            android:title="@string/halo_app_title"
+            android:summary="@string/halo_app_summary">
+            <intent android:action="android.intent.action.MAIN"
+                    android:targetPackage="com.paranoid.halo"
+                    android:targetClass="com.paranoid.halo.MainActivity" />
+        </PreferenceScreen>
 
 </PreferenceScreen>

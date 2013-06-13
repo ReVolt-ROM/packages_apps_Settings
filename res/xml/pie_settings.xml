@@ -17,11 +17,6 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         android:title="@string/pie_controls_title">
 
-    <PreferenceScreen
-            android:key="pie_color"
-            android:title="@string/pie_color_title"
-            android:fragment="com.android.settings.paranoid.PieColor" /> 
-
     <PreferenceCategory
         android:key="pie_control"
         android:title="@string/pie_controls_title" >

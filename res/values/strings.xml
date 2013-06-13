@@ -2181,6 +2181,8 @@
     <string name="menu_restore">Reset to default</string>
     <!-- APNs screen toast message to inform reset default APN settings is completed -->
     <string name="restore_default_apn_completed">Reset default APN settings completed.</string>
+    <!-- Delete apn confirmation dialog message -->
+    <string name="confirm_delete_apn">The APN will be deleted.</string> 
 
     <!-- Master Clear -->
     <!-- SD card & phone storage settings screen, setting option name under Internal phone storage heading -->
@@ -4584,18 +4586,20 @@
     <string name="tool_bar_navigation_header">Navigation bar</string>
 
     <!-- HALO -->
-    <string name="halo_settings_title">HALO configuration</string>
-    <string name="halo_settings_summary">Configure HALO</string>
-    <string name="halo_hide_title">Hide HALO after activity</string>
-    <string name="halo_hide_summary">HALO will appear for incoming tasks and scroll out of sight after a while</string>
-    <string name="halo_reversed_title">Reverse HALO gestures</string>
+    <string name="halo_settings_title">Halo configuration</string>
+    <string name="halo_settings_summary">Configure Halo</string>
+    <string name="halo_hide_title">Hide Halo after activity</string>
+    <string name="halo_hide_summary">Halo will appear for incoming tasks and scroll out of sight after a while</string>
+    <string name="halo_reversed_title">Reverse Halo gestures</string>
     <string name="halo_reversed_summary">Applies tasking or dragging to the double-tap-swipe gesture</string>
-    <string name="halo_state_title">HALO policy</string>
-    <string name="halo_state_summary">For black/white-listing notifications pinging through HALO</string>
+    <string name="halo_state_title">Halo policy</string>
+    <string name="halo_state_summary">For black/white-listing notifications pinging through Halo</string>
     <string name="halo_state_black">Black list</string>
     <string name="halo_state_white">White list</string>
-    <string name="halo_pause_title">HALO pause active app</string>
-    <string name="halo_pause_summary">When opening an app with HALO the underlying app will get paused (enabled by default on low memory devices)</string>
+    <string name="halo_pause_title">Halo pause active app</string>
+    <string name="halo_pause_summary">When opening an app with Halo the underlying app will get paused (enabled by default on low memory devices)</string>
+    <string name="halo_app_title">Halo)))</string>
+    <string name="halo_app_summary">Control Which apps to stay in notifications to be able to access always through Halo</string>
 
     <!-- Quick pulldown -->
     <string name="quick_pulldown_title">Quick pulldown</string>
@@ -4738,17 +4742,6 @@
     <string name="pie_size_default">@string/pie_mode_default</string>
     <string name="pie_size_large">Large</string>
     <string name="pie_size_gigantic">Gigantic</string>
-    <string name="pie_color_title">Pie color settings</string>
-    <string name="pie_color_style_title">Pie color style</string>
-    <string name="pie_background_title">Background color</string>
-    <string name="pie_select_title">Selection color</string>
-    <string name="pie_outlines_title">Outlines color</string>
-    <string name="pie_status_clock_title">Clock color</string>
-    <string name="pie_status_title">Status color</string>
-    <string name="pie_chevron_left_title">Left chevron color</string>
-    <string name="pie_chevron_right_title">Right chevron color</string>
-    <string name="pie_juice_title">Battery juice color</string>
-    <string name="pie_button_color_title">Buttons color</string>
     <string name="pie_angle_title">Pie angle</string>
     <string name="pie_angle_summary">Adjust the angle of pie\'s egdes from the attachment</string>
     <string name="pie_angle_none">None (old)</string>

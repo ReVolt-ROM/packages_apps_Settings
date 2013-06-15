@@ -52,6 +52,11 @@
             android:summary="@string/halo_pause_summary"
             android:dependency="halo_enabled" />
 
+     <CheckBoxPreference
+         android:key="halo_style"
+         android:title="@string/halo_style_title"
+         android:summary="@string/halo_style_summary" />
+
         <PreferenceScreen
             android:key="halo_app"
             android:title="@string/halo_app_title"

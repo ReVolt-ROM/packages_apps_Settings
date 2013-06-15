@@ -4897,6 +4897,8 @@
     <string name="halo_app_title">Halo)))</string>
     <string name="halo_app_summary">Control Which apps to stay in notifications to be able to access always through Halo</string>
     <string name="halo_pause_summary">When opening an app with HALO the underlying app will get paused</string>
+    <string name="halo_style_title">HALO minimal style</string>
+    <string name="halo_style_summary">Different style of HALO when applying this to settings</string>
 
     <!-- Hardware keys -->
     <string name="hardware_keys_title">Hardware keys</string>

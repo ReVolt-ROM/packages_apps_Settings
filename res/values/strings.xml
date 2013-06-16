@@ -4900,13 +4900,14 @@
     <string name="halo_style_title">HALO style</string>
     <string name="halo_style_summary">Different style of HALO bubbles</string>
 
-    <string name="halo_black">Black</string>
-    <string name="halo_blue">Blue</string>
+    <string name="halo_blue">Blue (default)</string>
     <string name="halo_green">Green</string>
     <string name="halo_white">White</string>
-    <string name="halo_blue_min">Blue minimal</string>
-    <string name="halo_green_min">Green minimal</string>
-    <string name="halo_white_min">White minimal</string>
+    <string name="halo_purple">Purple</string>
+    <string name="halo_red">Red</string>
+    <string name="halo_pink">Pink</string>
+    <string name="halo_yellow">Yellow</string>
+    <string name="halo_black">Black</string>
 
     <!-- Hardware keys -->
     <string name="hardware_keys_title">Hardware keys</string>

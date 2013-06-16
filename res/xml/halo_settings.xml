@@ -18,12 +18,19 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/halo_settings_title">
 
+        <CheckBoxPreference
+            android:key="halo_enabled"
+            android:title="@string/halo_enabled_title"
+            android:summary="@string/halo_enabled_summary"
+            android:defaultValue="false" />
+
         <ListPreference
             android:key="halo_state"
             android:dialogTitle="@string/halo_state_title"
             android:title="@string/halo_state_title"
             android:summary="@string/halo_state_summary"
             android:entries="@array/entries_halo_state"
+            android:dependency="halo_enabled"
             android:entryValues="@array/values_halo_state" />
 
         <CheckBoxPreference
@@ -36,17 +43,20 @@
             android:key="halo_reversed"
             android:title="@string/halo_reversed_title"
             android:summary="@string/halo_reversed_summary"
+            android:dependency="halo_enabled"
             android:defaultValue="true" />
 
         <CheckBoxPreference
             android:key="halo_pause"
             android:title="@string/halo_pause_title"
-            android:summary="@string/halo_pause_summary" />
+            android:summary="@string/halo_pause_summary"
+            android:dependency="halo_enabled" />
 
         <PreferenceScreen
             android:key="halo_app"
             android:title="@string/halo_app_title"
-            android:summary="@string/halo_app_summary">
+            android:summary="@string/halo_app_summary"
+            android:dependency="halo_enabled" >
             <intent android:action="android.intent.action.MAIN"
                     android:targetPackage="com.paranoid.halo"
                     android:targetClass="com.paranoid.halo.MainActivity" />

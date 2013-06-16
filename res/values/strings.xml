@@ -4586,6 +4586,8 @@
     <string name="tool_bar_navigation_header">Navigation bar</string>
 
     <!-- HALO -->
+    <string name="halo_enabled_title">Enable HALO</string>
+    <string name="halo_enabled_summary">Completely enable or disable HALO</string>
     <string name="halo_settings_title">Halo configuration</string>
     <string name="halo_settings_summary">Configure Halo</string>
     <string name="halo_hide_title">Hide Halo after activity</string>

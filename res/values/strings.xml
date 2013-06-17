@@ -4406,8 +4406,8 @@
     <!-- Label for are-notifications-enabled checkbox in app details [CHAR LIMIT=20] -->
     <string name="app_notifications_switch_label">Show notifications</string>
     <!-- Label for are-notifications-enabled checkbox in app details [CHAR LIMIT=20] -->
-    <string name="app_halo_label_black">Blacklist HALO notifications</string>
-    <string name="app_halo_label_white">Whitelist HALO notifications</string>
+    <string name="app_halo_label_black">Blacklist from HALO</string>
+    <string name="app_halo_label_white">Whitelist from HALO</string>
 
     <!--  Help URLs for some screens. Not specified here. Specified in product overlays --><skip/>
     <!-- Help menu label [CHAR LIMIT=20] -->
@@ -4726,9 +4726,9 @@
     <string name="pie_size_default">@string/pie_mode_default</string>
     <string name="pie_size_large">Large</string>
     <string name="pie_size_gigantic">Gigantic</string>
-    <string name="pie_angle_title">Pie angle</string>
-    <string name="pie_angle_summary">Adjust the angle of pie\'s egdes from the attachment</string>
-    <string name="pie_angle_none">None (old)</string>
+    <string name="pie_angle_title">Bottom angle</string>
+    <string name="pie_angle_summary">Adjust the angle between screen\'s egde and Pie</string>
+    <string name="pie_angle_none">None</string>
     <string name="pie_angle_small">Small</string>
     <string name="pie_angle_big">Normal (default)</string>
     <string name="pie_angle_huge">Big</string>
@@ -4883,14 +4883,14 @@
     <!-- HALO -->
     <string name="halo_enabled_title">Enable HALO</string>
     <string name="halo_enabled_summary">Completely enable or disable HALO</string>
-    <string name="halo_settings_title">Halo configuration</string>
-    <string name="halo_settings_summary">Configure Halo</string>
+    <string name="halo_settings_title">HALO</string>
+    <string name="halo_settings_summary">Configure Halo options</string>
     <string name="halo_hide_title">Hide Halo after activity</string>
     <string name="halo_hide_summary">Halo will appear for incoming tasks and scroll out of sight after a while</string>
     <string name="halo_reversed_title">Reverse HALO</string>
-    <string name="halo_reversed_summary">Applies for task switching and HALO moving gestures</string> 
+    <string name="halo_reversed_summary">Applies for task switching and moving gestures</string> 
     <string name="halo_state_title">Halo policy</string>
-    <string name="halo_state_summary">Enables black/white listing notifications shown in HALO</string>
+    <string name="halo_state_summary">Enables black/white listing notifications shown</string>
     <string name="halo_state_black">Black list</string>
     <string name="halo_state_white">White list</string>
     <string name="halo_pause_title">Pause active app</string>

@@ -77,11 +77,11 @@ public class Utilities {
         if (version == null || branch == null || !version.startsWith("ReVolt") || version.contains("Unofficial")) {
             return "KANG";
         } else {
-            String[] splitVer = version.split("-");
+            String[] splitVer = version.split("_");
             if (version.contains("Nightly")) {
-                return "Nightly" + "-" + splitVer[4]; // exact milestone version
+                return branch + "-" + splitVer[3]; // exact milestone version
             } else {
-                return "Stable" + "-" + splitVer[3]; // nightly || unofficial
+                return branch + "-" + splitVer[2]; // nightly || unofficial
             }
         }
     }

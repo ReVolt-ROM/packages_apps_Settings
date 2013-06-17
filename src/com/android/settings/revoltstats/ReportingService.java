@@ -35,7 +35,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.google.analytics.tracking.android.GoogleAnalytics;
-import com.google.analytics.tracking.android.ModelFields;
 import com.google.analytics.tracking.android.Tracker;
 
 import com.android.settings.R;
@@ -90,11 +89,10 @@ public class ReportingService extends Service {
             Tracker tracker = ga.getTracker(getString(R.string.ga_trackingId));
             tracker.setAppName("REVOLT");
             tracker.setAppVersion(deviceVersion);
-            tracker.set(ModelFields.CLIENT_ID, deviceId);
+            tracker.setCustomDimension(1, deviceId);
             tracker.setCustomDimension(2, deviceName);
             tracker.setCustomMetric(1, 1L);
             tracker.sendEvent("checkin", deviceName, deviceVersion, null);
-            tracker.sendView(deviceName);
             tracker.close();
             return true;
         }
@@ -120,4 +118,3 @@ public class ReportingService extends Service {
         }
     }
 }
-

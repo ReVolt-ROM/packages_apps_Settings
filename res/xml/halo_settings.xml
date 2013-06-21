@@ -37,6 +37,7 @@
             android:key="halo_hide"
             android:title="@string/halo_hide_title"
             android:summary="@string/halo_hide_summary"
+            android:dependency="halo_enabled"
             android:defaultValue="false" />
 
         <CheckBoxPreference
@@ -52,12 +53,13 @@
             android:summary="@string/halo_pause_summary"
             android:dependency="halo_enabled" />
 
-     <ListPreference
-         android:key="halo_style"
-         android:title="@string/halo_style_title"
-         android:summary="@string/halo_style_summary"
-         android:entries="@array/entries_halo_style"
-         android:entryValues="@array/values_halo_style" />
+         <ListPreference
+            android:key="halo_style"
+            android:title="@string/halo_style_title"
+            android:summary="@string/halo_style_summary"
+            android:entries="@array/entries_halo_style"
+            android:dependency="halo_enabled"
+            android:entryValues="@array/values_halo_style" />
 
         <PreferenceScreen
             android:key="halo_app"

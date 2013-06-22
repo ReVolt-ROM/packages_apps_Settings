@@ -1348,6 +1348,7 @@
         <item>@string/halo_purple</item>
         <item>@string/halo_red</item>
         <item>@string/halo_yellow</item>
+        <item>@string/halo_pink</item>
         <item>@string/halo_black</item>
     </string-array>
 
@@ -1359,5 +1360,6 @@
         <item>4</item>
         <item>5</item>
         <item>6</item>
+        <item>7</item>
     </string-array>
 </resources>

@@ -94,12 +94,8 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private static final String HOME_UNLOCK_PREF = "home_unlock";
     private static final String LOCKSCREEN_QUICK_UNLOCK_CONTROL = "quick_unlock_control";
     private static final String KEY_VIBRATE_PREF = "lockscreen_vibrate";
-<<<<<<< HEAD
-=======
-    private static final String KEY_SMS_SECURITY_CHECK_PREF = "sms_security_check_limit";
     private static final String KEY_PRIVACY_GUARD_DEFAULT = "privacy_guard_default";
     private static final String KEY_APP_SECURITY_CATEGORY = "app_security";
->>>>>>> 855a3fc... settings: Privacy Guard support
 
     DevicePolicyManager mDPM;
 
@@ -132,11 +128,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private CheckBoxPreference mMenuUnlock;
     private CheckBoxPreference mHomeUnlock;
     private CheckBoxPreference mQuickUnlockScreen;
-<<<<<<< HEAD
-=======
-    private ListPreference mSmsSecurityCheck;
     private CheckBoxPreference mPrivacyGuardDefault;
->>>>>>> 855a3fc... settings: Privacy Guard support
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -404,16 +396,6 @@ public class SecuritySettings extends SettingsPreferenceFragment
                     mToggleVerifyApps.setEnabled(false);
                 }
             }
-<<<<<<< HEAD
-        }
-        boolean isTelephony = pm.hasSystemFeature(PackageManager.FEATURE_TELEPHONY);
-        if (isTelephony) {
-            addPreferencesFromResource(R.xml.security_settings_app_cyanogenmod);
-            mSmsSecurityCheck = (ListPreference) root.findPreference(KEY_SMS_SECURITY_CHECK_PREF);
-            mSmsSecurityCheck.setOnPreferenceChangeListener(this);
-            int smsSecurityCheck = Integer.valueOf(mSmsSecurityCheck.getValue());
-            updateSmsSecuritySummary(smsSecurityCheck);
-=======
 
             // App security settings
             addPreferencesFromResource(R.xml.security_settings_app_cyanogenmod);
@@ -436,7 +418,6 @@ public class SecuritySettings extends SettingsPreferenceFragment
             } catch (SettingNotFoundException e) {
                 mPrivacyGuardDefault.setChecked(false);
             }
->>>>>>> 855a3fc... settings: Privacy Guard support
          }
         return root;
     }

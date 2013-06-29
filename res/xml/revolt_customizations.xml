@@ -135,7 +135,7 @@
         android:key="status_bar_traffic"
         android:title="@string/show_network_speed"
         android:summary="@string/show_network_speed_summary"
-        android:defaultValue="true" />
+        android:defaultValue="false" />
 
  </PreferenceCategory>
 

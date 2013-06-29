@@ -93,7 +93,7 @@ public class Revolt extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.revolt_customizations);
         PreferenceScreen prefs = getPreferenceScreen();
 
-        mStatusBarTraffic = (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_TRAFFIC);
+        mStatusBarTraffic = (CheckBoxPreference) prefs.findPreference(STATUS_BAR_TRAFFIC);
 
         mSeeThrough = (CheckBoxPreference) findPreference(KEY_SEE_TRHOUGH);
         mSeeThrough.setChecked(Settings.System.getInt(resolver,

@@ -56,10 +56,10 @@
 
  <!-- /PreferenceCategory -->
 
- <!-- Lock Screen Header >
+ <!-- Lock Screen Header -->
  <PreferenceCategory
         android:key="lock_screen"
-        android:title="@string/lockscreen_header" --> 
+        android:title="@string/lockscreen_header"> 
 
   <!-- See Through (By PA) -->
   <CheckBoxPreference
@@ -88,7 +88,7 @@
         <extra android:name="cm_security" android:value="true" />
   </PreferenceScreen -->
 
- <!-- /PreferenceCategory -->
+ </PreferenceCategory>
 
  <!-- Clock Header >
  <PreferenceCategory
@@ -130,21 +130,28 @@
         android:summary="@string/power_widget_summary"
         android:fragment="com.android.settings.cyanogenmod.PowerWidget" />
 
+  <!-- Network Speed Indicator -->
+  <CheckBoxPreference
+        android:key="status_bar_traffic"
+        android:title="@string/show_network_speed"
+        android:summary="@string/show_network_speed_summary"
+        android:defaultValue="false" />
+
  </PreferenceCategory>
 
- <!-- Hardware Keys >
+ <!-- Hardware Keys -->
  <PreferenceCategory
         android:key="hardware_keys"
-        android:title="@string/hardware_keys_header" -->
+        android:title="@string/hardware_keys_header">
 
-  <!-- Hardware Keys Re-Mapping (By CM) >
+  <!-- Hardware Keys Re-Mapping (By CM) -->
   <PreferenceScreen
         android:key="hardware_keys"
         android:icon="@drawable/ic_hardware_keys"
         android:fragment="com.android.settings.cyanogenmod.HardwareKeys"
         android:title="@string/hardware_keys_title"
-        android:summary="@string/hardware_keys_summary" / -->
+        android:summary="@string/hardware_keys_summary" />
 
- <!-- /PreferenceCategory -->
+ </PreferenceCategory>
 
 </PreferenceScreen>

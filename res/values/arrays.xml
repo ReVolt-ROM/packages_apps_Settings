@@ -867,10 +867,18 @@
         <item>Enable</item>
     </string-array>
 
+    <!-- Profile 2G-3G mode options. -->
+    <string-array name="profile_networkmode_entries" translatable="false">
+        <item>@string/profile_networkmode_2g</item>
+        <item>@string/profile_networkmode_3g</item>
+        <item>@string/profile_networkmode_2g3g</item>
+    </string-array>
+
     <!-- Values for profile connections. Do not translate. -->
     <string-array name="profile_connection_values" translatable="false">
         <item>0</item>
         <item>1</item>
+        <item>2</item>
     </string-array>
 
     <!--  Values for profile Wi-Fi triggers -->
@@ -878,6 +886,13 @@
         <item>@string/profile_trigger_connect</item>
         <item>@string/profile_trigger_disconnect</item>
         <item>@string/profile_trigger_notrigger</item>
+    </string-array>
+
+    <!--  Values for profile trigger types -->
+    <string-array name="profile_trigger_filters" translatable="false">
+        <item>@string/profile_trigger_filter_all</item>
+        <item>@string/profile_trigger_filter_wifi</item>
+        <item>@string/profile_trigger_filter_bluetooth</item>
     </string-array>
 
     <!-- Profile lock mode options. Do not translate. -->
@@ -1339,27 +1354,5 @@
     <string-array name="values_halo_state" translatable="false">
         <item>1</item>
         <item>0</item>
-    </string-array>
-
-    <string-array name="entries_halo_style">
-        <item>@string/halo_blue</item>
-        <item>@string/halo_green</item>
-        <item>@string/halo_white</item>
-        <item>@string/halo_purple</item>
-        <item>@string/halo_red</item>
-        <item>@string/halo_yellow</item>
-        <item>@string/halo_pink</item>
-        <item>@string/halo_black</item>
-    </string-array>
-
-    <string-array name="values_halo_style" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
     </string-array>
 </resources>

@@ -130,12 +130,12 @@
         android:summary="@string/power_widget_summary"
         android:fragment="com.android.settings.cyanogenmod.PowerWidget" />
 
-  <!-- Network Speed Indicator -->
+  <!-- Network Speed Indicator>
   <CheckBoxPreference
         android:key="status_bar_traffic"
         android:title="@string/show_network_speed"
         android:summary="@string/show_network_speed_summary"
-        android:defaultValue="false" />
+        android:defaultValue="false" / -->
 
  </PreferenceCategory>
 

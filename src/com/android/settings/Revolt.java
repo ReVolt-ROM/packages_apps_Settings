@@ -61,12 +61,10 @@ public class Revolt extends SettingsPreferenceFragment implements
     private static final String KEY_BACKGROUND_PREF = "lockscreen_background";
     private static final String HARDWARE_KEYS = "hardware_keys";
     private static final String GENERAL_UI = "general_ui";
-    private static final String STATUS_BAR_TRAFFIC = "status_bar_traffic";
 
     private PreferenceScreen mHardwareKeys;
     private CheckBoxPreference mSeeThrough;
     private ListPreference mCustomBackground;
-    private CheckBoxPreference mStatusBarTraffic;
     private final Configuration mCurConfig = new Configuration();
     private ContentResolver mCr;
     private Context mContext;
@@ -86,8 +84,6 @@ public class Revolt extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.revolt_customizations);
         PreferenceScreen prefs = getPreferenceScreen();
 
-        mStatusBarTraffic = (CheckBoxPreference) prefs.findPreference(STATUS_BAR_TRAFFIC);
-
         mSeeThrough = (CheckBoxPreference) findPreference(KEY_SEE_TRHOUGH);
         mSeeThrough.setChecked(Settings.System.getInt(resolver,
                 Settings.System.LOCKSCREEN_SEE_THROUGH, 0) == 1);
@@ -98,9 +94,6 @@ public class Revolt extends SettingsPreferenceFragment implements
 
         mWallpaperImage = new File(getActivity().getFilesDir() + "/lockwallpaper");
         mWallpaperTemporary = new File(getActivity().getCacheDir() + "/lockwallpaper.tmp");
-
-        mStatusBarTraffic.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
-                Settings.System.STATUS_BAR_TRAFFIC, 1) == 1));
 
         boolean hasNavBarByDefault = getResources().getBoolean(
                 com.android.internal.R.bool.config_showNavigationBar);
@@ -171,12 +164,7 @@ public class Revolt extends SettingsPreferenceFragment implements
 
          if (preference == mSeeThrough) {
             Settings.System.putInt(mContext.getContentResolver(), Settings.System.LOCKSCREEN_SEE_THROUGH, 
-                    mSeeThrough.isChecked() ? 1 : 0); 
-         } else if (preference == mStatusBarTraffic) {
-             value = mStatusBarTraffic.isChecked();
-             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                     Settings.System.STATUS_BAR_TRAFFIC, value ? 1 : 0);
-            return true;
+                    mSeeThrough.isChecked() ? 1 : 0);
          }  else {
               // If not handled, let preferences handle it.
               return super.onPreferenceTreeClick(preferenceScreen, preference);

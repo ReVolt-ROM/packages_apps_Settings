@@ -56,22 +56,15 @@ public class Revolt extends SettingsPreferenceFragment implements
     private static final int LOCKSCREEN_BACKGROUND_CUSTOM_IMAGE = 1;
     private static final int LOCKSCREEN_BACKGROUND_DEFAULT_WALLPAPER = 2;
 
-    private static final String KEY_LOCK_CLOCK = "lock_clock";
-    private static final String KEY_FONT_SIZE = "font_size";
     private static final String KEY_HARDWARE_KEYS = "hardware_keys";
-    private static final String KEY_EXPANDED_DESKTOP = "power_menu_expanded_desktop";
     private static final String KEY_SEE_TRHOUGH = "see_through";
     private static final String KEY_BACKGROUND_PREF = "lockscreen_background";
-    private static final String PREF_LOW_BATTERY_WARNING_POLICY = "pref_low_battery_warning_policy";
     private static final String HARDWARE_KEYS = "hardware_keys";
     private static final String GENERAL_UI = "general_ui";
     private static final String STATUS_BAR_TRAFFIC = "status_bar_traffic";
 
     private PreferenceScreen mHardwareKeys;
-    private CheckBoxPreference mExpandedDesktopPref;
-    private CheckBoxPreference mFullscreenKeyboard;
     private CheckBoxPreference mSeeThrough;
-    private ListPreference mLowBatteryWarning;
     private ListPreference mCustomBackground;
     private CheckBoxPreference mStatusBarTraffic;
     private final Configuration mCurConfig = new Configuration();
@@ -99,13 +92,6 @@ public class Revolt extends SettingsPreferenceFragment implements
         mSeeThrough.setChecked(Settings.System.getInt(resolver,
                 Settings.System.LOCKSCREEN_SEE_THROUGH, 0) == 1);
 
-        mLowBatteryWarning = (ListPreference) findPreference(PREF_LOW_BATTERY_WARNING_POLICY);
-        int lowBatteryWarning = Settings.System.getInt(getActivity().getContentResolver(),
-                                    Settings.System.POWER_UI_LOW_BATTERY_WARNING_POLICY, 3);
-        mLowBatteryWarning.setValue(String.valueOf(lowBatteryWarning));
-        mLowBatteryWarning.setSummary(mLowBatteryWarning.getEntry());
-        mLowBatteryWarning.setOnPreferenceChangeListener(this);
-
         mCustomBackground = (ListPreference) findPreference(KEY_BACKGROUND_PREF);
         mCustomBackground.setOnPreferenceChangeListener(this);
         updateCustomBackgroundSummary();
@@ -118,24 +104,6 @@ public class Revolt extends SettingsPreferenceFragment implements
 
         boolean hasNavBarByDefault = getResources().getBoolean(
                 com.android.internal.R.bool.config_showNavigationBar);
-
-        mExpandedDesktopPref = (CheckBoxPreference) findPreference(KEY_EXPANDED_DESKTOP);
-        boolean showExpandedDesktopPref =
-            getResources().getBoolean(R.bool.config_show_expandedDesktop);
-        if (!showExpandedDesktopPref) {
-            if (mExpandedDesktopPref != null) {
-                getPreferenceScreen().removePreference(mExpandedDesktopPref);
-            }
-        } else {
-            mExpandedDesktopPref.setChecked((Settings.System.getInt(getContentResolver(),
-                Settings.System.POWER_MENU_EXPANDED_DESKTOP_ENABLED, 0) == 1));
-        }
-
-        // Do not display lock clock preference if its not installed
-        removePreferenceIfPackageNotInstalled(findPreference(KEY_LOCK_CLOCK));
-
-        // Do not display FontSize preference if its not installed
-        removePreferenceIfPackageNotInstalled(findPreference(KEY_FONT_SIZE));
 
         // Whether to show Hardware keys remapping or not
         boolean hasHardwareButtons = mContext.getResources().getBoolean(
@@ -201,12 +169,7 @@ public class Revolt extends SettingsPreferenceFragment implements
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
          boolean value;
 
-         if (preference == mExpandedDesktopPref) {
-            value = mExpandedDesktopPref.isChecked();
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.POWER_MENU_EXPANDED_DESKTOP_ENABLED,
-                    value ? 1 : 0);
-         } else if (preference == mSeeThrough) {
+         if (preference == mSeeThrough) {
             Settings.System.putInt(mContext.getContentResolver(), Settings.System.LOCKSCREEN_SEE_THROUGH, 
                     mSeeThrough.isChecked() ? 1 : 0); 
          } else if (preference == mStatusBarTraffic) {
@@ -223,14 +186,7 @@ public class Revolt extends SettingsPreferenceFragment implements
 
     public boolean onPreferenceChange(Preference preference, Object Value) {
         final String key = preference.getKey();
-         if (preference == mLowBatteryWarning) {
-            int lowBatteryWarning = Integer.valueOf((String) Value);
-            int index = mLowBatteryWarning.findIndexOfValue((String) Value);
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.POWER_UI_LOW_BATTERY_WARNING_POLICY, lowBatteryWarning);
-            mLowBatteryWarning.setSummary(mLowBatteryWarning.getEntries()[index]);
-            return true;
-        } else if (preference == mCustomBackground) {
+         if (preference == mCustomBackground) {
             int selection = mCustomBackground.findIndexOfValue((String) Value);
             return handleBackgroundSelection(selection);
         }

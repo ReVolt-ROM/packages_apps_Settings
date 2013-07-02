@@ -36,6 +36,12 @@
         <PreferenceScreen android:key="revolt_logo"
                           android:layout="@layout/logo_row" />
 
+        <!-- Share ReVolt ROM -->
+        <Preference
+            android:key="share"
+            android:title="@string/share_revoltrom"
+            android:summary="@string/share_revoltrom_summary" />
+
         <!-- Device status - launches activity -->
         <PreferenceScreen android:key="status_info"
                 android:title="@string/device_status" 

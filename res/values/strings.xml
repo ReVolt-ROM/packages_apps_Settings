@@ -5471,6 +5471,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Share ReVolt ROM -->
    <string name="share_revoltrom">Share ReVolt ROM</string>
    <string name="share_revoltrom_summary">Let people know you use ReVolt ROM</string>
-   <string name="share_message">Try ReVolt ROM! \nWebsite : http://revolt.iminisoft.org \nTwitter : @ReVoltROM \nDownload : http://revolt.iminisoft.org</string>
+   <string name="share_message">Try ReVolt ROM! \nWebsite : http://revolt-rom.com \nTwitter : @ReVoltROM \nDownload : http://revolt.basketbuild.com</string>
    <string name="share_chooser_title">Via..</string>
 </resources>

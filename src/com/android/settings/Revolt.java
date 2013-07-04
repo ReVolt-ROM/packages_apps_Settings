@@ -91,9 +91,6 @@ public class Revolt extends SettingsPreferenceFragment implements
         mSeeThrough = (CheckBoxPreference) findPreference(KEY_SEE_TRHOUGH);
         mSeeThrough.setChecked(Settings.System.getInt(resolver,
                 Settings.System.LOCKSCREEN_SEE_THROUGH, 0) == 1);
-        
-	mStatusBarTraffic.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
-                Settings.System.STATUS_BAR_TRAFFIC, 1) == 1));
 
         mCustomBackground = (ListPreference) findPreference(KEY_BACKGROUND_PREF);
         mCustomBackground.setOnPreferenceChangeListener(this);
@@ -172,14 +169,9 @@ public class Revolt extends SettingsPreferenceFragment implements
          if (preference == mSeeThrough) {
             Settings.System.putInt(mContext.getContentResolver(), Settings.System.LOCKSCREEN_SEE_THROUGH, 
                     mSeeThrough.isChecked() ? 1 : 0);
-         } else if (preference == mStatusBarTraffic) {
-            value = mStatusBarTraffic.isChecked();
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.STATUS_BAR_TRAFFIC, value ? 1 : 0);
-            return true;
-         } else {
-            // If not handled, let preferences handle it.
-            return super.onPreferenceTreeClick(preferenceScreen, preference);
+         }  else {
+              // If not handled, let preferences handle it.
+              return super.onPreferenceTreeClick(preferenceScreen, preference);
          }
          return true;    
      }

@@ -199,7 +199,7 @@ public class ProfileConfig extends SettingsPreferenceFragment
     }
 
     private void startTriggerFragment() {
-        final PreferenceActivity pa = (PreferenceActivity) getActivity();
+        final PreferenceDrawerActivity pa = (PreferenceDrawerActivity) getActivity();
         final Bundle args = new Bundle();
         args.putParcelable("profile", mProfile);
 

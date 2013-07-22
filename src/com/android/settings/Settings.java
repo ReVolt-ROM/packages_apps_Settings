@@ -124,7 +124,6 @@ public class Settings extends PreferenceActivity
             R.id.date_time_settings,
             R.id.about_settings,
             R.id.accessibility_settings,
-            R.id.quick_links,
             R.id.revolt_control,
             R.id.themes,
             R.id.advanced_settings

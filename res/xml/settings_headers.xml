@@ -58,42 +58,18 @@
         android:fragment="com.android.settings.WirelessSettings"
         android:icon="@drawable/empty_icon" />
 
-    <!-- Quick Links -->
-    <header android:id="@+id/quick_links"
-            android:title="@string/quick_links_title" />
+    <!-- Customizations Section -->
+    <header android:title="@string/header_category_revolt" />
 
     <!-- ReVolt Control -->
-    <header android:id="@+id/rom_control"
-            android:title="@string/rom_control_title"
+    <header android:id="@+id/revolt_control"
+            android:title="@string/revolt_control_title"
             android:icon="@drawable/ic_settings_about_rv" >
         <intent
                 android:action="android.intent.action.MAIN"
                 android:targetClass="com.revolt.control.ReVoltControlActivity"
                 android:targetPackage="com.revolt.control" />
     </header>
-
-    <!-- Themes -->
-    <header android:id="@+id/themes"
-            android:title="@string/themes_title"
-            android:icon="@drawable/ic_settings_themes" >
-        <intent
-                android:action="android.intent.action.MAIN"
-                android:targetPackage="com.tmobile.themechooser"
-                android:targetClass="com.tmobile.themechooser.ThemeChooser" />
-    </header>
-
-   <!-- Device Options -->
-    <header android:id="@+id/advanced_settings"
-            android:title="@string/advanced_settings_title"
-            android:icon="@drawable/ic_settings_advanced">
-        <intent
-                android:action="com.cyanogenmod.action.LAUNCH_DEVICE_SETTINGS"
-                android:targetPackage="com.cyanogenmod.settings.device"
-                android:targetClass="com.cyanogenmod.settings.device.DeviceSettings" />
-    </header>
-
-    <!-- Customizations Section -->
-    <header android:title="@string/header_category_revolt" />
 
     <!-- ReVolt Links -->
     <header
@@ -108,12 +84,15 @@
         android:icon="@drawable/ic_settings_multiuser"
         android:title="@string/dark_settings_title" />
 
-    <!-- About ReVolt ROM -->
-    <header
-        android:id="@+id/about_rom"
-        android:fragment="com.android.settings.rv.About"
-        android:icon="@drawable/ic_settings_about_rv"
-        android:title="@string/about_rv_settings_title" />
+    <!-- Themes -->
+    <header android:id="@+id/themes"
+            android:title="@string/themes_title"
+            android:icon="@drawable/ic_settings_themes" >
+        <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="com.tmobile.themechooser"
+                android:targetClass="com.tmobile.themechooser.ThemeChooser" />
+    </header>
 
     <!-- Update Me -->
     <header android:id="@+id/updateme_settings"
@@ -123,6 +102,16 @@
                 android:action="android.intent.action.MAIN"
                 android:targetPackage="com.s0up.goomanager"
                 android:targetClass="com.s0up.goomanager.GooManagerActivity" />
+    </header>
+
+   <!-- Device Options -->
+    <header android:id="@+id/advanced_settings"
+            android:title="@string/advanced_settings_title"
+            android:icon="@drawable/ic_settings_advanced">
+        <intent
+                android:action="com.cyanogenmod.action.LAUNCH_DEVICE_SETTINGS"
+                android:targetPackage="com.cyanogenmod.settings.device"
+                android:targetClass="com.cyanogenmod.settings.device.DeviceSettings" />
     </header>
 
     <!-- sTweaks -->

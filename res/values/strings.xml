@@ -4881,8 +4881,8 @@
     <!-- Quick Links -->
     <string name="quick_links_title">Quick Links</string>
 
-    <!-- ROM Control by AOKP -->
-    <string name="rom_control_title">ReVolt Control</string>
+    <!-- ReVolt Control -->
+    <string name="revolt_control_title">ReVolt Control</string>
 
     <!-- Theming System -->
     <string name="themes_title">Themes</string>

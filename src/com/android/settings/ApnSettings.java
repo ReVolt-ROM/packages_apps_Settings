@@ -163,6 +163,7 @@ public class ApnSettings extends SettingsPreferenceFragment implements
                 "_id", "name", "apn", "type"}, where, null,
                 Telephony.Carriers.DEFAULT_SORT_ORDER);
 
+<<<<<<< HEAD
         PreferenceGroup apnList = (PreferenceGroup) getPreferenceScreen().findPreference("apn_list");
         apnList.removeAll();
 
@@ -189,17 +190,47 @@ public class ApnSettings extends SettingsPreferenceFragment implements
             if (selectable) {
                 if ((mSelectedKey != null) && mSelectedKey.equals(key)) {
                     pref.setChecked();
-                }
-                apnList.addPreference(pref);
-            } else {
-                mmsApnList.add(pref);
-            }
-            cursor.moveToNext();
-        }
-        cursor.close();
+=======
+        if (cursor != null) {
+            PreferenceGroup apnList = (PreferenceGroup) findPreference("apn_list");
+            apnList.removeAll();
 
-        for (Preference preference : mmsApnList) {
-            apnList.addPreference(preference);
+            ArrayList<Preference> mmsApnList = new ArrayList<Preference>();
+
+            mSelectedKey = getSelectedApnKey();
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                String name = cursor.getString(NAME_INDEX);
+                String apn = cursor.getString(APN_INDEX);
+                String key = cursor.getString(ID_INDEX);
+                String type = cursor.getString(TYPES_INDEX);
+
+                ApnPreference pref = new ApnPreference(this);
+
+                pref.setKey(key);
+                pref.setTitle(name);
+                pref.setSummary(apn);
+                pref.setPersistent(false);
+                pref.setOnPreferenceChangeListener(this);
+
+                boolean selectable = ((type == null) || !type.equals("mms"));
+                pref.setSelectable(selectable);
+                if (selectable) {
+                    if ((mSelectedKey != null) && mSelectedKey.equals(key)) {
+                        pref.setChecked();
+                    }
+                    apnList.addPreference(pref);
+                } else {
+                    mmsApnList.add(pref);
+>>>>>>> FETCH_HEAD
+                }
+                cursor.moveToNext();
+            }
+            cursor.close();
+
+            for (Preference preference : mmsApnList) {
+                apnList.addPreference(preference);
+            }
         }
     }
 

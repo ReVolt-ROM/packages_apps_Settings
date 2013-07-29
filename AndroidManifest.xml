@@ -1675,22 +1675,6 @@
                 android:resource="@id/sound_settings" />
         </activity>
 
-        <activity android:name="Settings$UserSettingsActivity"
-                android:uiOptions="splitActionBarWhenNarrow"
-                android:label="@string/user_settings_title"
-                android:taskAffinity=""
-                android:excludeFromRecents="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <action android:name="android.settings.USER_SETTINGS" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.users.UserSettings" />
-            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
-                android:resource="@id/user_settings" />
-        </activity>
-
         <!-- Notification Shortcuts -->
         <activity android:name="Settings$NotificationShortcutsSettingsActivity"
                 android:label="@string/notification_shortcuts_settings_title"
@@ -1750,7 +1734,15 @@
                 android:value="com.android.settings.profiles.ProfilesSettings" />
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
                 android:resource="@id/profiles_settings" />
-=======
+        </activity>
+
+        <activity android:name="Settings$UserSettingsActivity"
+                android:uiOptions="splitActionBarWhenNarrow"
+                android:label="@string/user_settings_title"
+                android:taskAffinity=""
+                android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.settings.USER_SETTINGS" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
@@ -1784,7 +1776,6 @@
                 <action android:name="android.settings.SHOW_REGULATORY_INFO" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
->>>>>>> FETCH_HEAD
         </activity>
 
         <receiver android:name=".widget.SettingsAppWidgetProvider"

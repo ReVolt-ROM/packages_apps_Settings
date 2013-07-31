@@ -130,7 +130,7 @@ public class QuietHours extends SettingsPreferenceFragment implements
                     mQuietHoursDim.isChecked() ? 1 : 0);
             return true;
         } else if (preference == mQuietHoursSystem) {
-            Settings.REVOLT.putInt(resolver, Settings.AOKP.QUIET_HOURS_SYSTEM,
+            Settings.REVOLT.putInt(resolver, Settings.REVOLT.QUIET_HOURS_SYSTEM,
                     mQuietHoursSystem.isChecked() ? 1 : 0);
             return true;
         }

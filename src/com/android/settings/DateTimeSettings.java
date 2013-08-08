@@ -270,7 +270,6 @@ public class DateTimeSettings extends SettingsPreferenceFragment
             d = null;
             break;
         }
-
         return d;
     }
 

@@ -419,7 +419,6 @@ public class Settings extends PreferenceActivity
                 WifiDisplaySettings.class.getName().equals(fragmentName) ||
                 BluetoothSettings.class.getName().equals(fragmentName) ||
                 DreamSettings.class.getName().equals(fragmentName) ||
-                BlacklistSettings.class.getName().equals(fragmentName) ||
                 ToggleAccessibilityServicePreferenceFragment.class.getName().equals(fragmentName)) {
             intent.putExtra(EXTRA_UI_OPTIONS, ActivityInfo.UIOPTION_SPLIT_ACTION_BAR_WHEN_NARROW);
         }
@@ -909,5 +908,4 @@ public class Settings extends PreferenceActivity
     public static class NotificationStationActivity extends Settings { /* empty */ }
     public static class UserSettingsActivity extends Settings { /* empty */ }
     public static class NotificationAccessSettingsActivity extends Settings { /* empty */ }
-    public static class BlacklistSettingsActivity extends Settings { /* empty */ }
 }

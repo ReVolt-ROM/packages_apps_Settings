@@ -236,6 +236,7 @@ public class DateTimeSettings extends SettingsPreferenceFragment
     public Dialog onCreateDialog(int id) {
         final Calendar calendar = Calendar.getInstance();
         Dialog d;
+
         switch (id) {
         case DIALOG_DATEPICKER: {
             d = new DatePickerDialog(
@@ -270,17 +271,6 @@ public class DateTimeSettings extends SettingsPreferenceFragment
             break;
         }
         return d;
-    }
-
-    static void configureDatePicker(DatePicker datePicker) {
-        // The system clock can't represent dates outside this range.
-        Calendar t = Calendar.getInstance();
-        t.clear();
-        t.set(1970, Calendar.JANUARY, 1);
-        datePicker.setMinDate(t.getTimeInMillis());
-        t.clear();
-        t.set(2037, Calendar.DECEMBER, 31);
-        datePicker.setMaxDate(t.getTimeInMillis());
     }
 
     /*

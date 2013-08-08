@@ -234,11 +234,11 @@ public class DateTimeSettings extends SettingsPreferenceFragment
 
     @Override
     public Dialog onCreateDialog(int id) {
-        final Calendar calendar = Calendar.getInstance();
         Dialog d;
 
         switch (id) {
         case DIALOG_DATEPICKER: {
+            final Calendar calendar = Calendar.getInstance();
             d = new DatePickerDialog(
                 getActivity(),
                 this,

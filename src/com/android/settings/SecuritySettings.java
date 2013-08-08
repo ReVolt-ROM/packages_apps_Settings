@@ -203,6 +203,9 @@ public class SecuritySettings extends SettingsPreferenceFragment
         }
         addPreferencesFromResource(resid);
 
+        // Application install
+        PreferenceGroup deviceAdminCategory= (PreferenceGroup)
+                root.findPreference(KEY_DEVICE_ADMIN_CATEGORY);
 
         // Add options for device encryption
         DevicePolicyManager dpm =
@@ -408,9 +411,6 @@ public class SecuritySettings extends SettingsPreferenceFragment
             removePreference(KEY_CREDENTIALS_MANAGER);
         }
 
-        // Application install
-        PreferenceGroup deviceAdminCategory= (PreferenceGroup)
-                root.findPreference(KEY_DEVICE_ADMIN_CATEGORY);
         mToggleAppInstallation = (CheckBoxPreference) findPreference(
                 KEY_TOGGLE_INSTALL_APPLICATIONS);
         mToggleAppInstallation.setChecked(isNonMarketAppsAllowed());

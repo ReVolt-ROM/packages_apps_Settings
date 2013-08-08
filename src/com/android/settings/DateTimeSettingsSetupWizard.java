@@ -121,6 +121,7 @@ public class DateTimeSettingsSetupWizard extends Activity
         mSelectedTimeZone = tz;
         mTimeZoneButton = (Button)findViewById(R.id.time_zone_button);
         mTimeZoneButton.setText(tz.getDisplayName());
+        // mTimeZoneButton.setText(DateTimeSettings.getTimeZoneText(tz));
         mTimeZoneButton.setOnClickListener(this);
 
         final boolean autoDateTimeEnabled;
@@ -140,7 +141,6 @@ public class DateTimeSettingsSetupWizard extends Activity
         mDatePicker = (DatePicker)findViewById(R.id.date_picker);
         mDatePicker.setEnabled(!autoDateTimeEnabled);
         mDatePicker.setCalendarViewShown(false);
-        DateTimeSettings.configureDatePicker(mDatePicker);
 
         mInputMethodManager = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
 
@@ -244,6 +244,7 @@ public class DateTimeSettingsSetupWizard extends Activity
             if (mTimeZoneButton != null) {
                 mTimeZoneButton.setText(tz.getDisplayName());
             }
+            // mTimeZoneButton.setText(DateTimeSettings.getTimeZoneText(tz));
             mDatePicker.updateDate(now.get(Calendar.YEAR), now.get(Calendar.MONTH),
                     now.get(Calendar.DAY_OF_MONTH));
             mTimePicker.setCurrentHour(now.get(Calendar.HOUR_OF_DAY));

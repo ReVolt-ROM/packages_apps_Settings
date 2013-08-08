@@ -45,7 +45,8 @@ import com.android.internal.telephony.TelephonyProperties;
 import com.android.settings.nfc.NfcEnabler;
 import com.android.settings.NsdEnabler;
 
-public class WirelessSettings extends SettingsPreferenceFragment {
+public class WirelessSettings extends SettingsPreferenceFragment
+    implements Preference.OnPreferenceChangeListener {
     private static final String TAG = "WirelessSettings";
 
     private static final String KEY_TOGGLE_AIRPLANE = "toggle_airplane";
@@ -173,6 +174,18 @@ public class WirelessSettings extends SettingsPreferenceFragment {
         Log.d(TAG, s);
     }
 
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference == mNfcPollingMode) {
+            int newVal = Integer.parseInt((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.NFC_POLLING_MODE, newVal);
+            updateNfcPolling();
+            return true;
+        }
+        return false;
+    }
+
     public static boolean isRadioAllowed(Context context, String type) {
         if (!AirplaneModeEnabler.isAirplaneModeOn(context)) {
             return true;
@@ -206,8 +219,8 @@ public class WirelessSettings extends SettingsPreferenceFragment {
 
         mNfcPollingMode = (ListPreference) findPreference(KEY_NFC_POLLING_MODE);
         mNfcPollingMode.setOnPreferenceChangeListener(this);
-        mNfcPollingMode.setValue((Settings.System.getInt(activity.getContentResolver(),
-                Settings.System.NFC_POLLING_MODE, 3)) + "");
+        mNfcPollingMode.setValue(String.valueOf(Settings.System.getInt(activity.getContentResolver(), 
+                Settings.System.NFC_POLLING_MODE, 3)));
         updateNfcPolling();
 
         mAirplaneModeEnabler = new AirplaneModeEnabler(activity, mAirplaneModePreference);

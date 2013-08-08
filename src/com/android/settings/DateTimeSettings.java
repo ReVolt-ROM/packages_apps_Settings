@@ -263,6 +263,7 @@ public class DateTimeSettings extends SettingsPreferenceFragment
                     calendar.get(Calendar.HOUR_OF_DAY),
                     calendar.get(Calendar.MINUTE),
                     DateFormat.is24HourFormat(getActivity()));
+        }
         default:
             throw new IllegalArgumentException();
         }

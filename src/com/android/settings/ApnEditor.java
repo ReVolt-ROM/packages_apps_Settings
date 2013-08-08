@@ -21,6 +21,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.ContentUris;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.CursorLoader;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -59,12 +60,9 @@ public class ApnEditor extends SettingsPreferenceFragment
     private final static String KEY_ROAMING_PROTOCOL = "apn_roaming_protocol";
     private final static String KEY_CARRIER_ENABLED = "carrier_enabled";
     private final static String KEY_BEARER = "bearer";
-<<<<<<< HEAD
     protected static final String EDIT_ACTION = "edit_action";
     protected static final String EDIT_DATA = "edit_data";
-=======
     private final static String KEY_MVNO_TYPE = "mvno_type";
->>>>>>> FETCH_HEAD
 
     private static final int MENU_DELETE = Menu.FIRST;
     private static final int MENU_SAVE = Menu.FIRST + 1;
@@ -239,7 +237,7 @@ public class ApnEditor extends SettingsPreferenceFragment
         mCursor = qCursor.loadInBackground();
         mCursor.moveToFirst();
 
-        mTelephonyManager = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
+        mTelephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
 
         fillUi();
         setHasOptionsMenu(true);
@@ -615,7 +613,7 @@ public class ApnEditor extends SettingsPreferenceFragment
     }
 
     private void deleteApn() {
-       new AlertDialog.Builder(getActivity())
+        new AlertDialog.Builder(getActivity())
         .setMessage(R.string.confirm_delete_apn)
         .setCancelable(true)
         .setPositiveButton(R.string.delete,new DialogInterface.OnClickListener() {

@@ -16,7 +16,6 @@
 
 package com.android.settings;
 
-<<<<<<< HEAD
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.ContentResolver;
@@ -466,23 +465,5 @@ public class BrightnessPreference extends SeekBarDialogPreference implements
                 return new SavedState[size];
             }
         };
-=======
-import android.content.Context;
-import android.content.Intent;
-import android.os.UserHandle;
-import android.preference.Preference;
-import android.util.AttributeSet;
-
-public class BrightnessPreference extends Preference {
-
-    public BrightnessPreference(Context context, AttributeSet attrs) {
-        super(context, attrs);
-    }
-
-    @Override
-    protected void onClick() {
-        Intent intent = new Intent(Intent.ACTION_SHOW_BRIGHTNESS_DIALOG);
-        getContext().sendBroadcastAsUser(intent, UserHandle.CURRENT_OR_SELF);
->>>>>>> FETCH_HEAD
     }
 }

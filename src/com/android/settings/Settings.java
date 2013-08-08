@@ -411,6 +411,7 @@ public class Settings extends PreferenceActivity
         return intent;
     }
 
+    private void onBuildStartFragmentIntentHelper(String fragmentName, Intent intent) {
         // Some fragments want split ActionBar; these should stay in sync with
         // uiOptions for fragments also defined as activities in manifest.
         if (WifiSettings.class.getName().equals(fragmentName) ||
@@ -418,6 +419,10 @@ public class Settings extends PreferenceActivity
                 WifiDisplaySettings.class.getName().equals(fragmentName) ||
                 BluetoothSettings.class.getName().equals(fragmentName) ||
                 DreamSettings.class.getName().equals(fragmentName) ||
+                ProfilesSettings.class.getName().equals(fragmentName) ||
+                ProfileConfig.class.getName().equals(fragmentName) ||
+                AppGroupConfig.class.getName().equals(fragmentName) ||
+                BlacklistSettings.class.getName().equals(fragmentName) ||
                 ToggleAccessibilityServicePreferenceFragment.class.getName().equals(fragmentName)) {
             intent.putExtra(EXTRA_UI_OPTIONS, ActivityInfo.UIOPTION_SPLIT_ACTION_BAR_WHEN_NARROW);
         }

@@ -235,9 +235,9 @@ public class DateTimeSettings extends SettingsPreferenceFragment
     @Override
     public Dialog onCreateDialog(int id) {
         final Calendar calendar = Calendar.getInstance();
+        Dialog d;
         switch (id) {
         case DIALOG_DATEPICKER: {
-            final Calendar calendar = Calendar.getInstance();
             d = new DatePickerDialog(
                 getActivity(),
                 this,
@@ -263,9 +263,13 @@ public class DateTimeSettings extends SettingsPreferenceFragment
                     calendar.get(Calendar.HOUR_OF_DAY),
                     calendar.get(Calendar.MINUTE),
                     DateFormat.is24HourFormat(getActivity()));
-        default:
-            throw new IllegalArgumentException();
+            break;
         }
+        default:
+            d = null;
+            break;
+        }
+        return d;
     }
 
     static void configureDatePicker(DatePicker datePicker) {

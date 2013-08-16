@@ -527,10 +527,12 @@ public class NotificationShortcuts extends SettingsPreferenceFragment implements
             String mUri = mTargetStore.get(i).uri;
             String mType = mTargetStore.get(i).iconType;
             String mSource = mTargetStore.get(i).iconSource;
-            if (!uri.equals(EMPTY_TARGET) && mType != null) {
+            if (!uri.equals(EMPTY_TARGET)) {
                 try {
                     Intent in = Intent.parseUri(mUri, 0);
-                    in.putExtra(mType, mSource);
+                    if (mType != null) {
+                        in.putExtra(mType, mSource);
+                    }
                     String mPkgName = mTargetStore.get(i).pkgName;
                     if (mPkgName != null) {
                         in.putExtra(ICON_PACKAGE, mTargetStore.get(i).pkgName);

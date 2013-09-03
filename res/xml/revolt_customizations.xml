@@ -51,6 +51,17 @@
         android:summary="@string/power_widget_summary"
         android:fragment="com.android.settings.cyanogenmod.PowerWidget" />
 
+    <CheckBoxPreference android:key="pref_key_sms_breath"
+        android:title="@string/sms_breath"
+        android:summary="@string/sms_breath_summary"
+        android:defaultValue="false" />
+
+    <CheckBoxPreference
+        android:key="missed_call_breath"
+        android:title="@string/missed_call_breath"
+        android:summary="@string/missed_call_breath_summary"
+        android:defaultValue="false" />
+
  </PreferenceCategory>
 
  <!-- Hardware Keys -->

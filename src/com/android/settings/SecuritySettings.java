@@ -130,7 +130,6 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private Preference mNotificationAccess;
 
     private boolean mIsPrimary;
-    private ListPreference mSmsSecurityCheck;
 
     // CyanogenMod Additions
     private CheckBoxPreference mSlideLockDelayToggle;

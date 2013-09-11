@@ -62,8 +62,6 @@ public class Revolt extends SettingsPreferenceFragment implements
     private static final String HARDWARE_KEYS = "hardware_keys";
     private static final String GENERAL_UI = "general_ui";
     private static final String STATUS_BAR_TRAFFIC = "status_bar_traffic";
-    private static final String KEY_SMS_BREATH = "pref_key_sms_breath";
-    private static final String KEY_MISSED_CALL_BREATH = "missed_call_breath";
 
     private PreferenceScreen mHardwareKeys;
     private CheckBoxPreference mSeeThrough;
@@ -75,8 +73,6 @@ public class Revolt extends SettingsPreferenceFragment implements
     private PreferenceScreen mPrefSet;
     private File mWallpaperImage;
     private File mWallpaperTemporary;
-    private CheckBoxPreference mSMSBreath;
-    private CheckBoxPreference mMissedCallBreath;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -94,14 +90,6 @@ public class Revolt extends SettingsPreferenceFragment implements
         mSeeThrough = (CheckBoxPreference) findPreference(KEY_SEE_TRHOUGH);
         mSeeThrough.setChecked(Settings.System.getInt(resolver,
                 Settings.System.LOCKSCREEN_SEE_THROUGH, 0) == 1);
-
-        mSMSBreath = (CheckBoxPreference) findPreference(KEY_SMS_BREATH);
-        mSMSBreath.setChecked(Settings.System.getInt(resolver,
-                Settings.System.SMS_BREATH, 0) == 1);
-
-        mMissedCallBreath = (CheckBoxPreference) findPreference(KEY_MISSED_CALL_BREATH);
-        mMissedCallBreath.setChecked(Settings.System.getInt(resolver,
-                Settings.System.MISSED_CALL_BREATH, 0) == 1);
 
         mCustomBackground = (ListPreference) findPreference(KEY_BACKGROUND_PREF);
         mCustomBackground.setOnPreferenceChangeListener(this);
@@ -181,16 +169,6 @@ public class Revolt extends SettingsPreferenceFragment implements
          if (preference == mSeeThrough) {
             Settings.System.putInt(mContext.getContentResolver(), Settings.System.LOCKSCREEN_SEE_THROUGH, 
                     mSeeThrough.isChecked() ? 1 : 0);
-           return true;
-         } else if (preference == mSMSBreath) {
-            Settings.System.putInt(mContext.getContentResolver(),
-                    Settings.System.SMS_BREATH,
-                    mSMSBreath.isChecked() ? 1 : 0);
-           return true;
-         } else if (preference == mMissedCallBreath) {
-            Settings.System.putInt(mContext.getContentResolver(),
-                    Settings.System.MISSED_CALL_BREATH,
-                    mMissedCallBreath.isChecked() ? 1 : 0);
            return true;
          }  else {
               // If not handled, let preferences handle it.

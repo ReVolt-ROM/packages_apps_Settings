@@ -5180,10 +5180,6 @@
     <string name="dpi_settings">DPI &amp; LAYOUT SETTINGS</string>
     <string name="hybrid_settings">Hybrid Settings</string>
 
-    <!-- Lockscreen See Through -->
-    <string name="lockscreen_seethrough">Lockscreen See through</string>
-    <string name="lockscreen_seethrough_summary">Allows you to see your homescreen behind the lock screen including apps.</string>
-
     <string name="dark_settings_title">Dark ReVolt</string>
 
     <!-- AOKP specific sound settings

@@ -10,13 +10,6 @@
         android:key="lock_screen"
         android:title="@string/lockscreen_header"> 
 
-  <!-- See Through (By PA) -->
-  <CheckBoxPreference
-        android:key="see_through"
-        android:icon="@drawable/ic_lock_alpha"
-        android:title="@string/lockscreen_seethrough"
-        android:summary="@string/lockscreen_seethrough_summary" />
-
   <!-- Custom Lockscreen Background (By CM) -->
   <ListPreference
         android:key="lockscreen_background"

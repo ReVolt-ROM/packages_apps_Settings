@@ -2484,10 +2484,6 @@
     <string name="notification_shortcuts_icon_picker_twitter">טוויטר</string>
     <string name="notification_shortcuts_icon_picker_unlock">לפתוח</string>
 
-   <!-- Lockscreen See Through (PA) -->
-   <string name="lockscreen_seethrough">לראות דרך מסך הנעילה</string>
-   <string name="lockscreen_seethrough_summary">מאפשר לך לראות את מסך הבית שלך מאחורי מסך נעילה, יכול גם להציג יישום פועל.</string>
-
     <!-- Custom lock screen background (CM) -->
     <string name="lockscreen_custom_background_title">רקע</string>
     <string name="lockscreen_custom_background_dialog_title">בחר צבע</string>

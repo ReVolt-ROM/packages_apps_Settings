@@ -57,14 +57,12 @@ public class Revolt extends SettingsPreferenceFragment implements
     private static final int LOCKSCREEN_BACKGROUND_DEFAULT_WALLPAPER = 2;
 
     private static final String KEY_HARDWARE_KEYS = "hardware_keys";
-    private static final String KEY_SEE_TRHOUGH = "see_through";
     private static final String KEY_BACKGROUND_PREF = "lockscreen_background";
     private static final String HARDWARE_KEYS = "hardware_keys";
     private static final String GENERAL_UI = "general_ui";
     private static final String STATUS_BAR_TRAFFIC = "status_bar_traffic";
 
     private PreferenceScreen mHardwareKeys;
-    private CheckBoxPreference mSeeThrough;
     private ListPreference mCustomBackground;
     private CheckBoxPreference mStatusBarTraffic;
     private final Configuration mCurConfig = new Configuration();
@@ -86,10 +84,6 @@ public class Revolt extends SettingsPreferenceFragment implements
         PreferenceScreen prefs = getPreferenceScreen();
 
         mStatusBarTraffic = (CheckBoxPreference) prefs.findPreference(STATUS_BAR_TRAFFIC);
-
-        mSeeThrough = (CheckBoxPreference) findPreference(KEY_SEE_TRHOUGH);
-        mSeeThrough.setChecked(Settings.System.getInt(resolver,
-                Settings.System.LOCKSCREEN_SEE_THROUGH, 0) == 1);
 
         mCustomBackground = (ListPreference) findPreference(KEY_BACKGROUND_PREF);
         mCustomBackground.setOnPreferenceChangeListener(this);
@@ -161,20 +155,6 @@ public class Revolt extends SettingsPreferenceFragment implements
     public void onPause() {
         super.onPause();
     }
-
-    @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-         boolean value;
-
-         if (preference == mSeeThrough) {
-            Settings.System.putInt(mContext.getContentResolver(), Settings.System.LOCKSCREEN_SEE_THROUGH, 
-                    mSeeThrough.isChecked() ? 1 : 0);
-           return true;
-         }  else {
-              // If not handled, let preferences handle it.
-              return super.onPreferenceTreeClick(preferenceScreen, preference);
-         }
-     }
 
     public boolean onPreferenceChange(Preference preference, Object Value) {
         final String key = preference.getKey();

@@ -5,23 +5,6 @@
     android:title="@string/revolt_custom_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
- <!-- Lock Screen Header -->
- <PreferenceCategory
-        android:key="lock_screen"
-        android:title="@string/lockscreen_header"> 
-
-  <!-- Custom Lockscreen Background (By CM) -->
-  <ListPreference
-        android:key="lockscreen_background"
-        android:icon="@drawable/ic_lock_wallpaper"
-        android:persistent="false"
-        android:dialogTitle="@string/lockscreen_custom_background_title"
-        android:title="@string/lockscreen_custom_background_title"
-        android:entries="@array/lockscreen_background_entries"
-        android:entryValues="@array/lockscreen_background_values" />
-
- </PreferenceCategory>
-
  <!-- Notification & StatusBar Header -->
  <PreferenceCategory
         android:key="statusbar_notifications"

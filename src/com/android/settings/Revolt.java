@@ -50,27 +50,15 @@ public class Revolt extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
     private static final String TAG = "Revolt";
 
-    private static final int REQUEST_CODE_BG_WALLPAPER = 1024;
-
-    private static final int LOCKSCREEN_BACKGROUND_COLOR_FILL = 0;
-    private static final int LOCKSCREEN_BACKGROUND_CUSTOM_IMAGE = 1;
-    private static final int LOCKSCREEN_BACKGROUND_DEFAULT_WALLPAPER = 2;
-
     private static final String KEY_HARDWARE_KEYS = "hardware_keys";
-    private static final String KEY_BACKGROUND_PREF = "lockscreen_background";
     private static final String HARDWARE_KEYS = "hardware_keys";
     private static final String GENERAL_UI = "general_ui";
-    private static final String STATUS_BAR_TRAFFIC = "status_bar_traffic";
 
     private PreferenceScreen mHardwareKeys;
-    private ListPreference mCustomBackground;
-    private CheckBoxPreference mStatusBarTraffic;
     private final Configuration mCurConfig = new Configuration();
     private ContentResolver mCr;
     private Context mContext;
     private PreferenceScreen mPrefSet;
-    private File mWallpaperImage;
-    private File mWallpaperTemporary;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -83,16 +71,6 @@ public class Revolt extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.revolt_customizations);
         PreferenceScreen prefs = getPreferenceScreen();
 
-        mStatusBarTraffic = (CheckBoxPreference) prefs.findPreference(STATUS_BAR_TRAFFIC);
-
-        mCustomBackground = (ListPreference) findPreference(KEY_BACKGROUND_PREF);
-        mCustomBackground.setOnPreferenceChangeListener(this);
-        updateCustomBackgroundSummary();
-
-
-        mWallpaperImage = new File(getActivity().getFilesDir() + "/lockwallpaper");
-        mWallpaperTemporary = new File(getActivity().getCacheDir() + "/lockwallpaper.tmp");
-
         boolean hasNavBarByDefault = getResources().getBoolean(
                 com.android.internal.R.bool.config_showNavigationBar);
 
@@ -104,51 +82,9 @@ public class Revolt extends SettingsPreferenceFragment implements
         }
     }
 
-    private void updateCustomBackgroundSummary() {
-        int resId;
-        String value = Settings.System.getString(getContentResolver(),
-                Settings.System.LOCKSCREEN_BACKGROUND);
-        if (value == null) {
-            resId = R.string.lockscreen_background_default_wallpaper;
-            mCustomBackground.setValueIndex(LOCKSCREEN_BACKGROUND_DEFAULT_WALLPAPER);
-        } else if (value.isEmpty()) {
-            resId = R.string.lockscreen_background_custom_image;
-            mCustomBackground.setValueIndex(LOCKSCREEN_BACKGROUND_CUSTOM_IMAGE);
-        } else {
-            resId = R.string.lockscreen_background_color_fill;
-            mCustomBackground.setValueIndex(LOCKSCREEN_BACKGROUND_COLOR_FILL);
-        }
-        mCustomBackground.setSummary(getResources().getString(resId));
-    }
-    
-    @Override
+     @Override
     public void onResume() {
         super.onResume();
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == REQUEST_CODE_BG_WALLPAPER) {
-            int hintId;
-
-            if (resultCode == Activity.RESULT_OK) {
-                if (mWallpaperTemporary.exists()) {
-                    mWallpaperTemporary.renameTo(mWallpaperImage);
-                }
-                mWallpaperImage.setReadOnly();
-                hintId = R.string.lockscreen_background_result_successful;
-                Settings.System.putString(getContentResolver(),
-                        Settings.System.LOCKSCREEN_BACKGROUND, "");
-                updateCustomBackgroundSummary();
-            } else {
-                if (mWallpaperTemporary.exists()) {
-                    mWallpaperTemporary.delete();
-                }
-                hintId = R.string.lockscreen_background_result_not_successful;
-            }
-            Toast.makeText(getActivity(),
-                    getResources().getString(hintId), Toast.LENGTH_LONG).show();
-        }
     }
 
     @Override
@@ -156,12 +92,8 @@ public class Revolt extends SettingsPreferenceFragment implements
         super.onPause();
     }
 
-    public boolean onPreferenceChange(Preference preference, Object Value) {
+public boolean onPreferenceChange(Preference preference, Object Value) {
         final String key = preference.getKey();
-         if (preference == mCustomBackground) {
-            int selection = mCustomBackground.findIndexOfValue((String) Value);
-            return handleBackgroundSelection(selection);
-        }
         return false;
     }
 
@@ -182,81 +114,4 @@ public class Revolt extends SettingsPreferenceFragment implements
         }
         return false;
     }
-
-    private boolean handleBackgroundSelection(int selection) {
-        if (selection == LOCKSCREEN_BACKGROUND_COLOR_FILL) {
-            final ColorPickerView colorView = new ColorPickerView(getActivity());
-            int currentColor = Settings.System.getInt(getContentResolver(),
-                    Settings.System.LOCKSCREEN_BACKGROUND, -1);
-
-            if (currentColor != -1) {
-                colorView.setColor(currentColor);
-            }
-            colorView.setAlphaSliderVisible(true);
-
-            new AlertDialog.Builder(getActivity())
-                    .setTitle(R.string.lockscreen_custom_background_dialog_title)
-                    .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            Settings.System.putInt(getContentResolver(),
-                                    Settings.System.LOCKSCREEN_BACKGROUND, colorView.getColor());
-                            updateCustomBackgroundSummary();
-                        }
-                    })
-                    .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.dismiss();
-                        }
-                    })
-                    .setView(colorView)
-                    .show();
-        } else if (selection == LOCKSCREEN_BACKGROUND_CUSTOM_IMAGE) {
-            final Intent intent = new Intent(Intent.ACTION_GET_CONTENT, null);
-            intent.setType("image/*");
-            intent.putExtra("crop", "true");
-            intent.putExtra("scale", true);
-            intent.putExtra("scaleUpIfNeeded", false);
-            intent.putExtra("outputFormat", Bitmap.CompressFormat.PNG.toString());
-
-            final Display display = getActivity().getWindowManager().getDefaultDisplay();
-            final Rect rect = new Rect();
-            final Window window = getActivity().getWindow();
-
-            window.getDecorView().getWindowVisibleDisplayFrame(rect);
-
-            int statusBarHeight = rect.top;
-            int contentViewTop = window.findViewById(Window.ID_ANDROID_CONTENT).getTop();
-            int titleBarHeight = contentViewTop - statusBarHeight;
-            boolean isPortrait = getResources().getConfiguration().orientation ==
-                    Configuration.ORIENTATION_PORTRAIT;
-
-            int width = display.getWidth();
-            int height = display.getHeight() - titleBarHeight;
-
-            intent.putExtra("aspectX", isPortrait ? width : height);
-            intent.putExtra("aspectY", isPortrait ? height : width);
-
-            try {
-                mWallpaperTemporary.createNewFile();
-                mWallpaperTemporary.setWritable(true, false);
-                intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(mWallpaperTemporary));
-                intent.putExtra("return-data", false);
-                getActivity().startActivityFromFragment(this, intent, REQUEST_CODE_BG_WALLPAPER);
-            } catch (IOException e) {
-                // Do nothing here
-            } catch (ActivityNotFoundException e) {
-                // Do nothing here
-            }
-        } else if (selection == LOCKSCREEN_BACKGROUND_DEFAULT_WALLPAPER) {
-            Settings.System.putString(getContentResolver(),
-                    Settings.System.LOCKSCREEN_BACKGROUND, null);
-            updateCustomBackgroundSummary();
-            return true;
-        }
-
-        return false;
-    }
-
 }

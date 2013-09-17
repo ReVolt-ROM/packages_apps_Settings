@@ -109,6 +109,12 @@
             android:title="@string/safe_headset_volume_title"
             android:defaultValue="true" />
 
+    <CheckBoxPreference
+            android:key="headset_connect_player"
+            android:title="@string/headset_connect_player_title"
+            android:summary="@string/headset_connect_player_summary"
+            android:defaultValue="false" />
+
     <ListPreference
             android:key="emergency_tone"
             android:title="@string/emergency_tone_title"

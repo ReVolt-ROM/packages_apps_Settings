@@ -94,6 +94,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private static final String KEY_POWER_NOTIFICATIONS = "power_notifications";
     private static final String KEY_POWER_NOTIFICATIONS_VIBRATE = "power_notifications_vibrate";
     private static final String KEY_POWER_NOTIFICATIONS_RINGTONE = "power_notifications_ringtone";
+    private static final String KEY_HEADSET_CONNECT_PLAYER = "headset_connect_player";
 
 
     private static final String[] NEED_VOICE_CAPABILITY = {
@@ -136,6 +137,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private CheckBoxPreference mDockSounds;
     private Intent mDockIntent;
     private CheckBoxPreference mDockAudioMediaEnabled;
+    private CheckBoxPreference mHeadsetConnectPlayer;
 
     private BroadcastReceiver mReceiver = new BroadcastReceiver() {
         @Override
@@ -244,6 +246,10 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         mSafeHeadsetVolume.setPersistent(false);
         mSafeHeadsetVolume.setChecked(Settings.System.getBoolean(resolver,
                 Settings.System.MANUAL_SAFE_MEDIA_VOLUME, true));
+
+        mHeadsetConnectPlayer = (CheckBoxPreference) findPreference(KEY_HEADSET_CONNECT_PLAYER);
+        mHeadsetConnectPlayer.setChecked(Settings.System.getInt(resolver,
+                Settings.System.HEADSET_CONNECT_PLAYER, 0) != 0);
 
         Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         if (vibrator == null || !vibrator.hasVibrator()) {
@@ -453,6 +459,10 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         } else if (preference == mSafeHeadsetVolume) {
             Settings.System.putBoolean(getContentResolver(), Settings.System.MANUAL_SAFE_MEDIA_VOLUME,
                     mSafeHeadsetVolume.isChecked());
+
+        } else if (preference == mHeadsetConnectPlayer) {
+            Settings.System.putInt(getContentResolver(), Settings.System.HEADSET_CONNECT_PLAYER,
+                    mHeadsetConnectPlayer.isChecked() ? 1 : 0);
 
         } else if (preference == mMusicFx) {
             // let the framework fire off the intent

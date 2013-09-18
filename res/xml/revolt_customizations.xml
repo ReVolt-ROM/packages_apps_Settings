@@ -10,15 +10,6 @@
         android:key="statusbar_notifications"
         android:title="@string/statusbar_header">
 
-    <!-- Notification Shortcuts -->
-    <PreferenceScreen
-        android:id="@+id/slim_notification_shortcuts"
-        android:icon="@drawable/ic_notification_shortcuts"
-        android:fragment="com.android.settings.slim.notificationshortcuts.NotificationShortcuts"
-        android:key="slim_shortcuts_settings"
-        android:title="@string/notification_shortcuts_settings_title"
-        android:summary="@string/notification_shortcuts_settings_summary" />
-
   <!-- Power Widget -->
   <PreferenceScreen
         android:id="@+id/power_widget_settings"

@@ -5,21 +5,6 @@
     android:title="@string/revolt_custom_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
- <!-- Notification & StatusBar Header -->
- <PreferenceCategory
-        android:key="statusbar_notifications"
-        android:title="@string/statusbar_header">
-
-  <!-- Power Widget -->
-  <PreferenceScreen
-        android:id="@+id/power_widget_settings"
-        android:icon="@drawable/ic_powerwidget_setting"
-        android:title="@string/power_widget"
-        android:summary="@string/power_widget_summary"
-        android:fragment="com.android.settings.cyanogenmod.PowerWidget" />
-
- </PreferenceCategory>
-
  <!-- Hardware Keys -->
  <PreferenceCategory
         android:key="hardware_keys"

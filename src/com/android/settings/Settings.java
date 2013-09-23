@@ -138,7 +138,6 @@ public class Settings extends PreferenceActivity
             R.id.date_time_settings,
             R.id.about_settings,
             R.id.accessibility_settings,
-            R.id.revolt_control,
             R.id.themes,
             R.id.advanced_settings
     };
@@ -899,7 +898,6 @@ public class Settings extends PreferenceActivity
     public static class DreamSettingsActivity extends Settings { /* empty */ }
     public static class AnonymousStatsActivity extends Settings { /* empty */ }
     public static class AboutActivity extends Settings { /* empty */ }
-    public static class RevoltActivity extends Settings { /* empty */ }
     public static class PieActivity extends Settings { /* empty */ }
     public static class HaloActivity extends Settings { /* empty */ }
     public static class ApnSettingsActivity extends Settings { /* empty */ }

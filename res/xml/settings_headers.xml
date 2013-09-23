@@ -71,13 +71,6 @@
                 android:targetPackage="com.revolt.control" />
     </header>
 
-    <!-- ReVolt Links -->
-    <header
-        android:id="@+id/revolt_customizations"
-        android:icon="@drawable/ic_settings_revolt"
-        android:fragment="com.android.settings.Revolt"
-        android:title="@string/revolt_custom_title" />
-
     <!-- TRDS by Slim -->
     <header
         android:id="@+id/dark_settings"

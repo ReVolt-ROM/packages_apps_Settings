@@ -5502,8 +5502,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="power_notifications_ringtone_title">Notification sound</string>
     <!-- Sound settings, power notifications label for ringtone == none -->
     <string name="power_notifications_ringtone_silent">Silent</string>
-    <!-- Permissions Management -->
-    <string name="permissions_settings_title">Permissions</string>
 
     <!-- Network speed -->
     <string name="show_network_speed">Network speed indicator</string>

@@ -5625,4 +5625,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="lock_numpad_random_off">Disabled</string>
     <string name="lock_numpad_random_always">Always</string>
     <string name="lock_numpad_random_on_request">On request</string>
+    <!-- Toast message warning user why they cannot disable the last usable launcher app -->
+    <string name="last_launcher">Please install or enable another launcher before you can disable or uninstall this one</string>
+
 </resources>

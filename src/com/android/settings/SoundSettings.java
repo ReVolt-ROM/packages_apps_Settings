@@ -190,11 +190,11 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         mNotificationPreference = findPreference(KEY_NOTIFICATION_SOUND);
 
         mQuietHours = (PreferenceScreen) findPreference(KEY_QUIET_HOURS);
-        if (Settings.AOKP.getInt(resolver, Settings.AOKP.QUIET_HOURS_ENABLED, 0) == 1) {
+        if (Settings.REVOLT.getInt(resolver, Settings.REVOLT.QUIET_HOURS_ENABLED, 0) == 1) {
             mQuietHours.setSummary(getString(R.string.quiet_hours_active_from) + " " +
-                    returnTime(Settings.AOKP.getString(resolver, Settings.AOKP.QUIET_HOURS_START))
+                    returnTime(Settings.REVOLT.getString(resolver, Settings.REVOLT.QUIET_HOURS_START))
                     + " " + getString(R.string.quiet_hours_active_to) + " " +
-                    returnTime(Settings.AOKP.getString(resolver, Settings.AOKP.QUIET_HOURS_END)));
+                    returnTime(Settings.REVOLT.getString(resolver, Settings.REVOLT.QUIET_HOURS_END)));
         } else {
             mQuietHours.setSummary(getString(R.string.quiet_hours_summary));
         }
@@ -293,11 +293,11 @@ public class SoundSettings extends SettingsPreferenceFragment implements
 
         final int vibrateMode = mAudioManager.getVibrateSetting(AudioManager.VIBRATE_TYPE_RINGER);
 
-        if (Settings.AOKP.getInt(resolver, Settings.AOKP.QUIET_HOURS_ENABLED, 0) == 1) {
+        if (Settings.REVOLT.getInt(resolver, Settings.REVOLT.QUIET_HOURS_ENABLED, 0) == 1) {
             mQuietHours.setSummary(getString(R.string.quiet_hours_active_from) + " " +
-                    returnTime(Settings.AOKP.getString(resolver, Settings.AOKP.QUIET_HOURS_START))
+                    returnTime(Settings.REVOLT.getString(resolver, Settings.REVOLT.QUIET_HOURS_START))
                     + " " + getString(R.string.quiet_hours_active_to) + " " +
-                    returnTime(Settings.AOKP.getString(resolver, Settings.AOKP.QUIET_HOURS_END)));
+                    returnTime(Settings.REVOLT.getString(resolver, Settings.REVOLT.QUIET_HOURS_END)));
         } else {
             mQuietHours.setSummary(getString(R.string.quiet_hours_summary));
         }

@@ -75,19 +75,19 @@ public class QuietHours extends SettingsPreferenceFragment implements
             mQuietHoursDim = (CheckBoxPreference) findPreference(KEY_QUIET_HOURS_DIM);
 
             // Set the preference state and listeners where applicable
-            mQuietHoursEnabled.setChecked(Settings.AOKP.getInt(resolver, Settings.AOKP.QUIET_HOURS_ENABLED, 0) == 1);
-            mQuietHoursTimeRange.setTimeRange(Settings.AOKP.getInt(resolver, Settings.AOKP.QUIET_HOURS_START, 0),
-                    Settings.AOKP.getInt(resolver, Settings.AOKP.QUIET_HOURS_END, 0));
+            mQuietHoursEnabled.setChecked(Settings.REVOLT.getInt(resolver, Settings.REVOLT.QUIET_HOURS_ENABLED, 0) == 1);
+            mQuietHoursTimeRange.setTimeRange(Settings.REVOLT.getInt(resolver, Settings.REVOLT.QUIET_HOURS_START, 0),
+                    Settings.REVOLT.getInt(resolver, Settings.REVOLT.QUIET_HOURS_END, 0));
             mQuietHoursTimeRange.setOnPreferenceChangeListener(this);
-            mQuietHoursNotifications.setChecked(Settings.AOKP.getInt(resolver, Settings.AOKP.QUIET_HOURS_NOTIFICATIONS, 0) == 1);
-            mQuietHoursRinger.setChecked(Settings.AOKP.getInt(resolver, Settings.AOKP.QUIET_HOURS_RINGER, 0) == 1);
-            mQuietHoursStill.setChecked(Settings.AOKP.getInt(resolver, Settings.AOKP.QUIET_HOURS_STILL, 0) == 1);
+            mQuietHoursNotifications.setChecked(Settings.REVOLT.getInt(resolver, Settings.REVOLT.QUIET_HOURS_NOTIFICATIONS, 0) == 1);
+            mQuietHoursRinger.setChecked(Settings.REVOLT.getInt(resolver, Settings.REVOLT.QUIET_HOURS_RINGER, 0) == 1);
+            mQuietHoursStill.setChecked(Settings.REVOLT.getInt(resolver, Settings.REVOLT.QUIET_HOURS_STILL, 0) == 1);
 
             // Remove the notification light setting if the device does not support it 
             if (mQuietHoursDim != null && getResources().getBoolean(com.android.internal.R.bool.config_intrusiveNotificationLed) == false) {
                 getPreferenceScreen().removePreference(mQuietHoursDim);
             } else {
-                mQuietHoursDim.setChecked(Settings.AOKP.getInt(resolver, Settings.AOKP.QUIET_HOURS_DIM, 0) == 1);
+                mQuietHoursDim.setChecked(Settings.REVOLT.getInt(resolver, Settings.REVOLT.QUIET_HOURS_DIM, 0) == 1);
             }
         }
     }
@@ -97,23 +97,23 @@ public class QuietHours extends SettingsPreferenceFragment implements
         ContentResolver resolver = getActivity().getApplicationContext().getContentResolver();
 
         if (preference == mQuietHoursEnabled) {
-            Settings.AOKP.putInt(resolver, Settings.AOKP.QUIET_HOURS_ENABLED,
+            Settings.REVOLT.putInt(resolver, Settings.REVOLT.QUIET_HOURS_ENABLED,
                     mQuietHoursEnabled.isChecked() ? 1 : 0);
             return true;
         } else if (preference == mQuietHoursNotifications) {
-            Settings.AOKP.putInt(resolver, Settings.AOKP.QUIET_HOURS_NOTIFICATIONS,
+            Settings.REVOLT.putInt(resolver, Settings.REVOLT.QUIET_HOURS_NOTIFICATIONS,
                     mQuietHoursNotifications.isChecked() ? 1 : 0);
             return true;
         } else if (preference == mQuietHoursRinger) {
-            Settings.AOKP.putInt(resolver, Settings.AOKP.QUIET_HOURS_RINGER,
+            Settings.REVOLT.putInt(resolver, Settings.REVOLT.QUIET_HOURS_RINGER,
                     mQuietHoursRinger.isChecked() ? 1 : 0);
             return true;
         } else if (preference == mQuietHoursStill) {
-            Settings.AOKP.putInt(resolver, Settings.AOKP.QUIET_HOURS_STILL,
+            Settings.REVOLT.putInt(resolver, Settings.REVOLT.QUIET_HOURS_STILL,
                     mQuietHoursStill.isChecked() ? 1 : 0);
             return true;
         } else if (preference == mQuietHoursDim) {
-            Settings.AOKP.putInt(resolver, Settings.AOKP.QUIET_HOURS_DIM,
+            Settings.REVOLT.putInt(resolver, Settings.REVOLT.QUIET_HOURS_DIM,
                     mQuietHoursDim.isChecked() ? 1 : 0);
             return true;
         }
@@ -123,9 +123,9 @@ public class QuietHours extends SettingsPreferenceFragment implements
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getApplicationContext().getContentResolver();
         if (preference == mQuietHoursTimeRange) {
-            Settings.AOKP.putInt(resolver, Settings.AOKP.QUIET_HOURS_START,
+            Settings.REVOLT.putInt(resolver, Settings.REVOLT.QUIET_HOURS_START,
                     mQuietHoursTimeRange.getStartTime());
-            Settings.AOKP.putInt(resolver, Settings.AOKP.QUIET_HOURS_END,
+            Settings.REVOLT.putInt(resolver, Settings.REVOLT.QUIET_HOURS_END,
                     mQuietHoursTimeRange.getEndTime());
             return true;
         }

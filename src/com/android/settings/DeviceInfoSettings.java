@@ -71,9 +71,6 @@ public class DeviceInfoSettings extends RestrictedSettingsFragment {
     private static final String KEY_MOD_BUILD_DATE = "build_date";
     private static final String KEY_DEVICE_CPU = "device_cpu";
     private static final String KEY_DEVICE_MEMORY = "device_memory";
-    private static final String KEY_DEVICE_REAR_CAMERA = "device_rear_camera";
-    private static final String KEY_DEVICE_FRONT_CAMERA = "device_front_camera";
-    private static final String KEY_DEVICE_SCREEN_RESOLUTION = "device_screen_resolution";
 
     long[] mHits = new long[3];
 
@@ -196,22 +193,6 @@ public class DeviceInfoSettings extends RestrictedSettingsFragment {
                     Log.e(LOG_TAG, "Unable to start activity " + intent.toString());
                 }
             }
-        } else if (prefKey.equals(KEY_MOD_VERSION)) {
-            System.arraycopy(mHits, 1, mHits, 0, mHits.length-1);
-            mHits[mHits.length-1] = SystemClock.uptimeMillis();
-            if (mHits[0] >= (SystemClock.uptimeMillis()-500)) {
-                Intent intent = new Intent(Intent.ACTION_MAIN);
-                intent.setClassName("android",
-                        com.android.internal.app.AOKPLogoActivity.class.getName());
-                try {
-                    startActivity(intent);
-                } catch (Exception e) {
-                    Log.e(LOG_TAG, "Unable to start activity " + intent.toString());
-                }
-            }
-        } else if (prefKey.equals(KEY_KERNEL_VERSION)) {
-            setStringSummary(KEY_KERNEL_VERSION, getKernelVersion());
-            return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }

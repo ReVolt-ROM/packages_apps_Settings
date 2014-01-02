@@ -61,6 +61,14 @@
     <!-- Quick Links -->
     <header android:title="@string/quick_links_title" />
 
+    <header android:icon="@drawable/ic_settings_advanced"
+            android:title="@string/revolt_control_title">
+        <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="com.revolt.control.MainActivity"
+                android:targetPackage="com.revolt.control" />
+    </header>
+
     <header android:id="@+id/advanced_settings"
             android:title="@string/advanced_settings_title"
             android:icon="@drawable/ic_settings_advanced">

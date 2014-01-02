@@ -15,6 +15,9 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- ReVolt Control -->
+    <string name="revolt_control_title">ReVolt Control</string>
+
     <!-- About phone screen, ReVolt Version -->
     <string name="revolt_version_title">ReVolt Version</string>
     <string name="revolt_version_default">Unknown</string>

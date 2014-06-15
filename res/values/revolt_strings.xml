@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2013 ReVolt ROM Project
+<!-- Copyright (C) 2013 The ReVolt ROM Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -17,6 +17,10 @@
 
     <!-- ReVolt Control -->
     <string name="revolt_control_title">ReVolt Control</string>
+
+    <!-- Device specific settings -->
+    <string name="quick_links_title">Quick Links</string>
+    <string name="advanced_settings_title">Device options</string>
 
     <!-- About phone screen, ReVolt Version -->
     <string name="revolt_version_title">ReVolt Version</string>
@@ -186,6 +190,11 @@
     <!-- Wi-Fi settings screen, error message when the frequency band could not be set [CHAR LIMIT=50]. -->
     <string name="wifi_setting_countrycode_error">There was a problem setting the region code.</string>
 
+    <!-- Wi-Fi SSID string limits -->
+    <string name="wifi_ssid_input_limit">SSID exceeds maximum length</string>
+    <!-- Wi-Fi P2P string limits -->
+    <string name="p2p_device_name_input_limit">P2P name exceeds maximum length</string>
+
     <!-- Volume steps options -->
     <string name="live_volume_title">Live volume steps</string>
     <string name="volume_steps_60">60</string>
@@ -201,5 +210,58 @@
     <string name="volume_steps_ring_title">Volume steps: Ringer</string>
     <string name="volume_steps_system_title">Volume steps: System</string>
     <string name="volume_steps_voice_call_title">Volume steps: Voice Call</string>
+
+    <!-- Subtitle of dialog for editing data usage cycle length. [CHAR LIMIT=32] -->
+    <string name="data_usage_lengths_spinner_subtitle">Cycle length:</string>
+    <!-- Increasing ringtone volume -->
+    <string name="checkbox_increasing_ring">Enable</string>
+    <string name="increasing_ring_title">Ascending ringtone</string>
+    <string name="increasing_ring_min_volume_title">Ringing start volume</string>
+    <string name="increasing_ring_volume_notice">Notice:\nAs the start volume is set higher
+        than the ringer volume, the ring tone will be played using the ringer volume.
+    </string>
+    <string name="increasing_ring_interval_title">Increase interval</string>
+    <string name="increasing_ring_interval_eachring">On each ring</string>
+    <string name="increasing_ring_interval_half_second">0.5 seconds</string>
+    <string name="increasing_ring_interval_1second">1 second</string>
+    <string name="increasing_ring_interval_2seconds">2 seconds</string>
+    <string name="increasing_ring_interval_3seconds">3 seconds</string>
+    <string name="increasing_ring_interval_5seconds">5 seconds</string>
+    <string name="increasing_ring_interval_10seconds">10 seconds</string>
+
+    <!-- Lockscreen pin shuffle -->
+    <string name="lock_numpad_random_title">Change the order of PIN pad numbers</string>
+    <string name="lock_numpad_random_dialog_title">PIN pad random order</string>
+    <string name="lock_numpad_random_off">Disabled</string>
+    <string name="lock_numpad_random_always">Always</string>
+    <string name="lock_numpad_random_on_request">On request</string>
+
+    <!-- Bluetooth accept all Filestypes -->
+    <string name="bluetooth_accept_all_files">Accept all file types</string>
+
+    <!-- Font size sample text. This needs to be a very short string, as it is shown in
+    multiple font sizes in a limited amount of space. -->
+    <string name="font_size_sample">Sample</string>
+    <string name="summary_font_size" translatable="false">%1$s</string>
+
+    <!-- Delete apn confirmation dialog message -->
+    <string name="confirm_delete_apn">The APN will be deleted.</string>
+
+    <!--  About device screen, Hardware info -->
+    <string name="hardware_info">Hardware info</string>
+    <!--  About device Screen, hardware info, rear camera -->
+    <string name="device_rear_camera">Rear camera</string>
+    <!--  About device Screen, hardware info, front camera -->
+    <string name="device_front_camera">Front facing camera</string>
+    <!--  About device Screen, hardware info, screen res -->
+    <string name="device_screen_resolution">Screen resolution</string>
+    <!--  About device Screen, hardware info, GPU info -->
+    <string name="gpu_info">GPU</string>
+    <!-- About device screen, Cpu info. -->
+    <string name="cpu_info">CPU</string>
+    <!-- About device screen, Chipset info -->
+    <string name="chipset_info">Chipset</string>
+    <!-- About phone screen, Free memory info -->
+    <string name="mem_info">Memory</string>
 
 </resources>

@@ -276,8 +276,8 @@ public class WirelessSettings extends RestrictedSettingsFragment
 
         mNfcPollingMode = (ListPreference) findPreference(KEY_NFC_POLLING_MODE);
         mNfcPollingMode.setOnPreferenceChangeListener(this);
-        mNfcPollingMode.setValue((Settings.AOKP.getInt(activity.getContentResolver(),
-                Settings.AOKP.NFC_POLLING_MODE, 3)) + "");
+        mNfcPollingMode.setValue((Settings.REVOLT.getInt(activity.getContentResolver(),
+                Settings.REVOLT.NFC_POLLING_MODE, 3)) + "");
         updateNfcPolling();
 
         mAirplaneModeEnabler = new AirplaneModeEnabler(activity, mAirplaneModePreference);
@@ -416,8 +416,8 @@ public class WirelessSettings extends RestrictedSettingsFragment
 
     private void updateNfcPolling() {
         int resId;
-        String value = Settings.AOKP.getString(getContentResolver(),
-                Settings.AOKP.NFC_POLLING_MODE);
+        String value = Settings.REVOLT.getString(getContentResolver(),
+                Settings.REVOLT.NFC_POLLING_MODE);
         String[] pollingArray = getResources().getStringArray(R.array.nfc_polling_mode_values);
 
         if (pollingArray[0].equals(value)) {
@@ -492,8 +492,8 @@ public class WirelessSettings extends RestrictedSettingsFragment
             return true;
         } else if (preference == mNfcPollingMode) {
             int newVal = Integer.parseInt((String) newValue);
-            Settings.AOKP.putInt(getActivity().getContentResolver(),
-                    Settings.AOKP.NFC_POLLING_MODE, newVal);
+            Settings.REVOLT.putInt(getActivity().getContentResolver(),
+                    Settings.REVOLT.NFC_POLLING_MODE, newVal);
             updateNfcPolling();
             return true;
         }

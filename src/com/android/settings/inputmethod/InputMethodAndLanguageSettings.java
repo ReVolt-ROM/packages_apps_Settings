@@ -119,8 +119,8 @@ public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
         addPreferencesFromResource(R.xml.language_settings);
 
         mFullscreenKeyboard = (CheckBoxPreference) findPreference(PREF_FULLSCREEN_KEYBOARD);
-        mFullscreenKeyboard.setChecked(Settings.AOKP.getInt(getActivity().getContentResolver(),
-                Settings.AOKP.FULLSCREEN_KEYBOARD, 0) == 1);
+        mFullscreenKeyboard.setChecked(Settings.REVOLT.getInt(getActivity().getContentResolver(),
+                Settings.REVOLT.FULLSCREEN_KEYBOARD, 0) == 1);
 
         try {
             mDefaultInputMethodSelectorVisibility = Integer.valueOf(
@@ -352,8 +352,8 @@ public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
             }
         } else if (preference == mFullscreenKeyboard) {
             boolean checked = ((CheckBoxPreference) preference).isChecked();
-            Settings.AOKP.putInt(getActivity().getContentResolver(),
-                    Settings.AOKP.FULLSCREEN_KEYBOARD, checked ? 1 : 0);
+            Settings.REVOLT.putInt(getActivity().getContentResolver(),
+                    Settings.REVOLT.FULLSCREEN_KEYBOARD, checked ? 1 : 0);
             return true;
         } else if (preference instanceof CheckBoxPreference) {
             final CheckBoxPreference chkPref = (CheckBoxPreference) preference;
